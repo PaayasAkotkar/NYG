@@ -1,0 +1,79 @@
+# ©️ copyright 2025
+#              ##### ONE COLOR STUDIO #####
+#                      presents NYG:
+#                            😄
+
+# structure:
+# 1. player creates a room:
+# 2. player joins a room:
+# 3. player votes to go either solo or with team mate to decide to set the challenge:
+# --- mutual vote =true if both agrees:
+# --- solo set =true if one of the player disagrees:
+# 4. player than toss:
+# ------ toss session over:
+# 5. player set the challenge:
+# 6. game begins:
+# 7.round format: round robin best of 2
+# per set there are two rounds:
+# set match-up:
+# set 1:
+# R1:
+# 0v0:
+# R2:
+# 1v1:
+# set 2:
+# R1:
+# 1v0:
+# R2:
+# 0v1:
+# set 3:
+# R1:
+# 1v1:
+# R2:
+# 0v0:
+
+# rules:
+# 1. display team details broadcast syntax: team your_name
+# example: team red // valid
+#          teamRed // invalid
+#          team_RED // invalid too
+# 2. the token came from client to be converted into upper-cases:
+
+# ### if you the go coroutine is not working properly it means that either you have not set the sync's method correctly or not able to add the chan in the hub
+# ### prohibition of global words:
+# ### token, id, r
+
+# ### dictionary-folder:
+# fetches the events from the database:
+# ### books-folder:
+# fetches the books from the sse database:
+# ## server-folder:
+# broadcasts to the client :
+
+# ### books is broadcast only one single book as per the created room
+# ### dictionary[event] is broadcast on the basis of the book
+# ### events[participants country or any] are broadcast on the basis of the dictionary
+# ### connected to main database
+
+# # locify mode:---------------
+# # basically we lock players into two teams
+# # where they face each other as a team
+
+# # clash mode:----------------
+# # we lock players into two teams
+# # where they each other in a stored team
+
+# # events updating
+# the game does the things in simple:
+# _for locify it will store :
+#       1. count_of_category: category of the room in which player played
+#       2. count_of_all_points: total points earned in the match by the player
+#       3. count_of_all_the_used_powers: power-up's used by the player
+#       4. count_of_all_the_result: counting only the winning result // #NOTE: note counting the 2nd place
+
+# _for clash it will store:
+#       1. count_of_category: category of the room in which player played
+#       2. count_of_all_bosses: total times the player has become final boss in a match
+#       3. count_of_all_the_used_powers: power-up's used by the player
+#       4. count_of_all_the_result: counting only the winning result // #NOTE: note counting the 2nd place
+

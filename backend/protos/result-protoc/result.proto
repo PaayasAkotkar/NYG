@@ -1,0 +1,87 @@
+// Copyright 2015 gRPC authors.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+package nygprotoc;
+
+option go_package = "app/nygprotoc";
+// updating the client profile
+service NYGGameCredentials {
+  rpc RecievedNYGGameCredentials(NYGGCredentials) returns (NYGGCredentialsReply) {}
+}
+message NYGGCredentials {
+  map<string, TypeGCredentials> players_game_credits = 1;
+  bool clash=2;
+  bool onevone=3;
+}
+message TypeGCredentials {
+  string id = 1;
+  string category = 2;
+  repeated string powers = 3;
+  int32 points = 4;
+  int32 results = 5;
+  int32 games_played = 6;
+  int32 rating = 7;
+  string book = 8;
+  int32 incremented=9;
+  int32 decremented=10;
+}
+message NYGGCredentialsReply {
+  bool reached = 1;
+  string msg = 2;
+}
+// end updating the client profile
+
+
+// sending the profile miscellaneous data
+
+service NYGRating {
+  rpc GetNYGRating(NYGpID) returns (NYGpRating) {}
+}
+
+message NYGpID {
+  string id = 1;
+  bool clash=2;
+  bool onevone=3;
+}
+
+message NYGpRating {
+  int32 rating = 1;
+}
+// end sending the profile miscellaneous data
+
+
+//  updating the players events 
+
+service NYGEvents {
+  rpc ViewEvents(Param) returns (TypeNYGEvents) {}
+}
+message TypeDailyEvent {
+  string event_name = 1;
+  string reward = 2;
+  int32 progress = 3;
+  int32 to_complete = 4;
+  int32 completed = 5;
+  bool is_clash = 6;
+  string description = 7;
+}
+message TypeNYGEvents {
+  repeated TypeDailyEvent clash = 1;
+  repeated TypeDailyEvent locify = 2;
+}
+message Param {
+  string id = 1;
+}
+// end updating the players events

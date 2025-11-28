@@ -1,0 +1,39 @@
+type InitMessage{
+    id: String!
+    msg: String!
+    roomname: String!
+    name:String!
+}
+
+type LatestMessage{
+    id: String!
+    msg: String!
+    roomname: String!
+    name:String!
+}
+
+type Reply{
+status:Int!
+name:String!
+msg:String!
+}
+
+input PUT {
+  id:String!
+  msg:String!
+  roomname:String!
+  name:String!
+
+}
+
+type Mutation {
+    POST(client: PUT!): Reply!
+}
+
+type Query{
+    client(id:String!): InitMessage!
+}
+
+type Subscription{
+    latest(room:String!): LatestMessage!
+}

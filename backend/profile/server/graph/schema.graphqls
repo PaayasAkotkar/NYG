@@ -1,0 +1,116 @@
+
+#deck
+type CurrentDeck{
+  id:ID!
+  _first:String!
+  _second:String!
+  isDefault:Boolean!
+}
+#end
+
+#display
+type IProfile{
+  gamesPlayed:Int!
+  tier:String!
+  rating:Int!
+  points:Int!
+}
+type IImage{
+imgURL:String!
+imgName:String!
+id:String!
+}
+
+type Display{
+  name:String!
+  nickname:String!
+  id:String!
+  image:IImage!
+  clashProfile:IProfile!
+  onevoneProfile:IProfile!
+  twovtwoProfile:IProfile!
+  nygProfile:IProfile!
+}
+#end
+
+#store
+type IStore{
+  Price:String!
+Title:String!
+}
+type Store{
+  coin:[IStore!]!
+  spur:[IStore!]!
+}
+#end
+
+#credits 
+type ICredits{
+  coins:String!
+  spurs:String!
+  theme:String!
+}
+#end
+
+#profile
+type IDailyEvents{
+  eventName:String!
+  reward:String!
+  completed:Int!
+  toComplete:Int!
+  progress:Int!
+  isClash:Boolean!
+  description:String!
+}
+
+type DailyEvents{
+  locify:[IDailyEvents!]!
+  clash:[IDailyEvents!]!
+}
+#end
+
+#upgrade
+type PowerProfile{
+  power:String!   
+	spur:Int!    
+	counter:Int! 
+	level:Int!
+  allow:Boolean!   
+  display:String! 
+}
+type PowerProgress{
+  upgrades:[PowerProfile!]!
+}
+#end 
+
+type loginReply{
+  msg:String!
+  updatedPlayerCredits(id:ID!):ICredits!
+  name(id:ID!):String!
+  nickname(id:ID!):String!
+  updatedStore(id:ID!):Store!
+  updatedEvents(id:ID!):DailyEvents!
+  updatedDisplay(id:ID!):Display!
+  updatedPowerupUpgrades(id:ID!):PowerProgress!
+  currentDeck(id:ID!):CurrentDeck!
+}
+type IBooks{
+  entertainment:[String!]!
+  sports:[String!]!
+}
+type Query{
+  login(id:ID!):loginReply!  
+  updatedBooks:IBooks!
+
+}
+
+type Subscription {
+  updatedPlayerCredits(id:ID!):ICredits!
+  name(id:ID!):String!
+  nickname(id:ID!):String!
+  updatedStore(id:ID!):Store!
+  updatedEvents(id:ID!):DailyEvents!
+  updatedDisplay(id:ID!):Display!
+  updatedPowerupUpgrades(id:ID!):PowerProgress!
+  currentDeck(id:ID!):CurrentDeck!
+}

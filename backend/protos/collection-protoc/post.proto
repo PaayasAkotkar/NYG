@@ -1,0 +1,13 @@
+syntax="proto3";
+
+package nygcollectionprotoc;
+
+option go_package="app/nygcollectionprotoc";
+
+
+service Sports{
+
+}
+service Cricket{
+    
+}
