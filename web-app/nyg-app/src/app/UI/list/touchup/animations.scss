@@ -1,0 +1,52 @@
+@supports(syntax: '<color>') {
+    @property --from {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: #ff0060;
+    }
+
+    @property --to {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: #7434ff;
+    }
+
+    @property --bg {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: blue;
+    }
+}
+
+:host {
+    .ocs-as {
+
+        --gradient-border: conic-gradient(from var(--border-angle), var(--from),
+
+                var(--to), var(--to), var(--from));
+        --border-angle: 0turn; // initial-state
+
+        border: solid 5px transparent;
+        background: var(--gradient-border) border-box;
+
+        background-position: center center;
+        animation: rotateQ;
+        animation-duration: 2.45s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+    }
+}
+
+@keyframes rotateQ {
+
+    to {
+        --border-angle: 1turn;
+    }
+
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}

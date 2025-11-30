@@ -1,0 +1,128 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+
+.nyg-fsx2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.nyg-p1x {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.ocs-fs2s {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.ocsx {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    overflow: hidden;
+}
+
+:host {
+    .btn-cont {
+        padding-bottom: 10px;
+        border-radius: 3rem;
+
+        .nyg-header {
+            font-size: 3rem;
+        }
+    }
+
+}
+
+
+:host {
+    .ocs-btn {
+        width: 200px;
+        height: 70px;
+        border-radius: 5rem;
+        border: 0px;
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
+:host {
+    .ocs-outer {
+        width: fit-content;
+        height: fit-content;
+        transform: skew(-10deg);
+        padding: 5px;
+        border-radius: 5rem;
+
+    }
+}
+
+:host {
+    .ocs-header {
+        font-size: 4rem;
+        font-family: arial;
+    }
+}
+
+
+:host {
+    .btn-cont {
+        padding-bottom: 10px;
+        border-radius: 3rem;
+
+        .nyg-header {
+            font-size: 3rem;
+        }
+    }
+
+}
+
+
+:host {
+    .ocs-btn {
+        width: 200px;
+        height: 70px;
+        border-radius: 5rem;
+        border: 0px;
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
+:host {
+    .ocs-outer {
+        width: fit-content;
+        height: fit-content;
+        transform: skew(-10deg);
+        padding: 5px;
+        border-radius: 5rem;
+
+    }
+}
+
+:host {
+    .ocs-header {
+        font-size: 4rem;
+        font-family: arial;
+    }
+}

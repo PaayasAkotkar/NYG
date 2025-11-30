@@ -1,0 +1,15 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+
+:host {
+    .nyg-input {
+        &:focus {
+            transition-property: padding-top;
+            transition-duration: 0.24s;
+            transition-timing-function: cubic-bezier(.9, .81, .67, .68);
+            padding-top: 20px;
+        }
+    }
+}

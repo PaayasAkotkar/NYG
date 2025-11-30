@@ -1,0 +1,33 @@
+<div class="cont">
+
+    <div class="ocs-prof">
+        <div class="ocs-p">
+            <app-ocs-img (Click)="SeeProfile()" [OCSPicURL]="NYGProfile.ProfilePic"></app-ocs-img>
+            <div cass="ocs-a">
+                <app-home-page-nav2 [OCSsrc]="OCSImagePath()" [OCSsubHeader2]="NYGProfile.Rating.toString()"
+                    [OCSsubHeader]="NYGProfile.Tier" [OCSheader]=" NYGProfile.Name"
+                    (NYGListen)="SeeProfile()"></app-home-page-nav2>
+            </div>
+            <!-- <app-login-page></app-login-page> -->
+        </div>
+
+    </div>
+    <div class="ocs-home">
+        <!-- <app-rooms-list></app-rooms-list> -->
+        <app-clash (OCSListen)="toClash()"></app-clash>
+        <app-locify (OCSListen)="toLocify()"></app-locify>
+    </div>
+    <div class="ocs-lb">
+
+        <app-home-page-label [NYGdoIt]="coinDoIt" [NYGTitle]="NYGProfile.Coin"></app-home-page-label>
+        <app-home-page-label [NYGdoIt]="spurDoIt" [NYGTitle]="NYGProfile.Spur"></app-home-page-label>
+        <app-home-page-nav [NYGdoIt]="eventDoIt" OCSmsg="new" [OCSlatest]="eventSeen" (NYGListen)="SeeDailyEvents()"
+            NYGHeader="EVENTS"></app-home-page-nav>
+        <app-home-page-nav [OCSlatest]="true" NYGLink="[/Settings]" (NYGListen)="toUpgrade()"
+            NYGHeader="UPGRADE"></app-home-page-nav>
+        <app-home-page-nav OCSmsg="new" [OCSlatest]="storeSeen" NYGLink="[/Settings]" (NYGListen)="toStore()"
+            NYGHeader="STORE"></app-home-page-nav>
+        <app-ocs-indox-box (OCSlisten)="openIndoxBox()" [OCSlatest]="isIndoxMsg"
+            [OCSmsg]="OCSindoxMsg"></app-ocs-indox-box>
+    </div>
+</div>

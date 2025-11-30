@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="nyg-form-container">
+        <form class="nyg-form" [formGroup]="JoinRoomForm">
+            <fieldset class="nyg-form-field">
+                <span class="ocs-sn"></span>
+                <div class="bx">
+                    @for (item of OCSRooms();track $index) {
+                    <div class="item-fitz">
+                        <div class=" nyg-form-fieldXX field-adjust">
+                            <label [htmlFor]="item.RoomName" class="nyg-labelXX  adjust-labelH">
+                                <span class="nyg-header">{{item.RoomName}}</span>
+                            </label>
+                            <div class="in-con">
+                                <div class="in-bor">
+                                    <input type="checkbox" class="nyg-input" (change)="CollectionToken(item.RoomName)"
+                                        [formControlName]="item.RoomName" [id]="item.RoomName" [name]="item.RoomName">
+                                </div>
+                            </div>
+                            <div class="ocs-itemfit">
+
+                                <div class="ocs-itemsx">
+                                    <span class="ocs-header2">{{item.Book}}</span>
+                                </div>
+                                <div class="ocs-itemsx">
+                                    <span class="ocs-header2">{{item.Category}}</span>
+                                </div>
+                                <div class="ocs-itemsx">
+                                    <span class="ocs-header2">{{item.Type}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+
+            </fieldset>
+            <span class="ocs-sn2"></span>
+
+        </form>
+        <div class="btn-cont">
+            <div class="ocs-outer">
+                <button type="submit" class="ocs-btn" (click)="Join($event)">
+                    <span class="ocs-header">JOIN</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

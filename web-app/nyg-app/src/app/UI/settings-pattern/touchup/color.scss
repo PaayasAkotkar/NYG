@@ -1,0 +1,33 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    .nyg-li {
+        background-color: map.get(theme.$nyg-white-palletes, ad8-white);
+        // background-color: map.get(theme.$nyg-black-palletes, ad1-black);
+
+    }
+}
+
+:host {
+    .nyg-input {
+        background: map.get(theme.$nyg-blue-palletes, ad3-blue);
+    }
+}
+
+:host {
+    .nyg-header {
+        font-size: 5rem;
+        font-family: Arial;
+
+        pointer-events: none;
+        background:
+            linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad11-red),
+                map.get(theme.$nyg-blue-palletes, ad11-blue));
+
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+    }
+}

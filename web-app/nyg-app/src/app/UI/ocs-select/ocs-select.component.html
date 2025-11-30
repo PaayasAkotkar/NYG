@@ -1,0 +1,29 @@
+<fieldset class="nyg-form-field">
+    <label [htmlFor]="NYGformControlName">
+        <span class="nyg-header">{{NYGheader}}</span>
+        @if (NYGsetToolTip) {
+        <div class="ocs-tt">
+            <span class="ocs-tool-tip">{{NYGtoolTip}}</span>
+        </div>
+        }
+    </label>
+    <div class="outer-bo">
+
+        <select #ref (change)="Click(ref.value)" class="ocs-select" [id]="NYGformControlName"
+            [name]="NYGformControlName" [formControlName]="NYGformControlName">
+            <optgroup class="ocs-og" [label]="NYGlabel">
+                @for (item of NYGoptions; track $index) {
+                <option [value]="item.OCSformControl">
+                    <span class="nyg-header">
+                        {{item.OCStemplate}}
+                    </span>
+                </option>
+                }
+            </optgroup>
+        </select>
+        @if (NYGisError) {
+        <span class="nyg-error-header">{{NYGerrorMessage}}</span>
+        }
+    </div>
+
+</fieldset>

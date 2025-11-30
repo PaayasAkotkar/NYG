@@ -1,0 +1,83 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    --from: #{map.get(theme.$nyg-blue-palletes,ad18-blue)};
+    --to: #{map.get(theme.$nyg-red-palletes,ad18-red)};
+    --border: #E5E3E1;
+    --progress: 0%;
+    --w: 0%;
+    --move: 100%; // moves exactly to the postion div
+}
+
+:host {
+    .run {
+        animation-name: run;
+        animation-duration: 1.49845s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.46, .31, .48, .14);
+        animation-fill-mode: forwards;
+        // opacity: 0.5;
+        background: map.get(theme.$nyg-black-palletes, ad8-black);
+    }
+}
+
+@keyframes run {
+    0% {
+        transform: translateX(0);
+
+    }
+
+    100% {
+        transform: translateX(calc(var(--progress) + 500%));
+    }
+}
+
+:host {
+    .ocs-prog {
+        background: var(--from);
+
+    }
+}
+
+.ocs-prog,
+.an {
+    width: 100%;
+    height: 100%;
+}
+
+.an {
+
+    background: linear-gradient(to left, var(--from), var(--to));
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    width: var(--progress);
+    overflow: hidden;
+    display: flex;
+}
+
+.an {
+    transition-property: width;
+    transition-duration: 0.55s;
+    animation-name: timelapse;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(.86, .05, .4, .96);
+}
+
+@keyframes timelapse {
+    0% {
+        width: 0%;
+
+    }
+
+    100% {
+        width: calc(var(--progress) + 10%);
+
+    }
+
+}

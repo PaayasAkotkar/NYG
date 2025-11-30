@@ -1,0 +1,173 @@
+<div class="container">
+
+    <div class="ocs-cont">
+        <div class="ocs-item">
+            <div class="ocs-headerx">
+                <span class="ocs-headera">
+                    {{_credition}}
+                </span>
+                <span class="ocs-headera">
+                    PRESENTS
+                </span>
+                <span class="ocs-headera">
+                    {{_credits}}
+                </span>
+            </div>
+            <div class="ocs-xitems">
+                <div class="ocs-img-cont">
+                    <app-ref-setup-board [NYGlist]="NYGclashList" [NYGMode]="NYGclashMode"
+                        [isNYGClash]="isNYGClash"></app-ref-setup-board>
+                </div>
+                <app-ocs-card [NYGsetHeadline]="aboutClash"></app-ocs-card>
+            </div>
+            <div class="ocs-xitems">
+                <div class="outer">
+                    <div class="ocs-manual-cont">
+                        <span class="nyg-header" [innerHTML]="aboutLocify">
+                        </span>
+
+                    </div>
+                </div>
+                <div class="ocs-img-cont">
+                    <app-ref-setup-board [NYGlist]="NYGlocifyList" [NYGMode]="NYGlocifyMode" [isNYGClash]="islNYGClash">
+                    </app-ref-setup-board>
+                    <div class="outer">
+                        <div class="ocs-manual-cont ocs-2nd">
+                            <span class="nyg-header" [innerHTML]="aboutLocifysecond">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ocs-adjustx">
+                <div class="ocs-xitems">
+                    <div class="ocs-dummy">
+                        <div class="ocs-col">
+                            <div class="ocs-pow">
+                                <div class="ocsxx">
+                                    <app-power-nexus [Nexus]="nexus"></app-power-nexus>
+
+                                </div>
+                                <div class=ocs-xx>
+
+                                    <app-ocs-card [NYGsetHeadline]="Nexus"></app-ocs-card>
+
+                                </div>
+                            </div>
+
+                            <div class="ocs-pow">
+                                <div class="ocsxx">
+                                    <RefguessText-25x [NYGcovertRef]="true"></RefguessText-25x>
+
+                                </div>
+                                <div class=ocs-xx>
+
+                                    <app-ocs-card [NYGsetHeadline]="Covert"></app-ocs-card>
+
+                                </div>
+                            </div>
+                            <div class="ocs-pow">
+                                <div class="ocsxx">
+                                    <app-power-freeze [NYGref]="true" [NYGfreezeAccess]="10"></app-power-freeze>
+                                </div>
+                                <div class=ocs-xx>
+
+                                    <app-ocs-card [NYGsetHeadline]="Freeze"></app-ocs-card>
+
+                                </div>
+                            </div>
+                            <div class="ocs-pow">
+                                <div class="ocsxx">
+                                    <app-power-draw [NYGref]="true"></app-power-draw>
+
+                                </div>
+                                <div class=ocs-xx>
+
+                                    <app-ocs-card [NYGsetHeadline]="Draw"></app-ocs-card>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ocs-row">
+                            <div class="ocs-pow">
+                                <div class=ocs-xx>
+
+                                    <app-ocs-card [NYGsetHeadline]="Rewind"></app-ocs-card>
+
+                                </div>
+                                <div class=ocs-xx>
+                                    <app-ref-rewind-power></app-ref-rewind-power>
+                                </div>
+
+                            </div>
+                            <div class="ocs-pow">
+                                <div class=ocs-xx>
+
+                                    <app-ocs-card [NYGsetHeadline]="Rewind"></app-ocs-card>
+
+                                </div>
+                                <div class="ocsxx">
+                                    <app-ref-tag-power></app-ref-tag-power>
+                                </div>
+
+                            </div>
+                            <div class="ocs-pow">
+                                <div class=ocs-xx>
+
+                                    <app-ocs-card [NYGsetHeadline]="Bet"></app-ocs-card>
+
+                                </div>
+                                <div class="ocsxx">
+                                    <guess-bet [NYGcollection]="bets" [NYGref]="true"
+                                        [NYGclash]="isNYGClash"></guess-bet>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ocs-xitems">
+                    <div class="ocs-dummy">
+
+                        <cdk-accordion class="ocs-acord">
+                            @for (item of init; track $index) {
+                            <cdk-accordion-item class="ocs-acord-item" #accordionItem="cdkAccordionItem">
+                                <button class="ocs-btn ocs-header" (click)="accordionItem.toggle()">
+                                    <span class="nyg-header1 ocs-content">
+                                        {{item.OCStemplate}}
+                                    </span>
+                                </button>
+                                @if (accordionItem.expanded) {
+                                <div class="ocs-paper">
+                                    <div class="ocs-headline">
+                                        <span class="nyg-header1" [innerHTML]="item.OCSToolTip">
+                                        </span>
+                                    </div>
+
+                                </div>
+                                }
+                            </cdk-accordion-item>
+                            }
+                        </cdk-accordion>
+                    </div>
+
+                </div>
+            </div>
+            <div class="ocs-img-contA">
+                <div class="ocs-img-contx">
+                    <img class="ocs-img" [src]="credits">
+                </div>
+                <div class="ocs-x">
+                    <span class="ocs-headera">Created by PAAYAS AKOTKAR 2025 </span>
+                    <footer>
+                        <span class="ocs-headera">
+                            all rights reservered; copyright 2025
+
+                        </span>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

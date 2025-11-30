@@ -1,0 +1,21 @@
+@use '../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+:host {
+    --bg:#{ map.get(theme.$nyg-black-palletes, ad6-black)};
+}
+
+:host {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        --bg: #{map.get(theme.$nyg-blue-palletes, ad16-blue)}; // for node arena
+        --bg:#{ map.get(theme.$nyg-brown-palletes, ad3-brown)}; // for mysterium arena
+        --bg: #{map.get(theme.$nyg-voilet-palletes, ad9-voilet)}; // for physic arena
+        --bg: #{map.get(theme.$nyg-green-palletes, ad16-green)}; // for fastlane arena
+        --bg: #{map.get(theme.$nyg-black-palletes, ad7-black)}; // for gym arena
+
+        background-color: var(--bg);
+
+    }
+}

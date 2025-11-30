@@ -1,0 +1,133 @@
+@use '../../helpers/helpers.scss' as mat;
+@use '../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+.box-field {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.opt-co {
+    background: transparent;
+}
+
+.ocs-tag {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.ocs-tags {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+
+.box-field {
+    padding: 10px;
+}
+
+.nyg-tex {
+    width: 600px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+
+
+}
+
+.tex-adjust {
+    padding: 10px;
+}
+
+.nyg-tlabel {
+    @include mat.setup(fit-content, fit-content, flex);
+    @include mat.setupFlex(row, center, center);
+
+    & {
+        // border-style: solid;
+        // border-width: 1px;
+        border-bottom: 0px;
+        padding-bottom: 0px;
+        font-family: arial;
+        overflow: hidden;
+        border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
+    }
+
+
+}
+
+:host {
+    .nyg-header {
+        pointer-events: none;
+    }
+}
+
+:host {
+    .nyg-header2 {
+        pointer-events: none;
+
+    }
+}
+
+.nyg-tex-m {
+    width: 100%;
+    height: fit-content;
+    padding: 0px;
+    // border-style: solid;
+    // border-width: 2px;
+    border-bottom-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 14rem;
+
+    & {
+        background-color: map.get(theme.$nyg-blue-palletes, potrait2-blue);
+    }
+
+    .nyg-header2 {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+.nyg-header {
+    font-size: 3rem;
+    font-family: Arial;
+    padding-right: 10px;
+    width: fit-content;
+    letter-spacing: -1px;
+    height: fit-content;
+    word-spacing: -20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: map.get(theme.$nyg-white-palletes, ad1-white)
+}
+
+.nyg-header2 {
+    font-size: 3rem;
+    font-family: Arial;
+    padding-right: 10px;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: map.get(theme.$nyg-black-palletes, ad1-black)
+}

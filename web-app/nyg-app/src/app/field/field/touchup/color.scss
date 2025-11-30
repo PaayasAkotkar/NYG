@@ -1,0 +1,104 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+@supports(syntax:'<color>') {
+    @property --bg {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: blue;
+    }
+
+    @property --col_ {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: white;
+    }
+
+    @property --from {
+        syntax: "<color>";
+        inherits: true;
+        initial-value: #FF0060;
+    }
+
+    @property --to {
+        syntax: "<color>";
+        inherits: true;
+        initial-value: #7434FF;
+    }
+}
+
+:host {
+    .nyg-form {
+        // --bg:#{map.get(theme.$nyg-white-palletes,ad9-white)}; // for gym
+        // --bg:#{map.get(theme.$nyg-green-palletes,ad15-green)}; // for fastlane
+        // --bg:#{map.get(theme.$nyg-orange-palletes,skin-tone4)}; // for mysterium
+        // --bg:#{map.get(theme.$nyg-red-palletes,ad6-red)}; // for psychic
+        // --bg:#{map.get(theme.$nyg-white-palletes,ad9-white)}; // for gym
+
+        background-color: var(--bg);
+    }
+}
+
+:host {
+    .nyg-form-fieldXX {
+        overflow: hidden;
+        // background-color: map.get(theme.$nyg-orange-palletes, ad2-orange);
+        // background-color: map.get(theme.$nyg-green-palletes, potrait1-green);
+        // background-color: map.get(theme.$nyg-white-palletes, white);
+        background-color: var(--bg);
+
+    }
+}
+
+:host {
+    .item-fitz {
+        // background-color: map.get(theme.$nyg-red-palletes, scarllet);
+        overflow: hidden;
+    }
+}
+
+:host {
+    .nyg-form {
+        border-radius: 4rem;
+        padding: 10px;
+    }
+}
+
+:host {
+    .nyg-header {
+
+        // for gym
+        // --from:#{map.get(theme.$nyg-white-palletes, ad4-white)};
+        // --to:#{map.get(theme.$nyg-white-palletes, ad8-white)};
+
+        // // for fastlane
+        // --from:#{map.get(theme.$nyg-black-palletes, umber-black)};
+        // --to:#{map.get(theme.$nyg-red-palletes, ad7-red)};
+        // // for mysterium
+        // --from:#{map.get(theme.$nyg-black-palletes, ad1-black)};
+        // --to:#{map.get(theme.$nyg-yellow-palletes, ad5-yellow)};
+
+        // // for psyhic
+        // --from:#{map.get(theme.$nyg-white-palletes, ad8-white)};
+        // --to:#{map.get(theme.$nyg-blue-palletes, ad14-blue)};
+
+        padding: 10px;
+        letter-spacing: -3px;
+        pointer-events: none;
+        background:
+            linear-gradient(to left, var(--from),
+                var(--to));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bolder;
+    }
+}
+
+:host {
+    .nyg-header1 {
+        --col_: #{map.get(theme.$nyg-white-palletes, ad1-white)};
+
+        color: var(--col_);
+    }
+}

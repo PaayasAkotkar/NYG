@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	USER     = ""
+	USER     = "root"
 	PASSWORD = ""
 )
 

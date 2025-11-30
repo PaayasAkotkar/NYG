@@ -1,0 +1,15 @@
+<div class="ocs-outer">
+    <div class="ocs-inner">
+        <div class="ocs-item"><span class="ocs-header ocs-ti">{{OCStitle}}</span></div>
+        @if (!OCSuseImage) {
+        <div class="ocs-item"><span class="ocs-header ocs-sub">{{OCSsubTitle}}</span></div>
+        }@else {
+        <div class="ocs-item ocs-img-item"><span class="ocs-header ocs-sub">
+                <img class="ocs-img" [src]="OCSImgSrc">
+
+                {{OCSsubTitle}}
+
+            </span></div>
+        }
+    </div>
+</div>

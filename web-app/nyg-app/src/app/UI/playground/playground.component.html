@@ -1,0 +1,31 @@
+<div appOnStyle [fromColor]="fromColor" [toColor]="toColor" [isLinearBg]="linearbg" [bgColor]="bg" class="containerx">
+    <div class="borderx">
+        <div class="items">
+            <div class="ocs-game-items">
+
+                <div class="play-view">
+
+                    <div class="nyg-scoreboard">
+                        <app-scoreboard [NYGstartClock]="OCSstartClock" [OCStheme]="NYGboardTheme"
+                            [NYGredScore]="NYGredScore" [NYGblueScore]="NYGblueScore" [NYGroundOver]="NYGroundOver"
+                            [NYGset]="NYGset" [NYGround]="NYGround" [NYGrewindRestart]="NYGrewindRestart"
+                            [NYGunFreeze]="NYGunFreeze" class="nyg-board" [NYGuseRewindPower]="NYGuseRewindPower"
+                            [OCSgameTime]="OCSgameTime" [NYGisGuessDone]="isGuessDone"></app-scoreboard>
+                    </div>
+
+                </div>
+
+                <div class="nyg-guess-text">
+                    <app-guess-text [NYGtimeout]="NYGtimeout" [OCStheme]="NYGguessTheme" [NYGfinalBoss]="NYGfinalBoss"
+                        [NYGlastDance]="NYGlastDance" [NYGonFire]="NYGonFire" [NYGPressedTime]="NYGTime" class="nyg-put"
+                        [NYGfriend]="NYGfriend" [NYGmyroom]="NYGmyroom" [NYGround]="NYGround" [NYGset]="NYGset"
+                        [NYGuseCovertPower]="NYGuseCovertPower" [NYGunFreeze]="NYGunFreeze"
+                        [NYGunderTast]="NYGunderTast" [NYGmyTeam]="NYGmyTeam" [NYGroundOver]="NYGroundOver"
+                        [NYGclash]="NYGClash" [NYGchances]="NYGchances" [NYGredScore]="NYGredScore"
+                        [NYGblueScore]="NYGblueScore" (NYGguessDone)="GuessDone($event)"></app-guess-text>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

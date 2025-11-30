@@ -1,0 +1,19 @@
+<div>
+
+    <div RemoveClass toRemove="ocs-animate-outer" [doIt]="NYGdoIt" class="ocs-inner ocs-animate-outer">
+
+        <div RemoveClass [doIt]="NYGdoIt" toRemove="ocs-animate-inner" class="ocs-animate-inner">
+            <a [routerLink]="NYGLink" class="ocs-hd" (click)="Listen()">
+                <span class="ocs-header">{{NYGHeader}}</span>
+            </a>
+        </div>
+    </div>
+
+    @if (!OCSlatest) {
+    <div class="ocs-msg">
+        <span class="nyg-header">
+            {{OCSmsg}}
+        </span>
+    </div>
+    }
+</div>

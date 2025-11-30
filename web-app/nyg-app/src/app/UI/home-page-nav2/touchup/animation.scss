@@ -1,0 +1,61 @@
+:host {
+    .ocs-inner {
+        --gradient-borderx: conic-gradient(from var(--raindbow-angle), #ff0060,
+
+                #7434ff, #7434ff, #ff0060);
+        --raindbow-angle: 0turn; // initial-state
+
+        border: solid 2px transparent;
+
+        background: var(--gradient-borderx) border-box;
+
+        background-position: center center;
+        animation: rainbowQ;
+        animation-duration: 3.45s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+}
+
+:host {
+    .ocs-outer {
+        --gradient-borderx: conic-gradient(from var(--border-angle), #f5f4de,
+
+                #00ff43, #effb00, #f5f4de);
+
+        border: solid 2px transparent;
+
+        background: var(--gradient-borderx) border-box;
+
+        background-position: center center;
+        animation: rotateQ;
+        animation-duration: 4.45s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+}
+
+@keyframes rotateQ {
+
+    to {
+        --border-angle: -1turn;
+    }
+}
+
+@keyframes rainbowQ {
+    to {
+        --raindbow-angle: 2turn;
+    }
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+@property --raindbow-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}

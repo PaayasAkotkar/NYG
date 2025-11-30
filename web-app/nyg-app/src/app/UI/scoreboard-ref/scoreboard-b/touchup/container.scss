@@ -1,0 +1,99 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+:host {
+    .nyg-teamsb {
+        @include mat.setup(fit-content, fit-content);
+        @include mat.setupFlex(row, flex-start, center);
+    }
+}
+
+:host {
+    .nyg-ti {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+:host {
+    .nyg-t {
+        @include mat.setup(fit-content, fit-content);
+        @include mat.setupFlex(row, center, center);
+    }
+}
+
+:host {
+    .nyg-header {
+        font-size: 3rem;
+        font-family: Arial;
+    }
+}
+
+:host {
+    .nyg-cont-item {
+        @include mat.setup(fit-content, fit-content);
+        @include mat.setupFlex(column, center, center);
+        padding: 10px;
+    }
+}
+
+:host {
+    .nyg-item {
+        @include mat.setup(fit-content, fit-content);
+        @include mat.setupFlex(column, center, center);
+        gap: 10px;
+        border-radius: 20px;
+
+    }
+}
+
+:host {
+    .nyg-tn {
+        @include mat.setup(fit-content, fit-content);
+        @include mat.setupFlex(column, flex-start, flex-start);
+
+    }
+}
+
+:host {
+    .outer-dis {
+        @include mat.setup(100%, 100%);
+        @include mat.setupFlex(row, center, center);
+        gap: 50px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+    }
+}
+
+:host {
+    .nyg-bx {
+        @include mat.setup(fit-content, fit-content);
+        @include mat.setupFlex(row, center, center);
+        gap: 5px;
+    }
+}
+
+:host {
+    .nyg-played {
+        width: 3pc;
+        height: 3pc;
+        border-radius: 100%;
+        background-color: map.get(theme.$nyg-blue-palletes, vivid-blue);
+
+    }
+}
+
+:host {
+    .nyg-header {
+        font-size: 6rem;
+    }
+}

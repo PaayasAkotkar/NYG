@@ -1,0 +1,22 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    .nyg-btn {
+        background-color: map.get(theme.$nyg-green-palletes, ad1-green);
+        border-width: 5px;
+        border-style: solid;
+        border-color: map.get(theme.$nyg-black-palletes, potrait3-black);
+    }
+}
+
+:host {
+
+    .nyg-in-conta {
+        background-color: map.get(theme.$nyg-green-palletes, ad1-green);
+        border-width: 4px;
+        border-color: map.get(theme.$nyg-black-palletes, potrait3-black);
+        border-style: solid;
+    }
+}

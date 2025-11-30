@@ -1,0 +1,138 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.nyg-cap {
+    @include mat.setup(100%, 100%);
+    @include mat.setupFlex(column, center, center);
+}
+
+.nyg-clock {
+    width: 400px;
+    height: 100%;
+    @include mat.setupFlex(row, center, center);
+
+    & {
+        gap: 10px;
+    }
+}
+
+.nyg-clock-item {
+    @include mat.setup(fit-content, fit-content);
+    @include mat.setupFlex(row, center, center);
+
+    & {
+        padding: 10px;
+
+    }
+}
+
+:host {
+    .nyg-header {
+        pointer-events: none;
+        font-size: 7rem;
+        font-family: monospace;
+
+        & {
+            color: map.get(theme.$nyg-black-palletes, umber-black)
+        }
+    }
+}
+
+.nyg-seconds {
+    width: 100%;
+    height: 100%;
+}
+
+.nyg-milliseconds {
+
+    width: 100%;
+    height: 100%;
+}
+
+.nyg-log {
+    width: 100%;
+    height: 100%;
+}
+
+:host {
+    .border {
+        padding: 10px;
+        height: fit-content;
+        width: fit-content;
+        border-radius: 50px;
+    }
+}
+
+.nyg-wave {
+    width: 100%;
+    height: 100%;
+}
+
+.nyg-log {
+    width: 230px;
+    height: 230px;
+    border-radius: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.nyg-log-t {
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+
+    .nyg-header {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-size: 7rem;
+        letter-spacing: -4px;
+
+        & {
+            @include mat.setupFlex(row, center, center);
+        }
+    }
+}
+
+.nyg-outer-border {
+    padding: 10px;
+}
+
+.nyg-seconds {
+    .nyg-header {
+        letter-spacing: -10px;
+        font-size: 5rem;
+
+    }
+}
+
+.nyg-milliseconds {
+    .nyg-header {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: flex-end;
+    }
+}
+
+:host {
+    .nyg-header {
+        letter-spacing: -3px;
+        pointer-events: none;
+        background:
+            linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad11-red),
+                map.get(theme.$nyg-blue-palletes, ad11-blue));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bolder;
+    }
+}

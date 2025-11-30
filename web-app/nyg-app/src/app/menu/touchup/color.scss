@@ -1,0 +1,58 @@
+@use '../../helpers/helpers.scss' as mat;
+@use '../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+
+:host {
+    .nav-outer-border {
+        & {
+            background: linear-gradient(to left, map.get(theme.$nyg-yellow-palletes, ad4-yellow),
+                    map.get(theme.$nyg-brown-palletes, ad2-brown), );
+        }
+    }
+}
+
+:host {
+    .nav-inner-border {
+        border-radius: 2rem;
+
+        & {
+            background-color: map.get(theme.$nyg-yellow-palletes, potrait4-yellow);
+        }
+    }
+}
+
+:host {
+
+    .PN-class {
+        background-color:
+            map.get(theme.$nyg-red-palletes, ad13-red);
+    }
+
+    .QM-class {
+        background-color: map.get(theme.$nyg-green-palletes, ad15-green);
+    }
+
+    .MR-class {
+        background-color: map.get(theme.$nyg-orange-palletes, ad6-orange);
+    }
+
+    .S-class {
+        background-color: map.get(theme.$nyg-voilet-palletes, ad8-voilet);
+
+    }
+}
+
+:host {
+    .n {
+        & {
+            border-color: map.get(theme.$nyg-black-palletes, umber-black);
+
+        }
+
+        & {
+            background: map.get(theme.$nyg-black-palletes, ad4-black);
+
+        }
+    }
+}

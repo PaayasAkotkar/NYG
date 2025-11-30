@@ -1,0 +1,13 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    .nyg-lheader {
+        font-size: 6rem;
+        font-family: arial;
+        font-weight: bolder;
+        color: map.get(theme.$nyg-white-palletes, ad1-white);
+        pointer-events: none;
+    }
+}

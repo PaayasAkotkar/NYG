@@ -1,0 +1,22 @@
+<fieldset class="nyg-form-field">
+    <label [htmlFor]="NYGformControl">
+        <span class="nyg-header">
+            {{NYGheader}}
+        </span>
+        @if (NYGsetToolTip) {
+        <div class="ocs-tt">
+            <span class="ocs-tool-tip">{{NYGtoolTip}}</span>
+        </div>
+        }
+    </label>
+    <div class="outer-bo">
+        <span class="ocs-sn"></span>
+
+        <input [type]="NYGType" autocomplete="off" type="text" class="ocs-input" [formControlName]="NYGformControl"
+            [name]="NYGformControl" [id]="NYGformControl">
+    </div>
+    <span class="ocs-sn2"></span>
+    @if (NYGisError) {
+    <span class="nyg-error-header">{{NYGerrorMessage}}</span>
+    }
+</fieldset>

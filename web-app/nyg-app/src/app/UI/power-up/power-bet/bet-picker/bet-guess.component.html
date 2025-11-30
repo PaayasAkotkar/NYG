@@ -1,0 +1,26 @@
+<div class="nyg-form-container">
+
+    <div class="nyg-form">
+
+        <fieldset class="nyg-form-field">
+
+            <div class="bx">
+                @for (item of jump; track $index) {
+                <div class="item-fitz">
+                    <fieldset class=" colx{{$index}} nyg-form-fieldXX field-adjust">
+                        <div class="nyg-labelXX  adjust-labelH">
+                            @for (item2 of item; track $index) {
+                            <span class="nyg-header ">{{item2}}</span>
+                            }
+                        </div>
+
+                    </fieldset>
+
+                </div>
+                }
+            </div>
+
+        </fieldset>
+    </div>
+
+</div>

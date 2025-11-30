@@ -1,0 +1,176 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+:host {
+    .nyg-form-container {
+        width: fit-content;
+        height: fit-content;
+        position: relative;
+        padding: 10px;
+
+        border-radius: 4rem;
+        // background:
+        //     linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad4-red),
+        //         map.get(theme.$nyg-blue-palletes, potrait9-blue));
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+
+.ocs-sn {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 12px;
+    background: linear-gradient(to right, #0c002b, #1779ff);
+    animation: animate1;
+    animation-duration: 2.46s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1, .4, .07, .7);
+    z-index: 1;
+    border-radius: 3rem;
+}
+
+@keyframes animate1 {
+    0% {
+        transform: translateX(-100%);
+        background: linear-gradient(to right, map.get(theme.$nyg-yellow-palletes, ad2-yellow)40%,
+                map.get(theme.$nyg-orange-palletes, cadium-orange)100%);
+    }
+
+    // 10% {
+    //     transform: translateX(-100%);
+    //     background: linear-gradient(to right, map.get(theme.$nyg-red-palletes, ad4-red)50%,
+    //             map.get(theme.$nyg-blue-palletes, ad4-blue)100%);
+    // }
+
+    100% {
+        transform: translateX(100%);
+        background: linear-gradient(to right, map.get(theme.$nyg-yellow-palletes, ad2-yellow)60%,
+                map.get(theme.$nyg-orange-palletes, cadium-orange)100%);
+    }
+}
+
+:host {
+    .item-fitz {
+        &:has(.nyg-input:checked) {
+            --gradient-border: conic-gradient(from var(--border-angle), #6F09E8 2%,
+
+                    #D6DCE8, #1AD6C2 99%, #F29136);
+            --border-angle: 0turn; // initial-state
+
+            border: solid 5px transparent;
+            background: var(--gradient-border) border-box;
+
+            background-position: center center;
+            animation: rotateQ;
+            animation-duration: .45s;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+        }
+    }
+}
+
+
+@keyframes rotateQ {
+
+    to {
+        --border-angle: 1turn;
+
+    }
+
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+.ocs-sn2 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 122px;
+    background: linear-gradient(to right, #0c002b, #1779ff);
+    animation: animate2;
+    animation-duration: 2.45s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1, .4, .07, .7);
+    z-index: -1;
+    border-radius: 3rem;
+}
+
+@keyframes animate2 {
+    0% {
+        transform: translateX(-100%);
+        background: linear-gradient(to right, map.get(theme.$nyg-yellow-palletes, ad2-yellow)40%,
+                map.get(theme.$nyg-orange-palletes, cadium-orange)100%);
+    }
+
+    // 10% {
+    //     transform: translateX(-100%);
+    //     background: linear-gradient(to right, map.get(theme.$nyg-red-palletes, ad4-red)50%,
+    //             map.get(theme.$nyg-blue-palletes, ad4-blue)100%);
+    // }
+
+    100% {
+        transform: translateX(100%);
+        background: linear-gradient(to right, map.get(theme.$nyg-yellow-palletes, ad2-yellow)60%,
+                map.get(theme.$nyg-orange-palletes, cadium-orange)100%);
+    }
+}
+
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+#b-balls {
+    @for $i from 1 to 19 {
+        &:nth-child(#{$i}) {
+            animation: lighting;
+
+            animation-delay: #{$i*10.15}'s';
+            // animation-duration: 0.99s;
+            // animation-iteration-count: 1;
+            animation-duration: 0.45s;
+            animation-iteration-count: infinite;
+
+            animation-timing-function: cubic-bezier(1, .4, .07, .7);
+        }
+    }
+}
+
+.ocs-header {
+    font-size: 4rem;
+    font-family: arial;
+    transition: fill;
+    transition-duration: .45s;
+    transition-timing-function: cubic-bezier(.9, .81, .67, .68);
+    fill: map.get(theme.$nyg-red-palletes, ad7-red);
+}
+
+:host {
+    .on-enter {
+        animation-name: on-enter;
+        animation-duration: .455s;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(1, .71, .74, 1.68);
+    }
+}
+
+@keyframes on-enter {
+    0% {
+        transform: translateY(-20%);
+    }
+
+    100% {
+        transform: translateY(20%)
+    }
+}

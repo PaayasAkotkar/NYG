@@ -1,0 +1,103 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+
+:host {
+    .ocs-f {
+        &:nth-child(even) {
+            animation-name: forward;
+            animation-duration: .15s;
+            animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+
+            animation-iteration-count: infinite;
+            animation-delay: 1s;
+        }
+
+        &:nth-child(odd) {
+            animation-name: forward;
+            animation-duration: .15s;
+            animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+
+            animation-iteration-count: infinite;
+            animation-delay: 2s;
+        }
+    }
+}
+
+
+@keyframes forward {
+
+    0% {
+        background: map.get(theme.$nyg-white-palletes, ad1-white);
+        opacity: 0.5;
+    }
+
+    100% {
+        background: map.get(theme.$nyg-black-palletes, ad1-black);
+        opacity: 0.5;
+
+    }
+
+}
+
+:host {
+    .ocs-btn {
+        animation-name: walk;
+        animation-duration: .55s;
+        animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+        animation-iteration-count: infinite;
+
+    }
+}
+
+@keyframes walk {
+    0% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+:host {
+    .ocs-forward-btn {
+        --gradient-border: conic-gradient(from var(--border-angle), #6F09E8 2%,
+
+                #D6DCE8, #1AD6C2 99%, #F29136);
+        --border-angle: 0turn; // initial-state
+
+        border: solid 5px transparent;
+        fill: var(--gradient-border) border-box;
+
+        background-position: center center;
+        animation: rotateQ;
+        animation-duration: .45s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+    }
+}
+
+
+@keyframes rotateQ {
+
+    to {
+        --border-angle: 1turn;
+
+    }
+
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}

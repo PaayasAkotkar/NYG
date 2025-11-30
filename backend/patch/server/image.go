@@ -27,8 +27,6 @@ func PatchImage(ctx *gin.Context) {
 	if err := ctx.ShouldBindWith(&store, binding.FormMultipart); err != nil {
 		panic(err)
 	}
-	log.Println("img name: ", store.File.Filename)
-	log.Println("for id: ", *store.ID)
 
 	file := store.File
 	cleanedName := strings.ReplaceAll(file.Filename, " ", "_")
@@ -45,7 +43,6 @@ func PatchImage(ctx *gin.Context) {
 
 	// note: in-order to set the image to the client you have to save it on your disk first
 	imageURL := "http://localhost:" + port + viewURL
-	log.Println("img url: ", imageURL)
 
 	var save_ ImgSQL
 	save_.ID = *store.ID
@@ -76,7 +73,4 @@ func PatchImage(ctx *gin.Context) {
 	}
 	db.Prepare(query, x, BUID)
 
-	log.Println("PROCESS DONE")
-	log.Println("for id: ", userID)
-	// log.Println("img name:", *store.ImageName)
 }

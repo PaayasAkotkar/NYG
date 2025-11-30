@@ -1,0 +1,59 @@
+$start: .945s;
+$timingFunc: cubic-bezier(.93, -0.25, .99, 1.63);
+// $timingFunc: cubic-bezier(.7, -1.16, .99, 1.63);
+$LeftStart: 385%;
+$RightStart: -385%;
+
+:host {
+    .ocs-load {
+        animation-name: fromLeft;
+        animation-duration: $start;
+        animation-iteration-count: infinite;
+        animation-timing-function: $timingFunc;
+
+    }
+}
+
+:host {
+    .ocs-load2 {
+        animation-name: fromRight;
+        animation-duration: $start;
+        animation-iteration-count: infinite;
+        animation-timing-function: $timingFunc;
+
+    }
+}
+
+@keyframes fromLeft {
+
+    0% {
+        transform: translateX($RightStart);
+    }
+
+
+    99% {
+        transform: translateX($RightStart - 150);
+
+    }
+
+    100% {
+        transform: translateX($RightStart);
+
+    }
+}
+
+@keyframes fromRight {
+    0% {
+        transform: translateX($LeftStart);
+    }
+
+
+    99% {
+        transform: translateX($LeftStart + 150);
+
+    }
+
+    100% {
+        transform: translateX($LeftStart);
+    }
+}

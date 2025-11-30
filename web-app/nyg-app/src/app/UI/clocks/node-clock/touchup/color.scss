@@ -1,0 +1,42 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    .left-bo {
+        border-color: map.get(theme.$nyg-yellow-palletes, ad9-yellow);
+    }
+}
+
+
+:host {
+    .ocs-o {
+        background-color: map.get(theme.$nyg-white-palletes, ad9-white);
+
+    }
+}
+
+:host {
+    .left-bo {
+        &:nth-child(5) {
+            background-color: map.get(theme.$nyg-yellow-palletes, ad9-yellow);
+
+        }
+    }
+}
+
+
+:host {
+
+    .nyg-headerT,
+    .nyg-header {
+        pointer-events: none;
+
+        background:
+            linear-gradient(195deg, map.get(theme.$nyg-white-palletes, ad8-white),
+                map.get(theme.$nyg-yellow-palletes, ad9-yellow));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bolder;
+    }
+}

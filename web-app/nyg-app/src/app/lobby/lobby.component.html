@@ -1,0 +1,248 @@
+@switch (true){
+
+@case(Session() && !gameOverAlert() &&_StartGame() &&lock() && !_Waiting()&&!IMBoss()){
+<app-game [NYGfreezeAccess]="freezeAccess" [OCSboardTheme]="boardTheme" [OCSguessTheme]="guessTheme"
+    [NYGfinalBoss]="FinalBoss" [NYGlastDance]="LastDance" [NYGonFire]="OnFire" [@OnEnter] [NYGStartIntro]="PorceedIntro"
+    [EntranceProceed]="EntranceProceed" [OCSplayersAgainst]="getPlayerAgainst" [NYGsheetValue]="_GetChallenge"
+    [NYGroundOver]="RoundOver" [NYGset]="___currentSet" [NYGround]="___currentRound" [NYGblueScore]="BlueScore"
+    [NYGredScore]="RedScore" [NYGnexusValue]="nexusWord" [NYGpowerActivated]="canUsePower" [NYGfriend]="Friend"
+    [NYGmyroom]="MyRoom" [NYGrewindRestart]="clockBack" [NYGuseFreezePower]="useFreezePower"
+    [NYGuseNexusPower]="useNexusPower" [NYGcanUnfreeze]="unFreezeControl" [NYGuseCovertPower]="useCovertPower"
+    [NYGuseRewindPower]="useRewindPower" [NYGunFreeze]="unfreezeAll" [NYGunderTast]="underTest" [NYGbetting]="betting"
+    [NYGmyTeam]="MyTeam" [OCSgameTime]="getRoomGameTime" [NYGbetCups]="betCups" [NYGClash]="isClash"
+    [NYGChances]="ChancesLeft"></app-game>
+}
+
+<!-- priority given to bet -->
+@case (Session() && !gameOverAlert() &&!block() && !_Waiting()
+&&!_DictionaryDiscussion() && _ChallengeDiscussion() && !TossCoin()
+&& !betPicker() &&
+!_TossSession() && !gameOverAlert()
+&&lock()&&!_StartGame()&&!IMBoss()){
+<app-setup-board (NYGtimeOut)="_timeout($event)" [NYGrating]="rating" [NYGspectateInfo]="spectateInfo"
+    [NYGspectate]="false" [NYGFrames]="frames" [NYGlock]="lock" [NYGround]="___currentRound" [NYGonFire]="OnFire"
+    [NYGClashProfile]="ClashProfile" [NYGChances]="ChancesLeft" [isNYGClash]="isClash" [AS]="BlueScore" [HS]="RedScore"
+    [NYGMode]="NYGMode" [NYGisPlaying]="isPlaying" [NYGmyTeam]="MyTeam" [Conns]="ActiveConn"
+    [NYGplayersNickName]="getNickNames" [NYGCupdate]="updateCheatSheet" [NYGcanUsePower]="canUsePower"
+    [NYGnexus]="useNexusPower" [NYGfreeze]="useFreezePower" [NYGrewind]="useRewindPower" [NYGmyroom]="MyRoom"
+    [NYGdraw]="useDrawPower" [NYGtag]="useTagPower" [NYGincludeD]="includeDrawPower" [NYGincludeR]="includeRewindPower"
+    [NYGincludeN]="includeNexusPower" [NYGincludeT]="includeTagPower" [NYGincludeF]="includeFreezePower"
+    [NYGincludeB]="includeBetPower" [NYGincludeC]="includeCovertPower" [NYGbet]="useBetPower"
+    [NYGcovert]="useCovertPower" [NYGblock]="block" [NYGmyroom]="MyRoom" [NYGgameClock]="getRoomGameTime"
+    [NYGlist]="getSetupDictionaries" [NYGdecisionTime]="getRoomDecisionTime" [NYGroomMode]="getRoomMode"
+    [NYGLproceed]="DictionarySetupProceed" [NYGstartClock]="StartClock" [NYGuseTag]="useTagPower">
+    <set-challenge (NYGstop)="reset($event)" [NYGround]="___currentRound" [NYGset]="___currentSet"
+        [NYGtimeout]="timeOut" [@OnEnter] [NYGround]="___currentRound" [NYGfinalBoss]="FinalBoss"
+        [NYGlastDance]="LastDance" [NYGmyTeam]="MyTeam" [NYGmyroom]="MyRoom" [NYGproceed]="ChallengeProceed"
+        [NYGMode]="NYGMode()" [NYGlist]="getLists" [NYGClash]="isClash" [NYGchances]="ChancesLeft">
+    </set-challenge>
+</app-setup-board>
+}
+
+@case (Session() && !gameOverAlert() &&lock() &&!block()
+&& !_Waiting() &&betPicker()&& !TossCoin()
+&&!_DictionaryDiscussion() &&!_StartGame()&&!IMBoss())
+{
+<app-setup-board (NYGtimeOut)="_timeout($event)" [NYGrating]="rating" [NYGspectateInfo]="spectateInfo"
+    [NYGspectate]="false" [NYGFrames]="frames" [NYGlock]="lock" [NYGround]="___currentRound" [NYGonFire]="OnFire"
+    [NYGClashProfile]="ClashProfile" [NYGChances]="ChancesLeft" [isNYGClash]="isClash" [AS]="BlueScore" [HS]="RedScore"
+    [NYGisPlaying]="isPlaying" [NYGmyTeam]="MyTeam" [Conns]="ActiveConn" [NYGplayersNickName]="getNickNames"
+    [NYGCupdate]="updateCheatSheet" [NYGcanUsePower]="canUsePower" [NYGnexus]="useNexusPower"
+    [NYGfreeze]="useFreezePower" [NYGrewind]="useRewindPower" [NYGmyroom]="MyRoom" [NYGdraw]="useDrawPower"
+    [NYGtag]="useTagPower" [NYGincludeD]="includeDrawPower" [NYGincludeR]="includeRewindPower"
+    [NYGincludeN]="includeNexusPower" [NYGincludeT]="includeTagPower" [NYGincludeF]="includeFreezePower"
+    [NYGincludeB]="includeBetPower" [NYGincludeC]="includeCovertPower" [NYGbet]="useBetPower"
+    [NYGcovert]="useCovertPower" [NYGblock]="block" [NYGmyroom]="MyRoom" [NYGgameClock]="getRoomGameTime"
+    [NYGlist]="getSetupDictionaries" [NYGdecisionTime]="getRoomDecisionTime" [NYGroomMode]="getRoomMode"
+    [NYGLproceed]="DictionarySetupProceed" [NYGMode]="NYGMode" [NYGstartClock]="StartClock" [NYGuseTag]="useTagPower">
+    <bet-on [NYGtimeout]="timeOut" (NYGstop)="reset($event)" [NYGround]="___currentRound" [NYGset]="___currentSet"
+        [NYGclash]="isClash" [NYGMode]="NYGMode()" [NYGcollection]="betItem" [NYGmyRoom]="MyRoom" [NYGmyTeam]="MyTeam"
+        [NYGproceed]="BetProceed"></bet-on>
+</app-setup-board>
+}
+
+@case(Session() && !gameOverAlert()&&!block() && !_Waiting() && _DictionaryDiscussion() && !_TossSession() &&
+!gameOverAlert() &&lock() && !TossCoin()&&
+!_StartGame()&&!IMBoss()){
+<app-setup-board (NYGtimeOut)="_timeout($event)" [NYGrating]="rating" [NYGspectateInfo]="spectateInfo"
+    [NYGspectate]="false" [NYGFrames]="frames" [NYGlock]="lock" [NYGround]="___currentRound" [NYGonFire]="OnFire"
+    [NYGClashProfile]="ClashProfile" [NYGChances]="ChancesLeft" [isNYGClash]="isClash" [AS]="BlueScore" [HS]="RedScore"
+    [NYGisPlaying]="isPlaying" [NYGmyTeam]="MyTeam" [Conns]="ActiveConn" [NYGplayersNickName]="getNickNames"
+    [NYGCupdate]="updateCheatSheet" [NYGcanUsePower]="canUsePower" [NYGnexus]="useNexusPower"
+    [NYGfreeze]="useFreezePower" [NYGrewind]="useRewindPower" [NYGmyroom]="MyRoom" [NYGdraw]="useDrawPower"
+    [NYGtag]="useTagPower" [NYGincludeD]="includeDrawPower" [NYGincludeR]="includeRewindPower"
+    [NYGincludeN]="includeNexusPower" [NYGincludeT]="includeTagPower" [NYGincludeF]="includeFreezePower"
+    [NYGincludeB]="includeBetPower" [NYGincludeC]="includeCovertPower" [NYGbet]="useBetPower"
+    [NYGcovert]="useCovertPower" [NYGblock]="block" [NYGmyroom]="MyRoom" [NYGgameClock]="getRoomGameTime"
+    [NYGlist]="getSetupDictionaries" [NYGdecisionTime]="getRoomDecisionTime" [NYGroomMode]="getRoomMode"
+    [NYGLproceed]="DictionarySetupProceed" [NYGMode]="NYGMode" [NYGstartClock]="StartClock" [NYGuseTag]="useTagPower">
+    <set-dictionary (NYGstop)="reset($event)" [NYGround]="___currentRound" [NYGset]="___currentSet"
+        [NYGtimeout]="timeOut" [NYGfinalBoss]="FinalBoss" [NYGlastDance]="LastDance" [@OnEnter] [NYGmyTeam]="MyTeam"
+        [NYGmyroom]="MyRoom" [OCScollection]="getDictionaries" [NYGClash]="isClash" [NYGchances]="ChancesLeft"
+        [NYGMode]="NYGMode()" [NYGproceed]="DictionaryProceed"></set-dictionary>
+</app-setup-board>
+}
+
+@case(Session() && !gameOverAlert()&& TossCoin() && lock() && !block() &&!IMBoss()){
+<app-setup-board (NYGtimeOut)="_timeout($event)" [NYGrating]="rating" [NYGspectateInfo]="spectateInfo"
+    [NYGspectate]="false" [NYGFrames]="frames" [NYGlock]="lock" [NYGround]=" ___currentRound" [NYGonFire]="OnFire"
+    [NYGClashProfile]="ClashProfile" [NYGChances]="ChancesLeft" [NYGMode]="NYGMode" [AS]="BlueScore" [HS]="RedScore"
+    [NYGisPlaying]="isPlaying" [NYGmyTeam]="MyTeam" [Conns]="ActiveConn" [NYGplayersNickName]="getNickNames"
+    [NYGCupdate]="updateCheatSheet" [NYGcanUsePower]="canUsePower" [NYGnexus]="useNexusPower"
+    [NYGfreeze]="useFreezePower" [NYGrewind]="useRewindPower" [NYGmyroom]="MyRoom" [NYGdraw]="useDrawPower"
+    [NYGtag]="useTagPower" [NYGincludeD]="includeDrawPower" [NYGincludeR]="includeRewindPower"
+    [NYGincludeN]="includeNexusPower" [NYGincludeT]="includeTagPower" [NYGincludeF]="includeFreezePower"
+    [NYGincludeB]="includeBetPower" [NYGincludeC]="includeCovertPower" [NYGbet]="useBetPower"
+    [NYGcovert]="useCovertPower" [NYGblock]="block" [NYGmyroom]="MyRoom" [NYGgameClock]="getRoomGameTime"
+    [NYGlist]="getSetupDictionaries" [NYGdecisionTime]="getRoomDecisionTime" [NYGroomMode]="getRoomMode"
+    [NYGLproceed]="DictionarySetupProceed" [NYGstartClock]="StartClock" [NYGuseTag]="useTagPower"
+    [isNYGClash]="isClash">
+    <app-coin (NYGstop)="reset($event)" [NYGround]="___currentRound" [NYGset]="___currentSet" [NYGtimeout]="timeOut"
+        [NYGfinalBoss]="FinalBoss()" [NYGlastDance]="LastDance()" [NYGclash]="isClash" [NYGisHead]="isHead"
+        [NYGchance]="ChancesLeft" [NYGfriend]="Friend" [NYGmyRoom]="MyRoom"></app-coin>
+</app-setup-board>
+}
+
+@case(Session() && !gameOverAlert()&&!TossCoin() && lock() && !block() && _TossSession() && !gameOverAlert()
+&&!IMBoss()){
+<app-setup-board (NYGtimeOut)="_timeout($event)" [NYGrating]="rating" [NYGspectateInfo]="spectateInfo"
+    [NYGspectate]="false" [NYGFrames]="frames" [NYGlock]="lock" [NYGround]="___currentRound" [NYGonFire]="OnFire"
+    [NYGClashProfile]="ClashProfile" [NYGChances]="ChancesLeft" [isNYGClash]="isClash" [AS]="BlueScore"
+    [NYGMode]="NYGMode" [HS]="RedScore" [NYGisPlaying]="isPlaying" [NYGmyTeam]="MyTeam" [Conns]="ActiveConn"
+    [NYGplayersNickName]="getNickNames" [NYGCupdate]="updateCheatSheet" [NYGcanUsePower]="canUsePower"
+    [NYGnexus]="useNexusPower" [NYGfreeze]="useFreezePower" [NYGrewind]="useRewindPower" [NYGmyroom]="MyRoom"
+    [NYGdraw]="useDrawPower" [NYGtag]="useTagPower" [NYGincludeD]="includeDrawPower" [NYGincludeR]="includeRewindPower"
+    [NYGincludeN]="includeNexusPower" [NYGincludeT]="includeTagPower" [NYGincludeF]="includeFreezePower"
+    [NYGincludeB]="includeBetPower" [NYGincludeC]="includeCovertPower" [NYGbet]="useBetPower"
+    [NYGcovert]="useCovertPower" [NYGblock]="block" [NYGmyroom]="MyRoom" [NYGgameClock]="getRoomGameTime"
+    [NYGlist]="getSetupDictionaries" [NYGdecisionTime]="getRoomDecisionTime" [NYGroomMode]="getRoomMode"
+    [NYGLproceed]="DictionarySetupProceed" [NYGstartClock]="StartClock" [NYGuseTag]="useTagPower">
+
+    <app-toss (NYGstop)="reset($event)" [NYGround]="___currentRound" [NYGset]="___currentSet" [NYGtimeout]="timeOut"
+        [NYGfinalBoss]="FinalBoss()" [NYGlastDance]="LastDance()" [NYGproceed]="_TossSession" [@OnEnter]
+        [NYGmyTeam]="MyTeam" [NYGroomname]="MyRoom.toLowerCase()" [isFriend]="Friend" [NYGClash]="isClash()"
+        [NYGMode]="NYGMode()" [NYGchances]="ChancesLeft()"></app-toss>
+</app-setup-board>
+}
+
+@case (Session() && !gameOverAlert()&&lock()&&block() ) {
+<app-setup-board [NYGrating]="rating" [NYGspectateInfo]="spectateInfo" [NYGspectate]="false" [NYGFrames]="frames"
+    [NYGlock]="lock" [NYGround]="___currentRound" [NYGonFire]="OnFire" [NYGClashProfile]="ClashProfile"
+    [NYGChances]="ChancesLeft" [isNYGClash]="isClash" [AS]="BlueScore" [NYGMode]="NYGMode" [HS]="RedScore"
+    [NYGisPlaying]="isPlaying" [NYGmyTeam]="MyTeam" [Conns]="ActiveConn" [NYGplayersNickName]="getNickNames"
+    [NYGCupdate]="updateCheatSheet" [NYGcanUsePower]="canUsePower" [NYGnexus]="useNexusPower"
+    [NYGfreeze]="useFreezePower" [NYGrewind]="useRewindPower" [NYGmyroom]="MyRoom" [NYGdraw]="useDrawPower"
+    [NYGtag]="useTagPower" [NYGincludeD]="includeDrawPower" [NYGincludeR]="includeRewindPower"
+    [NYGincludeN]="includeNexusPower" [NYGincludeT]="includeTagPower" [NYGincludeF]="includeFreezePower"
+    [NYGincludeB]="includeBetPower" [NYGincludeC]="includeCovertPower" [NYGbet]="useBetPower"
+    [NYGcovert]="useCovertPower" [NYGblock]="block" [NYGmyroom]="MyRoom" [NYGgameClock]="getRoomGameTime"
+    [NYGlist]="getSetupDictionaries" [NYGdecisionTime]="getRoomDecisionTime" [NYGroomMode]="getRoomMode"
+    [NYGLproceed]="DictionarySetupProceed" [NYGstartClock]="StartClock" [NYGuseTag]="useTagPower">
+</app-setup-board>
+}
+
+@case ( Session() && !gameOverAlert() &&!lock() || IMBoss()) {
+@if (_StartGame()) {
+
+<app-setup-board [NYGrating]="rating" [NYGspectateInfo]="spectateInfo" [NYGspectate]="true" [NYGFrames]="frames"
+    [NYGlock]="lock" [NYGround]="___currentRound" [NYGonFire]="OnFire" [NYGClashProfile]="ClashProfile"
+    [NYGChances]="ChancesLeft" [isNYGClash]="isClash" [AS]="BlueScore" [NYGMode]="NYGMode" [HS]="RedScore"
+    [NYGisPlaying]="isPlaying" [NYGmyTeam]="MyTeam" [Conns]="ActiveConn" [NYGplayersNickName]="getNickNames"
+    [NYGCupdate]="updateCheatSheet" [NYGcanUsePower]="canUsePower" [NYGnexus]="useNexusPower"
+    [NYGfreeze]="useFreezePower" [NYGrewind]="useRewindPower" [NYGmyroom]="MyRoom" [NYGdraw]="useDrawPower"
+    [NYGtag]="useTagPower" [NYGincludeD]="includeDrawPower" [NYGincludeR]="includeRewindPower"
+    [NYGincludeN]="includeNexusPower" [NYGincludeT]="includeTagPower" [NYGincludeF]="includeFreezePower"
+    [NYGincludeB]="includeBetPower" [NYGincludeC]="includeCovertPower" [NYGbet]="useBetPower"
+    [NYGcovert]="useCovertPower" [NYGblock]="block" [NYGmyroom]="MyRoom" [NYGgameClock]="getRoomGameTime"
+    [NYGlist]="getSetupDictionaries" [NYGdecisionTime]="getRoomDecisionTime" [NYGroomMode]="getRoomMode"
+    [NYGLproceed]="DictionarySetupProceed" [NYGstartClock]="StartClock" [NYGuseTag]="useTagPower">
+    <app-spectate [NYGspecInfo]="spectateInfo" [NYGproceed]="defaultProceed" [OCScollections]="getDictionaries"
+        NYGheader="GAME" [NYGgame]="_StartGame" [NYGblueTeamScore]="BlueScore"
+        [NYGredTeamScore]="RedScore"></app-spectate>
+</app-setup-board>
+}
+@else if (_ChallengeDiscussion()) {
+
+<app-setup-board [NYGrating]="rating" [NYGspectateInfo]="spectateInfo" [NYGspectate]="true" [NYGFrames]="frames"
+    [NYGlock]="lock" [NYGround]="___currentRound" [NYGonFire]="OnFire" [NYGClashProfile]="ClashProfile"
+    [NYGChances]="ChancesLeft" [isNYGClash]="isClash" [AS]="BlueScore" [NYGMode]="NYGMode" [HS]="RedScore"
+    [NYGisPlaying]="isPlaying" [NYGmyTeam]="MyTeam" [Conns]="ActiveConn" [NYGplayersNickName]="getNickNames"
+    [NYGCupdate]="updateCheatSheet" [NYGcanUsePower]="canUsePower" [NYGnexus]="useNexusPower"
+    [NYGfreeze]="useFreezePower" [NYGrewind]="useRewindPower" [NYGmyroom]="MyRoom" [NYGdraw]="useDrawPower"
+    [NYGtag]="useTagPower" [NYGincludeD]="includeDrawPower" [NYGincludeR]="includeRewindPower"
+    [NYGincludeN]="includeNexusPower" [NYGincludeT]="includeTagPower" [NYGincludeF]="includeFreezePower"
+    [NYGincludeB]="includeBetPower" [NYGincludeC]="includeCovertPower" [NYGbet]="useBetPower"
+    [NYGcovert]="useCovertPower" [NYGblock]="block" [NYGmyroom]="MyRoom" [NYGgameClock]="getRoomGameTime"
+    [NYGlist]="getSetupDictionaries" [NYGdecisionTime]="getRoomDecisionTime" [NYGroomMode]="getRoomMode"
+    [NYGLproceed]="DictionarySetupProceed" [NYGstartClock]="StartClock" [NYGuseTag]="useTagPower">
+
+    <app-spectate [NYGspecInfo]="spectateInfo" [NYGproceed]="ChallengeProceed" [OCScollections]="getLists"
+        NYGheader="CHALLENGE" [NYGgame]="_StartGame" [NYGblueTeamScore]="BlueScore"
+        [NYGredTeamScore]="RedScore"></app-spectate>
+</app-setup-board>
+} @else if (_DictionaryDiscussion()&& !TossCoin()) {
+
+<app-setup-board [NYGrating]="rating" [NYGspectateInfo]="spectateInfo" [NYGspectate]="true" [NYGFrames]="frames"
+    [NYGlock]="lock" [NYGround]="___currentRound" [NYGonFire]="OnFire" [NYGClashProfile]="ClashProfile"
+    [NYGChances]="ChancesLeft" [isNYGClash]="isClash" [AS]="BlueScore" [NYGMode]="NYGMode" [HS]="RedScore"
+    [NYGisPlaying]="isPlaying" [NYGmyTeam]="MyTeam" [Conns]="ActiveConn" [NYGplayersNickName]="getNickNames"
+    [NYGCupdate]="updateCheatSheet" [NYGcanUsePower]="canUsePower" [NYGnexus]="useNexusPower"
+    [NYGfreeze]="useFreezePower" [NYGrewind]="useRewindPower" [NYGmyroom]="MyRoom" [NYGdraw]="useDrawPower"
+    [NYGtag]="useTagPower" [NYGincludeD]="includeDrawPower" [NYGincludeR]="includeRewindPower"
+    [NYGincludeN]="includeNexusPower" [NYGincludeT]="includeTagPower" [NYGincludeF]="includeFreezePower"
+    [NYGincludeB]="includeBetPower" [NYGincludeC]="includeCovertPower" [NYGbet]="useBetPower"
+    [NYGcovert]="useCovertPower" [NYGblock]="block" [NYGmyroom]="MyRoom" [NYGgameClock]="getRoomGameTime"
+    [NYGlist]="getSetupDictionaries" [NYGdecisionTime]="getRoomDecisionTime" [NYGroomMode]="getRoomMode"
+    [NYGLproceed]="DictionarySetupProceed" [NYGstartClock]="StartClock" [NYGuseTag]="useTagPower">
+
+    <app-spectate [NYGspecInfo]="spectateInfo" [NYGproceed]="DictionaryProceed" [OCScollections]="getDictionaries"
+        NYGheader="DICTIONARY" [NYGgame]="_StartGame" [NYGblueTeamScore]="BlueScore"
+        [NYGredTeamScore]="RedScore"></app-spectate>
+</app-setup-board>
+}@else {
+
+<app-setup-board [NYGrating]="rating" [NYGspectateInfo]="spectateInfo" [NYGspectate]="true" [NYGFrames]="frames"
+    [NYGlock]="lock" [NYGround]="___currentRound" [NYGonFire]="OnFire" [NYGClashProfile]="ClashProfile"
+    [NYGChances]="ChancesLeft" [isNYGClash]="isClash" [AS]="BlueScore" [NYGMode]="NYGMode" [HS]="RedScore"
+    [NYGisPlaying]="isPlaying" [NYGmyTeam]="MyTeam" [Conns]="ActiveConn" [NYGplayersNickName]="getNickNames"
+    [NYGCupdate]="updateCheatSheet" [NYGcanUsePower]="canUsePower" [NYGnexus]="useNexusPower"
+    [NYGfreeze]="useFreezePower" [NYGrewind]="useRewindPower" [NYGmyroom]="MyRoom" [NYGdraw]="useDrawPower"
+    [NYGtag]="useTagPower" [NYGincludeD]="includeDrawPower" [NYGincludeR]="includeRewindPower"
+    [NYGincludeN]="includeNexusPower" [NYGincludeT]="includeTagPower" [NYGincludeF]="includeFreezePower"
+    [NYGincludeB]="includeBetPower" [NYGincludeC]="includeCovertPower" [NYGbet]="useBetPower"
+    [NYGcovert]="useCovertPower" [NYGblock]="block" [NYGmyroom]="MyRoom" [NYGgameClock]="getRoomGameTime"
+    [NYGlist]="getSetupDictionaries" [NYGdecisionTime]="getRoomDecisionTime" [NYGroomMode]="getRoomMode"
+    [NYGLproceed]="DictionarySetupProceed" [NYGstartClock]="StartClock" [NYGuseTag]="useTagPower">
+
+    <app-spectate [NYGspecInfo]="spectateInfo" [NYGproceed]="defaultProceed" [OCScollections]="refToss" NYGheader="TOSS"
+        [NYGgame]="_StartGame" [NYGblueTeamScore]="BlueScore" [NYGredTeamScore]="RedScore"></app-spectate>
+</app-setup-board>
+}
+
+}
+}
+@switch (true) {
+
+@case (Session() && !gameOverAlert() && drawOffer() &&!drawMeetingDone()) {
+<app-setup-draw-power [NYGdmyRoom]=" MyRoom" [NYGmyTeam]="MyTeam" [NYGdrawOffer]="drawOffer"></app-setup-draw-power>
+}
+@case ( messagePort()) {
+<app-setup-alert-msg NYGalertFor="ARBITAR" [NYGMode]="NYGMode()" [NYGalertMsg]="alertMsg"></app-setup-alert-msg>
+}
+}
+
+@if(!Session() && !gameOverAlert() &&!isClash()) {
+
+<app-party-room [NYGmyNickname]="MyNickName" [NYGplayersProfile]="joinedPlayer" [NYGcollection]="getBook"
+    [NYGentertainmentCollection]="entertainmentCollection" [NYGactiveConn]="ActiveConn"
+    [NYGroomSettings]="NYGroomSettings">
+</app-party-room>
+}@else if(!Session() && !gameOverAlert()&&isClash()){
+<app-clash-lobby></app-clash-lobby>
+}@else if(gameOverAlert()) {
+<app-party-room [NYGmyNickname]="MyNickName" [NYGplayersProfile]="joinedPlayer" [NYGcollection]="getBook"
+    [NYGentertainmentCollection]="entertainmentCollection" [NYGactiveConn]="ActiveConn"
+    [NYGroomSettings]="NYGroomSettings">
+</app-party-room>
+<app-game-over [OCSgameOverInfo]="gameOver"></app-game-over>
+}

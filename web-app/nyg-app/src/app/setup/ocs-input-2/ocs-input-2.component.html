@@ -1,0 +1,12 @@
+<form [formGroup]="NYGformGroup">
+    <fieldset class="nyg-form-field">
+        <label for="Token">
+            <span class="nyg-header">
+                {{NYGheader}}
+            </span>
+        </label>
+        <input type="text" class="nyg-input" formControlName="Token" name="Token">
+    </fieldset>
+
+    <app-ocs-btns OCSType="button" OCSheader="SET" (OCSclick)="Token()"></app-ocs-btns>
+</form>

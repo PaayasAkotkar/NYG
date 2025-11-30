@@ -1,0 +1,68 @@
+@supports(syntax:'<color>') {
+    @property --bg {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: blue;
+    }
+
+    @property --col_ {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: white;
+    }
+
+    @property --from {
+        syntax: "<color>";
+        inherits: true;
+        initial-value: red;
+    }
+
+    @property --to {
+        syntax: "<color>";
+        inherits: true;
+        initial-value: green;
+    }
+}
+
+:host {
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+:host {
+    .nyg-form-field {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 20px;
+        padding: 10px;
+    }
+}
+
+:host {
+    .nyg-header {
+        font-size: 3rem;
+        font-family: arial;
+        pointer-events: none;
+        background:
+            linear-gradient(to left, var(--from),
+                var(--to));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+    }
+}
+
+:host {
+    .nyg-header1 {
+        font-size: 4rem;
+        pointer-events: none;
+        font-family: arial;
+    }
+}

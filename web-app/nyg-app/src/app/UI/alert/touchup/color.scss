@@ -1,0 +1,10 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+:host {
+    .ocs-item {
+        background: map.get(theme.$nyg-voilet-palletes, magenta-dark-shade-2);
+        filter: grayscale(1);
+    }
+}

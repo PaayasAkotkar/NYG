@@ -1,0 +1,45 @@
+@switch (OCStheme) {
+@case ("text25x") {
+<scoreboard-25x [OCSgameTime]="OCSgameTime" [NYGblueScore]="NYGblueScore" [NYGredScore]="NYGredScore"
+    [NYGuseRewindPower]="NYGuseRewindPower" [NYGrewindRestart]="NYGrewindRestart" [NYGroundOver]="NYGroundOver"
+    [NYGset]="NYGset" [NYGround]="NYGround" [NYGunFreeze]="NYGunFreeze"></scoreboard-25x>
+}
+@case ("text11x") {
+<scoreboard-11x [OCSgameTime]="OCSgameTime" [NYGblueScore]="NYGblueScore" [NYGredScore]="NYGredScore"
+    [NYGuseRewindPower]="NYGuseRewindPower" [NYGrewindRestart]="NYGrewindRestart" [NYGroundOver]="NYGroundOver"
+    [NYGset]="NYGset" [NYGround]="NYGround" [NYGunFreeze]="NYGunFreeze"></scoreboard-11x>
+}
+@case ('clash-gym') {
+<app-gym-clock [NYGdiscussionSec]="OCSgameTime" [NYGStart]="NYGstartClock"></app-gym-clock>
+}
+@case('clash-mysterium'){
+<div class="ocs-clok">
+    <app-mysterium-clock [NYGdiscussionSec]="OCSgameTime" [NYGStart]="NYGstartClock"></app-mysterium-clock>
+
+</div>
+}
+@case ('clash-gym') {
+<div class="ocs-clok">
+    <app-gym-clock [NYGdiscussionSec]="OCSgameTime" [NYGStart]="NYGstartClock"></app-gym-clock>
+</div>
+}
+@case('clash-fastlane'){
+<div class="ocs-clok">
+    <app-fastlane-clock [NYGdiscussionSec]="OCSgameTime" [NYGStart]="NYGstartClock"></app-fastlane-clock>
+</div> }
+@case('clash-pshycic'){
+<div class="ocs-clok">
+    <app-physics-clock [NYGdiscussionSec]="OCSgameTime" [NYGStart]="NYGstartClock"></app-physics-clock>
+</div>
+}
+
+@case('clash-node'){
+<div class="ocs-clok">
+    <app-node-clock [NYGdiscussionSec]="OCSgameTime" [NYGStart]="NYGstartClock"></app-node-clock>
+</div> }
+@default {
+<scoreboard-25x [OCSgameTime]="OCSgameTime" [NYGblueScore]="NYGblueScore" [NYGredScore]="NYGredScore"
+    [NYGuseRewindPower]="NYGuseRewindPower" [NYGrewindRestart]="NYGrewindRestart" [NYGroundOver]="NYGroundOver"
+    [NYGset]="NYGset" [NYGround]="NYGround" [NYGunFreeze]="NYGunFreeze"></scoreboard-25x>
+}
+}

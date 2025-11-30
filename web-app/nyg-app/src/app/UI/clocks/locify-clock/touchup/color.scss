@@ -1,0 +1,23 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+
+:host {
+    .ocs-item {
+        background: map.get(theme.$nyg-green-palletes, ad20-green);
+    }
+}
+
+
+:host {
+    .nyg-header {
+        pointer-events: none;
+        background:
+            linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad17-red),
+                map.get(theme.$nyg-yellow-palletes, ad10-yellow));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bolder;
+    }
+}

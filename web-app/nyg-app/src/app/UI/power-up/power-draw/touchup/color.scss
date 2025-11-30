@@ -1,0 +1,37 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+:host {
+    .item-fitz {
+        // background-color: map.get(theme.$nyg-red-palletes, scarllet);
+        overflow: hidden;
+    }
+}
+
+:host {
+    .nyg-form {
+        border-radius: 30px;
+        padding: 10px;
+    }
+}
+
+:host {
+    .nyg-header {
+        padding: 10px;
+        letter-spacing: -3px;
+        pointer-events: none;
+        background:
+            linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad4-red),
+                map.get(theme.$nyg-blue-palletes, ad4-blue));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bolder;
+    }
+}
+
+:host {
+    .nyg-header1 {
+        color: map.get(theme.$nyg-white-palletes, ad1-white)
+    }
+}

@@ -1,0 +1,96 @@
+@use '../../helpers/helpers.scss' as mat;
+@use '../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+:host {
+    .Mcontainer {
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        z-index: 11111;
+        position: absolute;
+    }
+}
+
+:host {
+    .nyg-Mcontainer {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+}
+
+:host {
+    .nyg-stand {
+        height: fit-content;
+        overflow: visible;
+        padding-top: 100px;
+        flex-direction: center;
+        margin-bottom: -95%;
+        // background-color: blue;
+        // padding: 10px;
+    }
+}
+
+:host {
+    .n {
+        width: 250px;
+        height: 85vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        gap: 50px;
+        overflow: visible;
+        // border-width: 3px;
+        // border-style: solid;
+    }
+}
+
+
+:host {
+    .nyg-header {
+        font-size: 3.8rem;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-family: monospace;
+        letter-spacing: -4px;
+        font-weight: bolder;
+    }
+}
+
+:host {
+    .nyg-inf {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+:host {
+    .nyg-header2 {
+        font-size: 3rem;
+        font-family: monospace;
+        // border-style: double;
+        // border-top: 0px;
+        // border-left: 0px;
+        // border-right: 0px;
+        // border-width: 10px;
+        letter-spacing: -3px;
+        pointer-events: none;
+        // background:
+        //     linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad4-red),
+        //         map.get(theme.$nyg-blue-palletes, ad4-blue));
+        // background-clip: text;
+        // -webkit-text-fill-color: transparent;
+        font-weight: 500;
+    }
+}

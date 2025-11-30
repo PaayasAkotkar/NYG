@@ -10,7 +10,7 @@ import (
 )
 
 func Server() {
-	log.Println("NYG UPDATE SERVER RUNNING")
+	log.Println("NYG UPDATE SERVER RUNNING ⚙️")
 
 	_p := fmt.Sprintf(":%d", *port)
 	_net := "tcp"

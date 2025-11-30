@@ -1,0 +1,14 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+$start: 12.945s;
+// $timingFunc: cubic-bezier(.93, -0.25, .99, 1.63);
+$timingFunc: cubic-bezier(.2, -0.39, 0.21, 5.03);
+
+.ocs-u:active {
+    transition-property: transform;
+    transition-duration: 0.435s;
+    transition-timing-function: $timingFunc;
+    transform: scale(0.9);
+}

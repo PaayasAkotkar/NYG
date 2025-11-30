@@ -14,8 +14,7 @@ func Server() {
 	app := gin.New()
 	h := NewHub()
 	conn := &sse.Server{}
-
-	fmt.Println("in server 🪛")
+	fmt.Println("ROOT SERVER RUNNING ⚙️")
 
 	app.Use(func(c *gin.Context) {
 		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
@@ -29,15 +28,15 @@ func Server() {
 		c.Writer.Header().Set("Content-Type", "text/event-stream")
 		c.Writer.Header().Set("Cache-Control", "no-cache")
 		c.Writer.Header().Set("Connection", "keep-alive")
-		fmt.Println("from: ", c.Request.URL.Path)
-		fmt.Println("next ⏭️")
 		c.Next()
 	})
 
+	// we can do this with for-loop too
 	app.GET(DictionariesURL, func(ctx *gin.Context) {
 		fmt.Println("sending to client")
 		conn.ServeHTTP(ctx.Writer, ctx.Request)
 	})
+
 	app.POST(DictionariesURL, func(ctx *gin.Context) {
 		store := map[string]map[string]bool{}
 		h.key = "Room"
@@ -52,13 +51,12 @@ func Server() {
 
 		conn.ServeHTTP(ctx.Writer, ctx.Request)
 	})
+
 	app.POST(ListsURLs, func(ctx *gin.Context) {
 		store := map[string]map[string]bool{}
 		h.key = "Room"
 		h.dictionaryKey = ctx.Param("dictionary")
 		h.bookKey = strings.ToLower(ctx.Param("book"))
-		fmt.Println("item: ", h.dictionaryKey)
-		fmt.Println("via: ", ctx.Param("dictionary"))
 		fmt.Println("POST 🤝 successfully ")
 
 		store[h.key] = map[string]bool{ItemKey: true}
@@ -70,6 +68,7 @@ func Server() {
 
 		conn.ServeHTTP(ctx.Writer, ctx.Request)
 	})
+
 	app.POST(ItemsURLs, func(ctx *gin.Context) {
 		store := map[string]map[string]bool{}
 		h.key = "Room"
@@ -78,8 +77,6 @@ func Server() {
 		h.dictionaryKey = ctx.Param("dictionary")
 		h.listKey = ctx.Param("list")
 
-		fmt.Println("dictionary: ", h.dictionaryKey)
-		fmt.Println("list: ", h.listKey)
 		store[h.key] = map[string]bool{ValidateKey: true}
 		h.trigger <- store
 	})

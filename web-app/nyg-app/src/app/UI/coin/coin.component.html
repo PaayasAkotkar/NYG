@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="bx">
+        <!-- [@HeadTails]="isOpen?'tails':'heads'"  -->
+        <button [@HeadTails]="isOpen?'tails':'heads'" (@HeadTails.done)="Result()" class=" coin-body" (click)="Toss()">
+            <div appCoinSide [isHead]="isTail" class="outer-bod  tail-face animate-tail nyg-tail">
+
+                <div class="nyg-cbody">
+                    <div class="border">
+                        <span class="nyg-header   nyg-tail-header">NYG TAIL</span>
+
+                    </div>
+                </div>
+            </div>
+            <div appCoinSide [isHead]="isHead" class="outer-bod head-face animate-head nyg-head">
+
+                <div class=" nyg-cbody">
+                    <div class="border">
+
+                        <span class="nyg-header  nyg-head-header">NYG HEAD</span>
+                    </div>
+                </div>
+            </div>
+
+        </button>
+    </div>
+</div>
+<!-- <button (click)="Toss()" style="position: relative; left: 500px; top: 100px;">FLIP</button> -->
+
+<!-- note: the coin side chosen by the player will be of the team color -->

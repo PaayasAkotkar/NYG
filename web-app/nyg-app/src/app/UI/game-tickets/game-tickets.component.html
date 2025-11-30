@@ -1,0 +1,69 @@
+<!-- mvp-runnerup-lastvote- finished-4th -->
+<div>
+    <div>
+        <div class="containerX">
+            <div class="nyg-sheet-container">
+                <div class="adjust21">
+
+                    <table class="nyg-cheat-sheet">
+
+                        <thead class="nyg-h">
+                            <tr class="nyg-set">
+                                <th class="ocs-score">
+                                    <span class="nyg-header s-header">STANDINGS</span>
+                                </th>
+                                @for (item of D; track $index) {
+                                <th scope="col">
+                                    <div>
+                                        <span class="nyg-header st-header">
+                                            {{item}}
+                                        </span>
+                                    </div>
+                                </th>
+                                }
+                            </tr>
+                        </thead>
+
+                        <tbody class="nyg-bx">
+                            @for (nn of tickets; track $index) {
+                            <tr class="nyg-stats">
+                                <th>
+                                    <div>
+                                        <span class="nyg-header n-header">
+                                            {{nn.Position}}
+                                        </span>
+                                    </div>
+                                </th>
+                                <td class="ocs-deta">
+                                    <div class="nyg-res">
+                                        <div class="adjust">
+                                            <span class="nyg-header left-head">{{nn.PlayerName}}</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="ocs-deta2">
+                                    <div class="nyg-res">
+                                        <div class="adjust">
+                                            <span class="nyg-header left-head" appOnTeamColor
+                                                [Team]="nn.Team">{{nn.Team}}</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="ocs-deta3">
+                                    <div class="nyg-res">
+                                        <div class="adjust">
+                                            <span class="nyg-header left-head">{{nn.MVP}}</span>
+                                            <span class="nyg-header right-head"></span>
+                                        </div>
+                                    </div>
+                                </td>
+
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

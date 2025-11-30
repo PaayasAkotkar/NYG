@@ -1,0 +1,25 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+#left,
+#cover,
+#mid,
+#right {
+    transition-property: fill;
+    transition-duration: 3.45s;
+    transition-timing-function: cubic-bezier(1, .4, .07, .7);
+
+    fill: map.get(theme.$nyg-yellow-palletes, ad10-yellow);
+}
+
+#mid-shade,
+#left-shade,
+#right-shade {
+    transition-property: fill;
+    transition-duration: 0.45s;
+    transition-timing-function: cubic-bezier(1, .4, .07, .7);
+
+    fill: map.get(theme.$nyg-red-palletes, ad18-red);
+
+}

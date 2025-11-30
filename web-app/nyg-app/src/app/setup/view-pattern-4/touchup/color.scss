@@ -1,0 +1,7 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+.ocs-xy {
+    background: map.get(theme.$nyg-white-palletes, ad8-white);
+}

@@ -8,17 +8,17 @@ import (
 )
 
 const (
-	USER     = ""
+	USER     = "root"
 	PASSWORD = ""
 )
 
 func SetEnv() {
 
-	err := os.Setenv("root", "root")
+	err := os.Setenv(USER, USER)
 	if err != nil {
 		log.Fatalf("Error setting MYSQL_USER: %v", err)
 	}
-	err = os.Setenv("kingp12", "kingp12")
+	err = os.Setenv(PASSWORD, PASSWORD)
 	if err != nil {
 		log.Fatalf("Error setting MYSQL_PASS: %v", err)
 	}

@@ -17,6 +17,7 @@ import (
 )
 
 func Server() {
+	log.Println("NYG CHAT SERVER RUNNING ⚙️")
 	port := "1299"
 
 	c := cors.New(cors.Options{
@@ -50,7 +51,6 @@ func Server() {
 	http.Handle("/nyg-chat-init", c.Handler(srv))
 	http.Handle("/nyg-chat-latest-msg", srv)
 
-	log.Printf("connect to http://localhost:%s/ for GraphQL playground", port)
 	if err := http.ListenAndServe(":"+port, nil); err != nil {
 		log.Println(err)
 		return

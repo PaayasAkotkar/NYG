@@ -1,0 +1,138 @@
+<div class="container" appOnMode [bg]="bg" [toColor]="toColor" [fromColor]="fromColor">
+
+    <div class="frame">
+        @if (isNYGClash()) {
+
+        <div class="setU setUXX">
+            <div class="ocs-bars">
+                @for (key of CollectKeys; track $index) {
+                <app-bar [NYGTeamName]="NYGClashProfile[key].teamname" [NYGheader]="key"
+                    [OCScurrentChance]="NYGClashProfile[key].chances"></app-bar>
+                }
+            </div>
+            <div class="setXXp">
+                <div class="set">
+                    <app-tags2 [NYGMode]="NYGMode()" [NYGheader]="NYGMode()"></app-tags2>
+                </div>
+                <app-tags2 [NYGMode]="NYGMode()" [NYGheader]="`ROUND${NYGround.toString()}`"></app-tags2>
+
+            </div>
+        </div>
+        }
+
+        <div class="ocs-grid">
+            @if (!NYGspectate) {
+
+            <div class="setV">
+                <div class="set">
+                    <app-list [NYGMode]="NYGMode()" [NYGlist]="NYGlist" [NYGproceed]="NYGLproceed"></app-list>
+                </div>
+            </div>
+            }
+            <div class="setZ setZZ">
+
+                <div class="set">
+                    <ng-content></ng-content>
+                </div>
+                @if (!isNYGClash()) {
+
+                <div class="setK">
+
+                    <div class="set">
+                        <app-tags2 [NYGMode]="NYGMode()" (NYGEVENT)="viewPowers()" NYGheader="POWERS"></app-tags2>
+                    </div>
+
+                    @if (NYGspectate) {
+                    <div class="set">
+                        <app-tags2 (NYGEVENT)="viewList()" NYGheader="PREPARE" [NYGMode]="NYGMode()"></app-tags2>
+
+                    </div>
+                    <div class="set">
+                        <app-tags NYGtitle="SPEC" [NYGsubTitle]="NYGspectateInfo.teamName"></app-tags>
+
+                    </div>
+                    }
+                    <div class="set">
+                        <app-tags2 [NYGMode]="NYGMode()" (NYGEVENT)="viewLeftOver()" NYGheader="FRAMES"></app-tags2>
+                    </div>
+
+                    <div class="set">
+                        <app-tags2 [NYGMode]="NYGMode()" (NYGEVENT)="viewStats()" NYGheader="STATS"></app-tags2>
+                    </div>
+                </div>
+                }
+
+            </div>
+
+            <div class="setY setOI">
+                @if (NYGlock() &&!isNYGClash()&&NYGMode()=="locify") {
+
+                <app-locify-clock (NYGtimeout)="timeOut($event)" [NYGStart]="NYGstartClock"
+                    [NYGdiscussionSec]="NYGdecisionTime"></app-locify-clock>
+
+                <!-- <app-clock [Start]="NYGstartClock" [NYGdiscussionSec]="NYGdecisionTime"></app-clock> -->
+
+
+                <div class="setY ">
+                    <app-tags [NYGMode]="NYGMode()" NYGtitle="RAT" [NYGsubTitle]="NYGrating.toString()"></app-tags>
+                    <app-tags [NYGMode]="NYGMode()" NYGtitle="TAG" [NYGsubTitle]="NYGisPlaying"></app-tags>
+                    <app-tags [NYGMode]="NYGMode()" NYGtitle="TEM" [NYGsubTitle]="NYGmyTeam"></app-tags>
+                    <app-tags [NYGMode]="NYGMode()" NYGtitle="ROM" [NYGsubTitle]=" NYGmyroom"></app-tags>
+                    <app-tags [NYGMode]="NYGMode()" NYGtitle="MOD" [NYGsubTitle]="NYGroomMode"></app-tags>
+                    <app-count [NYGMode]="NYGMode()" [NYGCount]="Conns"></app-count>
+                </div>
+                }@else if (NYGlock()) {
+
+                <div class="setUU">
+                    @switch (NYGMode()) {
+                    @case('mysterium'){
+                    <div class="ocs-clok">
+                        <app-mysterium-clock (NYGtimeout)="timeOut($event)" [NYGStart]="NYGstartClock"
+                            [NYGdiscussionSec]="NYGdecisionTime"></app-mysterium-clock>
+
+                    </div>
+                    }
+                    @case ('gym') {
+                    <div class="ocs-clok">
+
+                        <app-gym-clock (NYGtimeout)="timeOut($event)" [NYGStart]="NYGstartClock"
+                            [NYGdiscussionSec]="NYGdecisionTime"></app-gym-clock>
+                    </div>
+                    }
+                    @case('fastlane'){
+                    <div class="ocs-clok">
+
+                        <app-fastlane-clock (NYGtimeout)="timeOut($event)" [NYGStart]="NYGstartClock"
+                            [NYGdiscussionSec]="NYGdecisionTime"></app-fastlane-clock>
+                    </div> }
+                    @case('pshycic'){
+                    <div class="ocs-clok">
+
+                        <app-physics-clock (NYGtimeout)="timeOut($event)" [NYGStart]="NYGstartClock"
+                            [NYGdiscussionSec]="NYGdecisionTime"></app-physics-clock>
+                    </div>
+                    }
+
+                    @case('node'){
+                    <div class="ocs-clok">
+                        <app-node-clock (NYGtimeout)="timeOut($event)" [NYGStart]="NYGstartClock"
+                            [NYGdiscussionSec]="NYGdecisionTime"></app-node-clock>
+
+                    </div> }
+                    }
+                    <div class="ocs-f">
+                        <app-fire [NYGheader]="NYGonFire"></app-fire>
+                    </div>
+                    <div class="set">
+                        <app-tags2 [NYGMode]="NYGMode()" (NYGEVENT)="viewPowers()" NYGheader="POWERS"></app-tags2>
+                    </div>
+
+                </div>
+                }
+
+            </div>
+        </div>
+
+
+    </div>
+</div>

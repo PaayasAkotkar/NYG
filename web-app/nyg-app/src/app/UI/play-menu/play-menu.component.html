@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="nyg-container">
+        <nav class="nyg-nav">
+            <div class="nyg-nav-container  nyg-nav-container-host">
+                <div class="guide x1"> <!--important for animation  -->
+                    <div class="letters-container make-outline letter-container-adjust left-letters">
+                        @for (item of CUSTOM; track $index) {
+                        <span class="letters letters-adjust2">{{item}}</span>
+                        }
+                    </div>
+                </div>
+                <div class="button-container button-left-container">
+
+                    <button class="nyg-button m-btn" (click)="toRoom()">
+                        <div class="nyg-button-header adjust-header make-letters letters-container">
+                            @for (item of CREATE; track $index) {
+                            <span class="letters  letters-adjust main-button-letters">
+                                {{item}}
+                            </span>
+                            }
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="nyg-nav-container nyg-nav-container-host">
+
+                <div class="button-container button-right-container">
+                    <button class="nyg-button j-btn" (click)="toJoin()">
+                        <div class="nyg-button-header adjust-header join-letters  letters-container">
+                            @for (item of JOIN; track $index) {
+                            <span class="letters letters-adjust main-button-letters">
+                                {{item}}
+                            </span>
+                            }
+                        </div>
+                    </button>
+                </div>
+                <div class="guide x2"> <!--important for animation  -->
+                    <div class="letters-container make-outline  letter-container-adjust right-letters">
+
+                        @for (item of QUICK; track $index) {
+                        <span class="letters letters-adjust2">{{item}}</span>
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+</div>

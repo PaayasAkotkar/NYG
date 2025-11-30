@@ -1,0 +1,93 @@
+<div class="Jcontainer">
+    <div class="nyg-form-Jcontainer">
+        <div class="nyg-sp">
+            <span class="ocs-sn"></span>
+            <form class="nyg-Jform" [formGroup]="joinRoomForm">
+                <app-ocs-input [NYGisError]="isNYGnameError" [NYGerrorMessage]="NYGnameError" [NYGsetToolTip]="true"
+                    [NYGtoolTip]="nameToolTip" NYGformControl="JoinToken" NYGheader="NAME"></app-ocs-input>
+                <!-- <app-ocs-input [NYGisError]="isNYGnicknameError" [NYGerrorMessage]="NYGnicknameError"
+                    [NYGsetToolTip]="true" [NYGtoolTip]="nicknameToolTip" NYGformControl="JoinNickNameToken"
+                    NYGheader="NICKNAME"></app-ocs-input> -->
+                <app-ocs-input [NYGsetToolTip]="true" [NYGtoolTip]="codeToolTip" NYGformControl="JoinCodeToken"
+                    NYGheader="CODE"></app-ocs-input>
+                <!-- <div class="cont-btn">
+<div class="btn-cont">
+                        <button class="nyg-btn" (click)="JoinRoom($event)">
+                            <span class="nyg-header">JOIN</span>
+                        </button>
+                    </div>
+                </div> -->
+                <div class="btn-cont">
+                    <div class="ocs-outer">
+                        <button type="submit" class="ocs-btn" (click)="JoinRoom($event)">
+                            <span class="ocs-header">JOIN</span>
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+            <span class="ocs-sn2"></span>
+
+        </div>
+    </div>
+</div>
+
+<!-- <div class="Jadjust">
+                <fieldset class="nyg-form-Jitems">
+                    <span class="Jadjust3">
+                        <fieldset class="nyg-form-field">
+                            <span class="nyg-legend">
+                                <label for="JoinToken" class="nyg-label">
+                                    <span class="nyg-header">
+                                        <span>NAME</span>
+                                    </span>
+                                </label>
+                            </span>
+                            <span class="input-container">
+                                <input class="nyg-input" type="text" name="JoinToken" id="JoinToken"
+                                    formControlName="JoinToken">
+                            </span>
+                        </fieldset>
+                        <fieldset class="nyg-form-field ">
+                            <span class="nyg-legend">
+                                <label for="JoinNickNameToken" class="nyg-label adjust-labelx">
+                                    <span class="nyg-header nyg-header-adjust">
+                                        <span class="name-header">NICKNAME</span>
+                                    </span>
+                                </label>
+                            </span>
+                            <span class="input-container">
+                                <input class="nyg-input" type="text" name="JoinNickNameToken" id="JoinNickNameToken"
+                                    formControlName="JoinNickNameToken">
+                            </span>
+                        </fieldset>
+                        <fieldset class="nyg-form-field">
+                            <span class="nyg-legend">
+                                <label for="JoinCodeToken" class="nyg-label">
+                                    <span class="nyg-header">
+                                        <span>CODE</span>
+                                    </span>
+                                </label>
+
+                            </span>
+                            <span class="input-container">
+                                <input class="nyg-input" #name type="text" name="JoinCodeToken" id="JoinCodeToken"
+                                    formControlName="JoinCodeToken">
+                            </span>
+                        </fieldset>
+                        <fieldset class="nyg-form-field">
+                            <span class="nyg-legend">
+                                <span class="join-container">
+                                    <button class="nyg-join-btn" type="submit" (click)="JoinRoom($event)">
+                                        <span class="nyg-button-container">
+                                            <div class="nyg-header letter-J">
+                                                <span>J</span>
+                                            </div>
+                                        </span>
+                                    </button>
+                                </span>
+                            </span>
+                        </fieldset>
+                    </span>
+                </fieldset>
+            </div> -->

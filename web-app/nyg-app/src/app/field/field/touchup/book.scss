@@ -1,0 +1,206 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+:host {
+    .bx {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+:host {
+    .nyg-form-field {
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        margin: 0px;
+        margin-inline: 0px;
+        border: 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+}
+
+:host {
+    .nyg-form-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+}
+
+:host {
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+:host {
+    .nyg-input {
+        appearance: none;
+        // width: 100%;
+        // height: 100%;
+    }
+}
+
+// :host {
+//     .in-bor {
+//         width: 100%;
+//         height: 100%;
+
+//     }
+// }
+
+:host {
+    .in-con {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        // background-color: orange;
+        z-index: -11;
+
+    }
+}
+
+// :host {
+//     input[type="checkbox"]:checked {
+//         border-style: solid;
+//         border-width: 10px;
+//     }
+// }
+
+// :host {
+//     .nyg-input:checked {
+//         background-color: map.get(theme.$nyg-red-palletes, indian-red);
+//     }
+// }
+
+:host {
+    .nyg-form-fieldXX {
+        @include mat.setup(100%, 100%);
+        @include mat.setupFlex(column, center, center);
+        padding: 0px;
+        margin: 0px;
+        margin-inline: 0px;
+        border: 0px;
+    }
+}
+
+:host {
+    .nyg-header {
+        font-size: 4.4rem;
+        font-family: arial;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        pointer-events: none;
+    }
+}
+
+:host {
+    .nyg-labelXX {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+:host {
+    .nyg-form {
+        width: 100%;
+        height: 600px;
+        overflow-y: scroll;
+        // overscroll-behavior: auto;
+        // scrollbar-width: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+:host {
+    .item-fitz {
+        transform: skew(-5deg);
+        padding: 10px;
+        margin: 10px;
+    }
+}
+
+
+:host {
+    .nyg-form-field2 {
+        width: 100%;
+        height: fit-content;
+        padding: 0px;
+        margin: 0px;
+        margin-inline: 0px;
+        border: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+:host {
+    .nyg-leg {
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        margin: 0px;
+        margin-inline: 0px;
+        border: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        overflow: hidden;
+    }
+}
+
+:host {
+    .noB {
+        width: fit-content;
+        height: fit-content;
+    }
+}
+
+:host {
+    .blur {
+        // background-color: rgba(map.get(theme.$nyg-white-palletes, ad4-white), 0.5);
+        border-radius: 20rem;
+        width: 40%;
+        height: 60px;
+        display: block;
+        position: absolute;
+        z-index: -1111;
+        filter: blur(1px);
+
+    }
+}
+
+:host {
+    .nyg-header1 {
+        font-size: 4rem;
+        font-family: arial;
+        z-index: 111;
+        font-weight: bolder;
+        pointer-events: none;
+
+    }
+}

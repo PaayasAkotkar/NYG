@@ -1,0 +1,91 @@
+@use '../../helpers/helpers.scss' as mat;
+@use '../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+:host {
+    .sheet-list {
+        @include mat.setup(100%, 100%, flex);
+        @include mat.setupFlex(column, center, flex-start);
+
+        & {
+            gap: 5px;
+        }
+    }
+
+    .nyg-set {
+        @include mat.setup(100%, 100%, flex);
+        @include mat.setupFlex(column, center, center);
+
+        & {
+            border-radius: 0px;
+            border-style: solid;
+            border-width: 10px;
+
+        }
+
+        & {
+            background-color: map.get(theme.$nyg-yellow-palletes, turner-yellow-feint-shade);
+
+        }
+
+        & {
+            background-color: map.get(theme.$nyg-yellow-palletes, turner-yellow-feint-shade);
+
+        }
+
+        & {
+            border-color: map.get(theme.$nyg-black-palletes, umber-black);
+
+        }
+    }
+
+    :host {
+        .nyg-header {
+            color: map.get(theme.$nyg-black-palletes, umber-black);
+        }
+    }
+
+    .det {
+
+        & {
+            background-color: map.get(theme.$nyg-yellow-palletes, turner-yellow-feint-shade);
+
+        }
+
+        & {
+            outline-color: map.get(theme.$nyg-black-palletes, umber-black);
+        }
+
+        & {
+
+            outline-style: solid;
+            outline-width: 4px;
+            padding: 5px;
+
+        }
+
+        & .nyg-header {
+            letter-spacing: -2px;
+        }
+    }
+
+    .adjust-sheet {
+        padding: 10px;
+        display: flex;
+    }
+
+    .adjust-sheet2 {
+        padding: 5px;
+        display: flex;
+    }
+
+    .nyg-title {
+        @include mat.setup(100%, 100%, flex);
+        @include mat.setupFlex(column, center, center);
+    }
+
+    .nyg-cheat-sheet {
+        @include mat.setup(100%, 100%, flex);
+        @include mat.setupFlex(row, center, center)
+    }
+}

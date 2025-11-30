@@ -1,0 +1,274 @@
+@use '../../helpers/helpers.scss' as mat;
+@use '../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    .nyg-settings-btn {
+        width: fit-content;
+        height: fit-content;
+
+        & {
+            color: map.get(theme.$nyg-black-palletes, umber-black);
+            background-color: map.get(theme.$nyg-orange-palletes, flame-orange);
+        }
+
+        border: 0px;
+    }
+}
+
+:host {
+    .nyg-contr {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: hidden;
+        gap: 10px;
+        padding: 10px;
+
+    }
+}
+
+:host {
+    .mka {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+:host {
+    .nyg-form-PCcontainer {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+:host {
+    .nyg-itemX {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 10px;
+    }
+}
+
+:host {
+    .PCcontainer {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .nyg-PCform {
+        @include mat.setup(fit-content, fit-content, flex);
+        @include mat.setupFlex(row, flex-start, center);
+
+        & {
+            overflow: hidden;
+            margin: 10px;
+        }
+    }
+
+    .nyg-form-PCitems {
+        @include mat.setup(100%, 100%, flex);
+        @include mat.setupFlex(column, center, center);
+
+        & {
+            border: 0px;
+            margin: 0px;
+            padding-inline: 0px;
+            padding-block: 0px;
+            overflow: hidden;
+            padding: 20px
+        }
+
+    }
+
+
+    .nyg-form-field {
+        @include mat.setup(100%, 100%, flex);
+        @include mat.setupFlex(row, center, flex-end);
+
+        & {
+            margin: 0px;
+            border: 0px;
+            border-style: none;
+            transform: skew(-10deg);
+            overflow: hidden;
+
+        }
+
+
+    }
+
+    .nyg-legend {
+        @include mat.setup(fit-content, 100%, flex);
+        @include mat.setupFlex(column, flex-start, flex-start);
+
+        & {
+            overflow: hidden;
+        }
+    }
+
+
+    .nyg-label {
+        @include mat.setup(fit-content, 100%, flex);
+        @include mat.setupFlex(row, center, center);
+
+        & {
+            // border-style: solid;
+            // border-width: 2.1px;
+            border-bottom: 0px;
+            font-family: arial;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+
+    }
+
+    .nyg-ma {
+        @include mat.setup(100%, 100%, flex);
+        @include mat.setupFlex(column, flex-start, flex-start);
+
+    }
+
+    .input-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .nyg-coun {
+        width: fit-content;
+        height: 100%;
+        padding: 10px;
+    }
+
+    .nyg-input {
+
+        @include mat.setup(100%, 100%, );
+
+
+
+        & {
+            padding-top: 10px;
+            border: 0px;
+            font-size: 3rem;
+            margin: 0px;
+            // border-style: solid;
+            // border-width: 2.1px;
+            font-family: monospace;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            width: 400px;
+        }
+
+
+
+
+    }
+
+    .PCadjust {
+        padding-top: 10px;
+        padding: 10px;
+    }
+
+    .button-containerG {
+        width: 100%;
+
+        height: 100%;
+    }
+
+    .nyg-chat-btn {
+        width: fit-content;
+        height: fit-content;
+        border-radius: 10px;
+        transform: skew(10deg);
+        border: 0px;
+    }
+
+
+    .nyg-form-PCview {
+        @include mat.setup(100%, 100%, flex);
+        @include mat.setupFlex(column-reverse, center, center);
+    }
+
+    .border {
+        // border-style: solid;
+        // border-width: 9px;
+        display: flex;
+        width: 100%;
+    }
+
+    .button-adjust {
+        align-items: center;
+        justify-content: center;
+
+        overflow: visible;
+    }
+
+
+    .nyg-form-fields {
+
+        @include mat.setup(100%, 100%, flex);
+        @include mat.setupFlex(column, center, flex-start);
+
+        & {
+            margin: 0px;
+            border: 0px;
+            border-style: none;
+            overflow: visible;
+        }
+
+    }
+
+    .nyg-form-fieldx {
+        @include mat.setup(fit-content, 100%, flex);
+        @include mat.setupFlex(row, center, flex-end);
+
+        & {
+            // margin-left: -50px;
+            overflow: visible;
+            margin: 0px;
+            border: 0px;
+            border-style: none;
+
+        }
+    }
+
+    .input-container2 {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        overflow: visible;
+    }
+
+    .nyg-display {
+        width: 100%;
+        height: 100px;
+        font-size: 5rem;
+        font-family: arial;
+
+        border-bottom-left-radius: 100%;
+        border-bottom-right-radius: 100%;
+        text-align: center;
+
+
+    }
+
+    .adjust-l {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+
+    }
+}

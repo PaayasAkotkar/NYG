@@ -1,0 +1,34 @@
+<fieldset class="nyg-form-field">
+    <div class="fit">
+
+        <label class="nyg-label" [htmlFor]="NYGformControl">
+            <span class="nyg-header">
+                {{NYGheader}}
+            </span>
+            @if (NYGsetToolTip) {
+            <div class="ocs-tt">
+                <span class="ocs-tool-tip">{{NYGtoolTip}}</span>
+            </div>
+            }
+        </label>
+
+        <div class="in-cont">
+            <div class="outer-bordr">
+                <div (click)="click()" class="nyg-li">
+                    <span class="nyg-header">
+                        {{Link}}
+                    </span>
+                </div>
+            </div>
+
+            <div class="border">
+                <div class="nyg-inputCont">
+                    <input [id]="NYGformControl" [name]="NYGformControl" [formControlName]="NYGformControl"
+                        type="checkbox" class="nyg-input" (change)="test()">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</fieldset>

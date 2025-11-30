@@ -1,0 +1,25 @@
+<div class="fit _click" RemoveClass [doIt]="RemoveClickAnimation" toRemove="_click">
+
+    <div class="fitx">
+
+        <div class="ocs-lvl">
+            <span class="nyg-header1">
+                {{OCSlvl}}
+            </span>
+        </div>
+        <div class="fit2">
+            <div class="nyg-label">
+                <span class="nyg-header">{{OCSpower}}</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="ocs-sprit" appOnUpgradeColor [currentLevel]="OCSdonatedSpurs">
+        @for (item of [1,2,3,4,5,6,7,10]; track $index) {
+        <div #slot [class.animate]="animate()" class="slot animate-slot"></div>
+        }
+        <div class="run"></div>
+
+    </div>
+</div>

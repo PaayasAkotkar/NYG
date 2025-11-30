@@ -1,0 +1,58 @@
+<div class='ocs-b'>
+    <div class="ocs-a">
+
+        <div class="ocs-item">
+            <div>
+                <form class="ocs-xo" [formGroup]="_f2">
+                    <div class="ocs-xy">
+
+                        @for (power of CurrentPowers; track $index) {
+                        <div [ngClass]="['x'+$index.toString(),'ocs-xx']">
+                            <app-power-upgrade [OCSpower]="power"
+                                [OCSdonatedSpurs]="notation[power]"></app-power-upgrade>
+                            <!-- <app-power-up-pattern [OCSdisableHover]="true" [OCSformControl]="power"
+                                [OCSpower]="power"></app-power-up-pattern> -->
+                            <div>
+                                <app-ocs-btns NYGMode="" (OCSclick)="_Switch(power)" OCSheader="SWITCH"
+                                    OCSType="button"></app-ocs-btns>
+                            </div>
+                        </div>
+
+                        }
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <form class="ocs-form" [formGroup]="_f">
+                <div class="ocs-x" appScrollBehvaior>
+                    @for (power of Powers; track $index) {
+                    <div class="ocs-itemx">
+                        <!-- <app-power-up-pattern [OCSdisableHover]="true" [OCSformControl]="power"
+                            [OCSpower]="power"></app-power-up-pattern> -->
+                        <app-power-upgrade [OCSpower]="power" [OCSdonatedSpurs]="notation[power]"></app-power-upgrade>
+
+                        @if (_switch) {
+                        <div>
+                            <app-ocs-btns NYGMode="" (OCSclick)="onUse(power)" OCSheader="USE"
+                                OCSType="button"></app-ocs-btns>
+                        </div>
+                        }
+                    </div>
+                    }
+                </div>
+
+                <div class="s">
+                    <app-ocs-btns NYGMode="" (OCSclick)="Save()" OCSheader="SAVE" OCSType="button"></app-ocs-btns>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div>
+        <app-ocs-xx-btn (OCSListen)="toPlay()" OCSHeader="PLAY"></app-ocs-xx-btn>
+
+    </div>
+</div>

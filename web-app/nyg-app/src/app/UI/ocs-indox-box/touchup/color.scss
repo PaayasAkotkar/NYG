@@ -1,0 +1,13 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+
+#inner {
+    fill:#{map.get(theme.$nyg-red-palletes,ad15-red)};
+
+}
+
+#outer {
+    fill:#{map.get(theme.$nyg-white-palletes,ad8-white)};
+}

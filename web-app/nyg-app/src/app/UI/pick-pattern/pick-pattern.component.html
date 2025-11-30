@@ -1,0 +1,10 @@
+<form [@OnEnter] [formGroup]="OCSformGroup">
+    <app-field (NYGposition)="getPosition($event)" [NYGMode]="NYGMode" [NYGheader]="OCSheader"
+        [NYGcollection]="OCScollections" (NYGEVENT)="Token($event)"></app-field>
+    <app-ocs-btns [NYGMode]="NYGMode" OCSType="submit" [OCSteam]="OCSmyTeam" (OCSclick)="Click()"
+        [OCSheader]="OCSbtnHeader"></app-ocs-btns>
+</form>
+<div class="container">
+    <div class="ball"></div>
+    <div class="bat"></div>
+</div>

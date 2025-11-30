@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="border">
+
+        <div class="nyg-form-field">
+
+            <div class="nyg-label">
+                <span class="nyg-header">TITLES</span>
+            </div>
+
+            <div class="nyg-input" type="text" name="CreateToken" id="CreateToken" formControlName="CreateToken">
+                <ul>
+                    <div class="even commonN">
+
+                        @for (item of even; track $index) {
+                        <li class="evenL">
+                            <span class="nyg-header">
+                                {{item}}
+                            </span>
+                        </li>
+                        }
+                    </div>
+
+                    <div class="odd commonN">
+                        @for (item of odd; track $index) {
+                        <li class="oddL">
+                            <span class="nyg-header">
+                                {{item}}
+                            </span>
+                        </li>
+                        }
+                    </div>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</div>

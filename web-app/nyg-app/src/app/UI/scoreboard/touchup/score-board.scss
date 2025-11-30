@@ -1,0 +1,11 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+
+:host {
+    .nyg-sco {
+        font-size: 5rem;
+        font-weight: 700;
+    }
+}

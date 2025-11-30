@@ -1,0 +1,58 @@
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use '../../../../helpers/helpers.scss' as mat;
+@use 'sass:map';
+
+:host {
+    .ocs-board {
+        --gradient-border: linear-gradient(to left, #ff0060, #7434ff);
+        border: solid 2px transparent;
+        border-radius: 100%;
+        background: var(--gradient-border) border-box;
+    }
+}
+
+:host {
+    .ocs-board {
+        --gradient-borderx: conic-gradient(from var(--raindbow-angle), #ff0060,
+
+                #7434ff, #7434ff, #ff0060);
+        --raindbow-angle: 0turn; // initial-state
+
+        border: solid 2px transparent;
+        border-radius: 4rem;
+
+        background: var(--gradient-borderx) border-box;
+
+        background-position: center center;
+        animation: rainbowQ;
+        animation-duration: 1.45s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+}
+
+
+@keyframes rotateQ {
+
+    to {
+        --border-angle: 10turn;
+    }
+}
+
+@keyframes rainbowQ {
+    to {
+        --raindbow-angle: 2turn;
+    }
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+@property --raindbow-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}

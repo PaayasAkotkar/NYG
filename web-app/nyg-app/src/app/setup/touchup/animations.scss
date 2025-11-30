@@ -1,0 +1,88 @@
+@use '../../helpers/helpers.scss' as mat;
+@use '../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+.nyg-sp {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    padding: 10px;
+
+    border-radius: 4rem;
+    // background:
+    //     linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad4-red),
+    //         map.get(theme.$nyg-blue-palletes, potrait9-blue));
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.ocs-sn {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 122px;
+    background: linear-gradient(to right, #0c002b, #1779ff);
+    animation: animate1;
+    animation-duration: 14s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1, .4, .07, .7);
+    z-index: -1;
+    border-radius: 3rem;
+}
+
+.ocs-sn2 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 122px;
+    background: linear-gradient(to right, #0c002b, #1779ff);
+    animation: animate2;
+    animation-duration: 14s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1, .4, .07, .7);
+    z-index: -1;
+    border-radius: 3rem;
+
+}
+
+@keyframes animate2 {
+    0% {
+        transform: translateX(100%);
+        background: linear-gradient(to right, map.get(theme.$nyg-red-palletes, ad4-red)40%,
+                map.get(theme.$nyg-blue-palletes, ad4-blue)100%);
+    }
+
+    10% {
+        transform: translateX(-100%);
+        background: linear-gradient(to right, map.get(theme.$nyg-red-palletes, ad4-red)50%,
+                map.get(theme.$nyg-blue-palletes, ad4-blue)100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+        background: linear-gradient(to right, map.get(theme.$nyg-red-palletes, ad4-red)60%,
+                map.get(theme.$nyg-blue-palletes, ad4-blue)100%);
+    }
+}
+
+@keyframes animate1 {
+    0% {
+        transform: translateX(-100%);
+        background: linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad4-red)40%,
+                map.get(theme.$nyg-blue-palletes, ad4-blue)100%);
+    }
+
+    10% {
+        transform: translateX(100%);
+        background: linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad4-red)60%,
+                map.get(theme.$nyg-blue-palletes, ad4-blue)100%);
+    }
+
+    100% {
+        transform: translateY(-100%);
+        background: linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad4-red)100%,
+                map.get(theme.$nyg-blue-palletes, ad4-blue)100%);
+    }
+}

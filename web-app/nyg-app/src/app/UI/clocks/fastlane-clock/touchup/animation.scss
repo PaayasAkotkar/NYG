@@ -1,0 +1,90 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    --func: cubic-bezier(1, -0.01, 0, .99)
+}
+
+:host {
+
+    .top-svg,
+    .bottomx-svg {
+        animation: toLeft;
+        animation-duration: 4.45s;
+        animation-iteration-count: infinite;
+        animation-timing-function: var(--func);
+    }
+}
+
+@keyframes toLeft {
+    0% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+:host {
+
+    .topx-svg,
+    .bottom-svg {
+        animation: toRight;
+        animation-duration: 4.45s;
+        animation-iteration-count: infinite;
+        animation-timing-function: var(--func);
+    }
+}
+
+@keyframes toRight {
+    0% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+:host {
+    .ocs-bo {
+        --gradient-borderx: conic-gradient(from var(--raindbow-angle), #{map.get(theme.$nyg-orange-palletes,ad8-orange)},
+
+            #{map.get(theme.$nyg-yellow-palletes,ad8-yellow)}, #{map.get(theme.$nyg-yellow-palletes,ad8-yellow)}, #{map.get(theme.$nyg-orange-palletes,ad8-orange)});
+        --raindbow-angle: 0turn; // initial-state
+
+        border: solid 2px transparent;
+        background: var(--gradient-borderx) border-box;
+
+        background-position: center center;
+        animation: rainbowQ;
+        animation-duration: 1.45s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+}
+
+
+@keyframes rainbowQ {
+    to {
+        --raindbow-angle: 1turn;
+    }
+}
+
+@property --raindbow-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}

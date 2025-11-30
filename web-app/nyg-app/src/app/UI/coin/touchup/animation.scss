@@ -1,0 +1,130 @@
+:host {
+    .border {
+        --gradient-border: conic-gradient(from var(--border-angle), #6F09E8 2%,
+
+                #D6DCE8, #1AD6C2 99%, #F29136);
+        --border-angle: 0turn; // initial-state
+
+        border: solid 5px transparent;
+        background: var(--gradient-border) border-box;
+
+        background-position: center center;
+        animation: rotateQ;
+        animation-duration: .45s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+    }
+}
+
+
+@keyframes rotateQ {
+
+    to {
+        --border-angle: 1turn;
+
+    }
+
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+// .animate-head {
+//     animation: flip-head 1s linear 0s 1 alternate;
+// }
+
+// .animate-tail {
+//     animation: flip-tail 1s linear 0s 1 alternate;
+// }
+
+// @keyframes fly {
+//     0% {
+//         top: 100%;
+//     }
+
+//     100% {
+//         top: 0%;
+//     }
+// }
+
+// @keyframes flip-head {
+
+//     0%,
+//     100% {
+//         transform: rotateX(0deg);
+//     }
+
+//     50% {
+//         transform: rotateX(180deg);
+//     }
+// }
+
+// @keyframes flip-tail {
+
+//     0%,
+//     100% {
+//         transform: rotateX(180deg);
+//     }
+
+//     50% {
+//         transform: rotateX(0deg);
+//     }
+// }
+.coin-body {
+    perspective: 10000px;
+}
+
+.bx {
+    perspective: 10000px;
+
+}
+
+.container {
+    perspective: 10000px;
+
+}
+
+// .animate-tail {
+//     transform-style: preserve-3d;
+//     animation: b 1s linear 0s infinite;
+
+// }
+
+// .animate-head {
+//     transform-style: preserve-3d;
+//     animation: a 1s linear 0s infinite;
+
+// }
+
+// @keyframes a {
+//     0% {
+//         transform: rotateX(0deg);
+
+//     }
+
+//     // 50% {
+//     //     transform: rotateX(180deg);
+//     // }
+
+//     100% {
+//         transform: rotateX(5turn);
+//     }
+// }
+
+// @keyframes b {
+//     0% {
+//         transform: rotateX(180deg);
+
+//     }
+
+//     // 50% {
+//     //     transform: rotateX(0deg);
+//     // }
+
+//     100% {
+//         transform: rotateX(11turn);
+//     }
+// }

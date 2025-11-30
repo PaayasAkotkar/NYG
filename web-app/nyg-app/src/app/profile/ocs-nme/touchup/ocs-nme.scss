@@ -1,0 +1,48 @@
+:host {
+    .ocs-outer {
+        padding: 10px;
+        width: fit-content;
+        height: fit-content;
+        transform: skew(-10deg);
+    }
+}
+
+.ocs-inner {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border-radius: 0.1rem;
+    gap: 10px;
+}
+
+:host {
+    .ocs-item {
+        width: 540px;
+        height: fit-content;
+    }
+}
+
+:host {
+    .ocs-header {
+        font-family: Arial;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        pointer-events: none;
+
+    }
+}
+
+:host {
+    .ocs-ti {
+        border-style: double;
+        border-width: 10px;
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+    }
+}

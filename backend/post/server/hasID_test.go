@@ -44,8 +44,6 @@ func TestHasID(t *testing.T) {
 		return
 	}
 
-	log.Println("name:", name)
-	log.Println("vie: ", view)
 	assert.Equal(t, true, exists)
 	// assert.Equal(t, "", name)
 	assert.Equal(t, 400, view.Rating)

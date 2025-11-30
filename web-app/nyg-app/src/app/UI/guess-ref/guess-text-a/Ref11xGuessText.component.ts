@@ -1,0 +1,22 @@
+import { Component, Input, Output, EventEmitter, WritableSignal, signal } from '@angular/core';
+import { LobbyResource } from '../../../lobby/resources/lobbyResource';
+import { RoomService } from '../../../roomService/room.service';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { OnTeamColorDirective } from '../guess-text-b/on-team-color.directive';
+import { OnFreezeDirective } from '../../power-up/power-freeze/on-freeze.directive';
+
+@Component({
+  selector: 'RefguessText-11x',
+  imports: [OnTeamColorDirective],
+  templateUrl: './Ref11xGuessText.component.html',
+  styleUrls: ['./touchup/guess.scss', './touchup/color.scss'
+    , './touchup/animation.scss'
+
+  ],
+})
+export class Ref11xGuessTextComponent {
+  constructor(private room: RoomService) {
+  }
+  @Input({ required: false }) NYGmyTeam: string = "BLUE"
+
+}

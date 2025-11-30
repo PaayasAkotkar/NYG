@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="nyg-pc">
+        <span class="nyg-pc-items">
+            <form class="nyg-form" [formGroup]="usePowerUpForm">
+                @if (!NYGcanUsePower()) {
+                <div class="fit">
+                    <!-- has been used and included in the playing -->
+                    @if (!NYGfreeze() && NYGincludeF() && !NYGblock()) {
+                    <app-power-up-pattern OCSformControl="FreezeToken" OCSpower="FREEZE" [OCSlvl]="OCSfreezePowerLevel"
+                        (OCSEvent)="FUse()"></app-power-up-pattern>
+                    }
+                </div>
+
+                <div class="fit">
+                    @if (!NYGnexus() && NYGincludeN() && !NYGblock()) {
+                    <app-power-up-pattern OCSformControl="NexusToken" OCSpower="NEXUS" [OCSlvl]="OCSnexusPowerLevel"
+                        (OCSEvent)="NUse()"></app-power-up-pattern>
+                    }
+                </div>
+
+                <div class="fit">
+                    @if(!NYGrewind() && NYGincludeR() && !NYGblock()){
+                    <app-power-up-pattern OCSformControl="RewindToken" OCSpower="REWIND" [OCSlvl]="OCSfreezePowerLevel"
+                        (OCSEvent)="RUse()"></app-power-up-pattern>
+                    }
+                </div>
+
+                <div class="fit">
+                    @if(!NYGtag() && NYGincludeT() && !NYGblock()){
+                    <app-power-up-pattern OCSformControl="TagToken" OCSpower="TAG" [OCSlvl]="OCSfreezePowerLevel"
+                        (OCSEvent)="TUse()"></app-power-up-pattern>
+                    }
+                </div>
+
+                <div class="fit">
+                    @if(!NYGdraw() && NYGincludeD() && !NYGblock()){
+                    <app-power-up-pattern OCSformControl="DrawToken" OCSpower="DRAW" [OCSlvl]="OCSfreezePowerLevel"
+                        (OCSEvent)="DUse()"></app-power-up-pattern>
+                    }
+                </div>
+
+                <div class="fit">
+                    @if(!NYGbet() && NYGincludeB() && !NYGblock()){
+                    <app-power-up-pattern OCSformControl="BetToken" OCSpower="BET" [OCSlvl]="OCSfreezePowerLevel"
+                        (OCSEvent)="BUse()"></app-power-up-pattern>
+                    }
+                </div>
+
+                <div class="fit">
+                    @if(!NYGcovert() && NYGincludeC() && !NYGblock()){
+                    <app-power-up-pattern OCSformControl="CovertToken" OCSpower="COVERT" [OCSlvl]="OCSfreezePowerLevel"
+                        (OCSEvent)="CUse()"></app-power-up-pattern>
+                    }
+                </div>
+                }
+            </form>
+        </span>
+    </div>
+</div>

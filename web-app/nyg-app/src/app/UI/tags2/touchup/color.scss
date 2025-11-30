@@ -1,0 +1,61 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+@supports(syntax:'<color>') {
+    @property --bg {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: blue;
+    }
+
+    @property --col_ {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: white;
+    }
+
+    @property --from {
+        syntax: "<color>";
+        inherits: true;
+        initial-value: red;
+    }
+
+    @property --to {
+        syntax: "<color>";
+        inherits: true;
+        initial-value: green;
+    }
+}
+
+:host {
+    button {
+        width: fit-content;
+        height: fit-content;
+        border: 0px;
+        background-color: var(--bg);
+    }
+}
+
+:host {
+    .ocs-mc {
+        background-color: var(--bg);
+
+    }
+}
+
+:host {
+    .nyg-header {
+        color: map.get(theme.$nyg-black-palletes, potrait3-black);
+        font-weight: bold;
+        pointer-events: none;
+        font-size: 3rem;
+        pointer-events: none;
+        background:
+            linear-gradient(to left, var(--from),
+                var(--to));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,103 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+:host {
+    .ocs-input:focus {
+        transition-property: padding-top;
+        transition-duration: 150ms;
+        transition-timing-function: cubic-bezier(1, .4, .07, .7);
+        padding-top: 35px;
+        border-width: 0px;
+        border-style: none;
+        border: 0px;
+        outline-style: none;
+        border-bottom-right-radius: 3.5rem;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+    }
+}
+
+:host {
+    .outer-bo:focus-within {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        padding: 10px;
+        flex-direction: column;
+        overflow: hidden;
+        border-bottom-right-radius: 3.5rem;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        animation: wakeup;
+        animation-delay: 0.48s;
+        // animation-duration: 0.99s;
+        // animation-iteration-count: 1;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+
+        animation-timing-function: cubic-bezier(1, .4, .07, .7);
+        transition-property: background;
+        transition-duration: 0.97s;
+        background: linear-gradient(to right, map.get(theme.$nyg-red-palletes, ad11-red)100%,
+                map.get(theme.$nyg-blue-palletes, ad11-blue)100%);
+
+    }
+}
+
+@keyframes wakeup {
+    0% {
+        background: linear-gradient(to right, map.get(theme.$nyg-red-palletes, ad11-red)0%,
+                map.get(theme.$nyg-blue-palletes, ad11-blue)100%);
+
+    }
+
+    30% {
+
+        background: linear-gradient(to right, map.get(theme.$nyg-red-palletes, ad11-red)30%,
+                map.get(theme.$nyg-blue-palletes, ad11-blue)100%);
+
+    }
+
+    40% {
+        background: linear-gradient(to right, map.get(theme.$nyg-red-palletes, ad11-red)40%,
+                map.get(theme.$nyg-blue-palletes, ad11-blue)100%);
+
+    }
+
+    50% {
+        background: linear-gradient(to right, map.get(theme.$nyg-red-palletes, ad11-red)50%,
+                map.get(theme.$nyg-blue-palletes, ad11-blue)100%);
+
+    }
+
+    60% {
+        background: linear-gradient(to right, map.get(theme.$nyg-red-palletes, ad11-red)60%,
+                map.get(theme.$nyg-blue-palletes, ad11-blue)100%);
+
+    }
+
+    70% {
+        background: linear-gradient(to right, map.get(theme.$nyg-red-palletes, ad11-red)70%,
+                map.get(theme.$nyg-blue-palletes, ad11-blue)100%);
+
+    }
+
+    80% {
+        background: linear-gradient(to right, map.get(theme.$nyg-red-palletes, ad11-red)80%,
+                map.get(theme.$nyg-blue-palletes, ad11-blue)100%);
+
+    }
+
+    90% {
+        background: linear-gradient(to right, map.get(theme.$nyg-red-palletes, ad11-red)90%,
+                map.get(theme.$nyg-blue-palletes, ad11-blue)100%);
+
+    }
+
+    100% {
+        background: linear-gradient(to right, map.get(theme.$nyg-red-palletes, ad11-red)100%,
+                map.get(theme.$nyg-blue-palletes, ad11-blue)100%);
+
+    }
+}

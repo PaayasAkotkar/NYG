@@ -1,0 +1,22 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+
+:host {
+    .x {
+        fill: #32afc7;
+    }
+}
+
+:host {
+    .y {
+        fill: #0e1437;
+    }
+}
+
+:host {
+    .o {
+        fill: #1a5d68;
+    }
+}

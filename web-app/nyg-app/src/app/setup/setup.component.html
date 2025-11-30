@@ -1,0 +1,103 @@
+<!-- 
+ change name
+ change profile pic
+ sign out-sign in
+ change theme
+ sound options
+ follow us
+ contact us
+ -->
+<div class="container">
+    <div class="nyg-cre">
+        <app-home-page-label [NYGdoIt]="coinDoIt" [NYGTitle]="NYGProfile.Coin"></app-home-page-label>
+        <app-home-page-label [NYGdoIt]="spurDoIt" [NYGTitle]="NYGProfile.Spur"></app-home-page-label>
+    </div>
+
+    <div class="nyg-sp">
+        <span class="ocs-sn"></span>
+        <div class="ocs-cont">
+            @switch (PageNavigation_) {
+            @case("profile"){
+            <app-profile [OCSImageURL]="NYGProfile.ProfilePic" [OCSname]="NYGProfile.Name"></app-profile>
+            <!-- <ocs-btnV2 NYGheader="2v2"></ocs-btnV2> -->
+            <div class="ocs-opx-x">
+                <app-view-pattern-4 [NYGclashProfile]="OCSPlayerClashProfile" [NYGonevoneProfile]="OCSPlayer1v1Profile"
+                    [NYGtwovtwoProfile]="OCSPlayer2v2Profile"></app-view-pattern-4>
+            </div>
+
+            }
+            @case ("features") {
+            <div class="ocs-item">
+                <div class="setB">
+                    <app-view-pattern3 OCStitle="THEME" (OCSEVENT)="setTheme()"></app-view-pattern3>
+                    <app-view-pattern3 OCStitle="MANUAL" (OCSEVENT)="viewManual()"></app-view-pattern3>
+                </div>
+
+                <!-- <div class="setB">
+                <app-ocs-header [OCSsubTitles]="sm" OCStitle="STAY UPDATED" [isLink]="true" OCShref="www.google.com">
+                </app-ocs-header>
+            </div> -->
+            </div>
+
+            }
+            @case("settings"){
+            <form [formGroup]="changeProfileSettings" class="nyg-form">
+                <div class="setC">
+                    <div class="setAB">
+                        <div class="setAXA">
+                            <app-ocs-save-img [NYGsrc]="NYGProfile.ProfilePic" (ListenFile)="ImageFile_($event)"
+                                (Listen)="imgName"></app-ocs-save-img>
+                        </div>
+                        <div class="setJK">
+                            <div class="setA">
+                                <app-ocs-det OCStitle="NAME" [OCSsubTitle]="NYGProfile.Name()"></app-ocs-det>
+                                <ocs-button NYGheader="C" (NYGEVENT)="setName()"></ocs-button>
+                            </div>
+                            <!-- <div class="setA">
+                            <app-settings-pattern NYGheader="SOUND"
+                                NYGformControl="ChangeSoundToken"></app-settings-pattern>
+                        </div> -->
+                            <div class="setA">
+                                <app-ocs-det OCStitle="NICKNAME" [OCSsubTitle]="NYGProfile.Nickname()"></app-ocs-det>
+                                <ocs-button NYGheader="C" (NYGEVENT)="setNickName()"></ocs-button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setAB">
+
+                        <div class="setA">
+                            <ocs-btnV2 NYGheader="SAVE" (NYGEVENT)="Save()"></ocs-btnV2>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </form>
+            }
+            @case ("store") {
+            <app-store (OCScoinPurchase)="coinPurcahse($event)" (OCSspurPurchase)="spurPurchase($event)"
+                [OCScoins]="OCScoin" [OCSspurs]="OCSspur"></app-store>
+            }
+
+            @case("upgrade"){
+            <app-upgrade-menu [NYGcurrentCredits]="NYGcredits" [OCSlist]="OCSupgradeList"></app-upgrade-menu>
+            }
+
+            @default {
+            <app-profile [OCSImageURL]="NYGProfile.ProfilePic" [OCSname]="NYGProfile.Name"></app-profile>
+            }
+            }
+        </div>
+        <span class="ocs-sn2"></span>
+    </div>
+</div>
+
+<div class="setD">
+    <ocs-btnV2 NYGheader="PROFILE" NYGpar="profile" (NYGEVENT)="PageNavigate($event)"></ocs-btnV2>
+    <ocs-btnV2 NYGheader="FEATURES" NYGpar="features" (NYGEVENT)="PageNavigate($event)"></ocs-btnV2>
+    <ocs-btnV2 NYGheader="SETTINGS" NYGpar="settings" (NYGEVENT)=" PageNavigate($event)"></ocs-btnV2>
+    <ocs-btnV2 NYGheader="STORE" NYGpar="store" (NYGEVENT)="PageNavigate($event)"></ocs-btnV2>
+    <ocs-btnV2 NYGheader="UPGRADE" NYGpar="upgrade" (NYGEVENT)="PageNavigate($event)"></ocs-btnV2>
+</div>

@@ -27,7 +27,7 @@ func (r *NYGResolver) Subscription() graph.SubscriptionResolver { return &Servic
 func (r *NYGResolver) Query() graph.QueryResolver               { return &QServices{r} }
 
 func Messenger() {
-
+	log.Println("NYG PROFILE SERVER RUNNING ⚙️")
 	port := "6060"
 	// imp for query
 	c := cors.New(cors.Options{
@@ -63,7 +63,6 @@ func Messenger() {
 	http.Handle("/settings-changes", srv)
 	http.Handle("/login", c.Handler(srv))
 
-	log.Printf("connect to http://localhost:%s/ for GraphQL playground", port)
 	go func() {
 		if err := http.ListenAndServe(":"+port, nil); err != nil {
 			panic(err)

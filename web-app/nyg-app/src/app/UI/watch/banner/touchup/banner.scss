@@ -1,0 +1,38 @@
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use '../../../../helpers/helpers.scss' as mat;
+@use 'sass:map';
+
+:host {
+    .nyg-items {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        transform: skew(-5deg);
+        padding: 10px;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.nyg-c {
+    width: fit-content;
+    height: fit-content;
+}
+
+:host {
+    .nyg-header {
+        font-size: 7rem;
+        pointer-events: none;
+        font-family: arial;
+    }
+}
+
+
+:host {
+    .nyg-vs {
+        pointer-events: none;
+        font-size: 4rem;
+    }
+}

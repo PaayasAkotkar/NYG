@@ -1,0 +1,139 @@
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use '../../../../helpers/helpers.scss' as mat;
+@use 'sass:map';
+
+._click:active {
+    transform: scale(0.9);
+}
+
+:host {
+    ._animate {
+        &:has(.nyg-label:hover) {
+            width: fit-content;
+            height: fit-content;
+            padding: 10px;
+
+            --gradient-border: conic-gradient(from var(--border-angle), #1AD6C2FF,
+                    #C2BD00FF 99%, #1AD6C2FF 99%, #F29136FF);
+            --border-angle: 0turn; // initial-state
+
+            border: solid 5px transparent;
+            background: var(--gradient-border) border-box;
+
+            background-position: center center;
+            animation: rotateQ;
+            animation-duration: 2.45s;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+
+        }
+    }
+}
+
+@keyframes rotateQ {
+    @for $i from 5 through 10 {
+        to {
+            --border-angle: #{$i*2}turn;
+
+        }
+    }
+}
+
+@property --border-angle {
+    inherits: true;
+    syntax: "<angle>";
+    initial-value: 0turn;
+}
+
+:host {
+    .run {
+        animation-name: run;
+        animation-duration: 1.49845s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.46, .31, .48, .14);
+        animation-fill-mode: forwards;
+        border-radius: 2rem;
+        opacity: 0.5;
+        background: white;
+    }
+}
+
+:host {
+    .animate-slot {
+        @for $i from 1 to 10 {
+            &:nth-child(#{$i}) {
+                animation-name: run2;
+                animation-duration: 1s;
+                animation-delay: #{$i *0.1}s;
+                animation-iteration-count: infinite;
+                animation-timing-function: cubic-bezier(.46, .31, .48, .14);
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+}
+
+:host {
+    --from: #C2BD00;
+    --to: #1AD6C2;
+    --fromPer: 100%;
+    --toPer: 100%;
+    --border: #E5E3E1;
+}
+
+@keyframes run2 {
+    0% {
+        background: linear-gradient(to right, var(--from) var(--fromPer),
+                var(--to) var(--toPer));
+
+        border-color: var(--border);
+    }
+
+    60% {
+        background: linear-gradient(to right, var(--from) 60%,
+                var(--to) 100%);
+
+    }
+
+    70% {
+        background: linear-gradient(to right, var(--from) 70%,
+                var(--to) 100%);
+
+    }
+
+    80% {
+        background: linear-gradient(to right, var(--from) 80%,
+                var(--to) 100%);
+
+    }
+
+    90% {
+        background: linear-gradient(to right, var(--from) 90%,
+                var(--to) 100%);
+
+    }
+
+    100% {
+        background: linear-gradient(to right, var(--from) 100%,
+                var(--to) 100%);
+
+    }
+}
+
+@keyframes run {
+    0% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(245%);
+    }
+
+    75% {
+        transform: translateY(-75%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}

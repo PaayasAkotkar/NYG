@@ -1,0 +1,68 @@
+<div>
+    <div class="ocs-y">
+        @switch (Page) {
+        @case("SPURS"){
+        <div class="ocs-x">
+            <div class="ocs-ax">
+                @for (item of OCSspurs; track $index) {
+                @if ($index%2==0) {
+                <app-ocs-cost-sheet [OCScostSheet]="item.Price" (OCSListen)="SpurPurchase(item.Price)"
+                    [OCSheader]="item.Title" OCSbuttonHeader="BUY"></app-ocs-cost-sheet>
+                }}
+            </div>
+            <div class="ocs-ax">
+                @for (item of OCSspurs; track $index) {
+                @if ($index%2!=0) {
+                <app-ocs-cost-sheet [OCScostSheet]="item.Price" (OCSListen)="SpurPurchase(item.Price)"
+                    [OCSheader]="item.Title" OCSbuttonHeader="BUY"></app-ocs-cost-sheet>
+                }}
+            </div>
+
+        </div>
+        }
+        @case("COINS"){
+        <div class="ocs-x">
+            <div class="ocs-ax">
+                @for (item of OCScoins; track $index) {
+                @if ($index%2==0) {
+                <app-ocs-cost-sheet [OCScostSheet]="item.Price" (OCSListen)="CoinPurchase(item.Price)"
+                    [OCSheader]="item.Title" OCSbuttonHeader="BUY"></app-ocs-cost-sheet>
+                }}
+            </div>
+            <div class="ocs-ax">
+                @for (item of OCScoins; track $index) {
+                @if ($index%2!=0) {
+                <app-ocs-cost-sheet [OCScostSheet]="item.Price" (OCSListen)="CoinPurchase(item.Price)"
+                    [OCSheader]="item.Title" OCSbuttonHeader="BUY"></app-ocs-cost-sheet>
+                }}
+            </div>
+
+        </div>
+
+        }
+        @case("THEMES"){
+        <div class="ocs-x">
+            <div>
+                <span class="nyg-header">COMING SOON</span>
+            </div>
+
+        </div>
+        }
+        @case("OFFERS"){
+        <div class="ocs-x">
+            <div>
+                <span class="nyg-header">COMING SOON</span>
+            </div>
+
+        </div>
+        }
+        }
+    </div>
+</div>
+
+<div class="setD">
+    <ocs-btnV2 NYGheader="COINS" (NYGEVENT)="toCoins()"></ocs-btnV2>
+    <ocs-btnV2 NYGheader="SPURS" (NYGEVENT)="toSpurs()"></ocs-btnV2>
+    <ocs-btnV2 NYGheader="THEMES" (NYGEVENT)="toThemes()"></ocs-btnV2>
+    <ocs-btnV2 NYGheader="OFFERS" (NYGEVENT)="toOffers()"></ocs-btnV2>
+</div>

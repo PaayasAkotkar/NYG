@@ -1,0 +1,55 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+button {
+    &:hover {
+
+        #inner,
+        #outer,
+        #name {
+            animation: shake;
+            animation-duration: .45s;
+            animation-iteration-count: 1;
+            animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+        }
+
+        #signal {
+            animation: signalout;
+            animation-duration: 3.45s;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+        }
+    }
+}
+
+ocs-indox {
+    position: relative;
+    z-index: 1111111111;
+
+}
+
+@keyframes signalout {
+    0% {}
+
+    100% {
+        transform: translateY(-300%)translateX(-200%);
+        opacity: 0;
+    }
+}
+
+
+@keyframes shake {
+
+    0% {}
+
+    50% {
+        transform: rotate(20deg);
+
+    }
+
+    100% {
+        transform: rotate(-20deg);
+
+    }
+}

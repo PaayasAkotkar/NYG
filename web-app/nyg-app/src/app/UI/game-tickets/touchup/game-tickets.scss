@@ -1,0 +1,125 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+
+.nyg-sheet-container {
+    padding: 10px;
+}
+
+.containerX {
+    width: 100%;
+    height: 100%;
+}
+
+.nyg-cheat-sheet {
+    background-color: map.get(theme.$nyg-white-palletes, ad1-white);
+
+}
+
+.s-header {
+    letter-spacing: -3px;
+    pointer-events: none;
+    background:
+        linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad12-red),
+            map.get(theme.$nyg-blue-palletes, ad12-blue));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bolder;
+}
+
+.n-header {
+    letter-spacing: -3px;
+    pointer-events: none;
+    background:
+        linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad12-red),
+            map.get(theme.$nyg-blue-palletes, ad12-blue));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bolder;
+}
+
+
+.st-header {
+    letter-spacing: -3px;
+    pointer-events: none;
+    background:
+        linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad12-red),
+            map.get(theme.$nyg-blue-palletes, ad12-blue));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bolder;
+}
+
+:host {
+    .nyg-header {
+        font-family: arial;
+    }
+}
+
+:host {
+    .s-header {
+        border-width: 10px;
+        border-style: double;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        background-color: orange;
+    }
+}
+
+:host {
+    .ocs-deta {
+
+        border-style: solid;
+        border-left: 0px;
+        //border-right: 0px;
+
+        width: fit-content;
+        border-width: 4px;
+
+
+        & {
+            border-color: map.get(theme.$nyg-black-palletes, umber-black);
+        }
+
+    }
+}
+
+
+:host {
+    .ocs-deta2 {
+
+        border-style: solid;
+        // border-left: 0px;
+        border-right: 0px;
+
+        width: fit-content;
+        border-width: 4px;
+
+
+        & {
+            border-color: map.get(theme.$nyg-black-palletes, umber-black);
+        }
+
+    }
+}
+
+
+:host {
+    .ocs-deta3 {
+
+        border-style: solid;
+        // border-left: 0px;
+        border-right: 0px;
+
+        width: fit-content;
+        border-width: 4px;
+
+
+        & {
+            border-color: map.get(theme.$nyg-black-palletes, umber-black);
+        }
+
+    }
+}

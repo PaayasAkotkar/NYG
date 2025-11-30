@@ -1,0 +1,20 @@
+@mixin setup($w, $h, $d: block) {
+
+    & {
+        width: $w;
+        height: $h;
+        display: $d;
+    }
+}
+
+
+@mixin setupFlex($dir, $jc, $ai, $w: nowrap) {
+
+    & {
+        display: flex;
+        flex-direction: $dir;
+        justify-content: $jc;
+        align-items: $ai;
+        flex-wrap: $w;
+    }
+}

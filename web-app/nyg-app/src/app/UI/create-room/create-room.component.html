@@ -1,0 +1,149 @@
+<div class="container">
+    <div class="pa">
+        <div class="nyg-sp">
+            <span class="ocs-sn"></span>
+            <form class="nyg-form" [formGroup]="createRoomForm">
+                @switch (ENavigation) {
+                @case('SET'){
+                <div class="ocs-d">
+                    <div class="ocs-f1">
+                        <app-ocs-input [NYGtoolTip]="nameToolTip" [NYGsetToolTip]="true"
+                            [NYGerrorMessage]="NYGnameError" [NYGisError]="isNYGnameError" NYGformControl="CreateToken"
+                            NYGheader="NAME"></app-ocs-input>
+                    </div>
+
+                    <!-- <div class="ocs-f1">
+                        <app-ocs-input [NYGtoolTip]="nicknameToolTip" [NYGsetToolTip]="true"
+                            [NYGisError]="isNYGnicknameError" [NYGerrorMessage]="NYGnicknamenameError"
+                            NYGformControl="CreateNickNameToken" NYGheader="NICKNAME"></app-ocs-input>
+                    </div> -->
+
+                    <div class="ocs-f1">
+                        <app-ocs-select [NYGtoolTip]="categoryToolTip" [NYGsetToolTip]="true"
+                            [NYGerrorMessage]="NYGcategoryError" [NYGisError]="isNYGcategoryError"
+                            NYGformControlName="CategoryToken" NYGheader="CATEGORY" NYGlabel="SET"
+                            [NYGoptions]="OCScategory"></app-ocs-select>
+                    </div>
+                    <!-- <div class="ocs-f1">
+                        <app-ocs-select NYGformControlName="FieldToken" NYGheader="FIELD" NYGlabel="SET"
+                            [NYGoptions]="OCSfields"></app-ocs-select>
+                    </div> -->
+                    <div class="ocs-f1">
+                        <app-ocs-select [NYGtoolTip]="roomLimitToolTip" [NYGsetToolTip]="true"
+                            [NYGerrorMessage]="NYGtypeError" [NYGisError]="isNYGtypeError"
+                            NYGformControlName="RoomLimitToken" (OCSselectValue)="GetMatchType($event)" NYGheader="TYPE"
+                            NYGlabel="SET" [NYGoptions]="OCSmode"></app-ocs-select>
+                    </div>
+                </div>
+                }
+                @case ('CONTROLS') {
+                <div class="ocs-xx">
+                    <div class="ocs-fs">
+                        @for (item of tokens; track $index) {
+                        @if (MatchType=='2') {
+                        @if (item.OCSformControl!='FriendZoneToken') {
+                        <app-settings-pattern (NYGclick)="click($event)" [NYGsetToolTip]="true"
+                            [NYGtoolTip]="item.OCSToolTip" [NYGformControl]="item.OCSformControl"
+                            [NYGheader]="item.OCStemplate">
+                        </app-settings-pattern>
+                        }
+                        }@else {
+                        <app-settings-pattern (NYGclick)="click($event)" [NYGsetToolTip]="true"
+                            [NYGtoolTip]="item.OCSToolTip" [NYGformControl]="item.OCSformControl"
+                            [NYGheader]="item.OCStemplate">
+                        </app-settings-pattern>
+                        }
+                        }
+                    </div>
+                    <div class="ocs-fs2s">
+                        <app-ocs-header [NYGsetToolTip]="true" [NYGtoolTip]="NYGgameTimeToolTip"
+                            OCStitle="GAME TIME"></app-ocs-header>
+                        <app-ocs-counter (OCSAdd)="GAdd()" (OCSSub)="GSub()" [OCSheader]="GameTime"></app-ocs-counter>
+                        <app-ocs-header [NYGsetToolTip]="true" [NYGtoolTip]="NYGdecisionTimeToolTip"
+                            OCStitle="DISCUSSION TIME"></app-ocs-header>
+                        <app-ocs-counter (OCSAdd)="DAdd()" (OCSSub)="DSub()"
+                            [OCSheader]="DiscussionTime"></app-ocs-counter>
+                    </div>
+                </div>
+                }
+                @case ('POWERS') {
+                <div class="ocsx">
+                    <div class="fs2">
+                        <app-ocs-header [NYGsetToolTip]="true" [NYGtoolTip]="powerToolTip"
+                            [NYGerrorMessage]="NYGpowerError" [NYGisError]="isNYGpowerError"
+                            OCStitle="ANY 4 POWERS"></app-ocs-header>
+                    </div>
+                    <div class="ocs-xx2">
+                        <div class="nyg-p1x">
+                            @for (item of powers; track $index) {
+                            @if ($index%2==0) {
+                            <app-power-setttings-pattern (NYGEVENT)="PowerToken($event)"
+                                [NYGformControl]="item.OCSformControl"
+                                [NYGheader]="item.OCStemplate"></app-power-setttings-pattern>
+                            }}
+                        </div>
+                        <div class="nyg-p1x">
+                            @for (item of powers; track $index) {
+                            @if ($index%2!=0) {
+                            <app-power-setttings-pattern (NYGEVENT)="PowerToken($event)"
+                                [NYGformControl]="item.OCSformControl"
+                                [NYGheader]="item.OCStemplate"></app-power-setttings-pattern>
+                            }}
+                        </div>
+                    </div>
+                </div>
+                }
+                @case('BOOK'){
+                <div class="ocsx">
+
+                    <div class="fs23">
+                        <app-ocs-header [NYGsetToolTip]="true" [NYGtoolTip]="bookToolTip"
+                            [NYGerrorMessage]="NYGbookerror" [NYGisError]="isNYGbookError"
+                            OCStitle="ANY 1 BOOK"></app-ocs-header>
+                    </div>
+
+                    @if (Entertainment) {
+                    <div class="ocs-xx2">
+                        <app-field NYGMode="CREATE" (NYGEVENT)="CollectionToken($event)"
+                            [NYGcollection]="NYGentertainmentCollection" NYGheader="ENTERTAINMENT"></app-field>
+                    </div>
+                    }@else {
+                    <div class="ocs-xx2">
+                        <app-field NYGMode="CREATE" (NYGEVENT)=" CollectionToken($event)"
+                            [NYGcollection]="NYGsportsCollection" NYGheader="SPORTS"></app-field>
+                    </div>
+                    }
+
+                </div>
+                }
+                }
+                <div class="ocs-boundary">
+                    <span class="ba"></span>
+                </div>
+            </form>
+            <span class="ocs-sn2"></span>
+        </div>
+    </div>
+</div>
+<div class="container2">
+    <div class="ocs-step">
+        <ocs-btnV2 NYGheader="SET" (NYGEVENT)="toSet()"></ocs-btnV2>
+        <ocs-btnV2 NYGheader="CONTROLS" (NYGEVENT)="toControls()"></ocs-btnV2>
+        <ocs-btnV2 NYGheader="POWERS" (NYGEVENT)="toPowers()"></ocs-btnV2>
+        <ocs-btnV2 NYGheader="BOOK" (NYGEVENT)="toBook()"></ocs-btnV2>
+        <div class="btn-cont">
+            <div class="ocs-outer">
+                <button type="submit" class="ocs-btn" (click)="RoomCreate($event)">
+                    <span class="ocs-header">MAKE</span>
+                </button>
+            </div>
+            <!-- <app-ocs-btns  OCSType="submit" OCSheader="MAKE" (NYGEVENT)="RoomCreate($event)"></app-ocs-btns> -->
+            <!-- <button class="nyg-make-btn">
+                <span class="nyg-header" (click)="RoomCreate($event)">MAKE</span>
+            </button> -->
+        </div>
+        <!-- <button class="ocs-btn" (click)="toSet()"><span class="nyg-header">ROOM</span></button>
+        <div class="do"></div>
+        <button class="ocs-btn" (click)="toBook()"><span class="nyg-header">BOOK</span></button> -->
+    </div>
+</div>

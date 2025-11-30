@@ -1,0 +1,115 @@
+@use '../../../helpers/color-palletes.scss' as theme;
+@use '../../../helpers/helpers.scss' as mat;
+@use 'sass:map';
+
+:host {
+    .nyg-form-field {
+        @include mat.setup(fit-content, 100%);
+        @include mat.setupFlex(row, center, center);
+
+        & {
+            padding: 0px;
+            margin: 0px;
+            border: 0px;
+            margin-inline: 0px;
+        }
+    }
+}
+
+:host {
+    .nyg-header {
+        font-size: 5rem;
+        font-family: arial;
+    }
+}
+
+:host {
+    .in-cont {
+        @include mat.setup(fit-content, fit-content);
+        @include mat.setupFlex(column, center, center);
+        overflow: hidden;
+    }
+}
+
+:host {
+    .fit {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+    }
+}
+
+:host {
+    .nyg-label {
+        border-width: 10px;
+        width: 100%;
+        height: fit-content;
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        border-style: double;
+    }
+}
+
+:host {
+    .nyg-li {
+        width: fit-content;
+        height: 60px;
+        border-top-left-radius: 1.5rem;
+        border-top-right-radius: 1.5rem;
+        border: 0px;
+        padding: 10px;
+
+        .nyg-header {
+            letter-spacing: -3px;
+            font-size: 3rem;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+}
+
+:host {
+    input {
+        appearance: none;
+        width: 100%;
+        height: 100%;
+        border-radius: 3rem;
+        border: 0px;
+        padding: 0px;
+        margin: 0px;
+    }
+}
+
+:host {
+    .border {
+        padding: 3px;
+        border-radius: 3rem;
+    }
+}
+
+:host {
+    .outer-bordr {
+        padding-top: 6px;
+        border-top-left-radius: 1.5rem;
+        border-top-right-radius: 1.5rem;
+    }
+}
+
+:host {
+    .nyg-inputCont {
+        width: 150px;
+        height: 30px;
+        border-radius: 3rem;
+    }
+}

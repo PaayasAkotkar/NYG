@@ -1,0 +1,59 @@
+$start: 14.945s;
+// $timingFunc: cubic-bezier(.93, -0.25, .99, 1.63);
+$timingFunc: cubic-bezier(.2, -0.39, 0.21, 5.03);
+// $timingFunc: cubic-bezier(.7, -1.16, .99, 1.63);
+$TopStart: 25%;
+$BottomStart: -20%;
+
+:host {
+    .ocs-load {
+        animation-name: fromLeft;
+        animation-duration: $start;
+        animation-iteration-count: infinite;
+        animation-timing-function: $timingFunc;
+    }
+}
+
+:host {
+    .ocs-load2 {
+        animation-name: fromRight;
+        animation-duration: $start;
+        animation-iteration-count: infinite;
+        animation-timing-function: $timingFunc;
+
+    }
+}
+
+@keyframes fromLeft {
+
+    0% {
+        transform: translateY($BottomStart);
+    }
+
+
+    99% {
+        transform: translateY($BottomStart - 1700);
+
+    }
+
+    100% {
+        transform: translateY($BottomStart);
+
+    }
+}
+
+@keyframes fromRight {
+    0% {
+        transform: translateY($TopStart);
+    }
+
+
+    99% {
+        transform: translateY($TopStart + 1700);
+
+    }
+
+    100% {
+        transform: translateY($TopStart);
+    }
+}

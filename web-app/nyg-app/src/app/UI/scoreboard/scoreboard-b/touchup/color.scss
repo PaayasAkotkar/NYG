@@ -1,0 +1,97 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    .nyg-played {
+        border-style: none;
+        outline-style: none;
+        background-color: map.get(theme.$nyg-green-palletes, ad5-green);
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+    }
+}
+
+:host {
+    .nyg-item {
+        background-color: map.get(theme.$nyg-black-palletes, potrait3-black);
+    }
+}
+
+:host {
+    .nyg-header {
+        color: map.get(theme.$nyg-white-palletes, ad1-white);
+        pointer-events: none;
+        font-size: 7rem;
+
+    }
+}
+
+:host {
+    .bord {
+        background-color: map.get(theme.$nyg-white-palletes, ad1-white);
+
+    }
+}
+
+:host {
+    .outer-dis {
+        background-color: map.get(theme.$nyg-black-palletes, ad2-black);
+
+    }
+}
+
+:host {
+    .red-head {
+        font-weight: bolder;
+        color: map.get(theme.$nyg-red-palletes, ad1-red);
+    }
+
+    .blue-head {
+        font-weight: bolder;
+
+        transform: scaleX(-1);
+
+        color: map.get(theme.$nyg-blue-palletes, potrait7-blue);
+    }
+}
+
+:host {
+    .blue-head {
+        text-shadow:
+            5px 0px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            5px 0px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            5px 0px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            10px 0px 0 map.get(theme.$nyg-white-palletes, ad1-white);
+    }
+
+    pointer-events: none;
+}
+
+:host {
+    .red-head {
+        text-shadow:
+            5px 0px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            5px 0px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            5px 0px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            10px 0px 0 map.get(theme.$nyg-white-palletes, ad1-white);
+    }
+
+}
+
+
+:host {
+
+    .nyg-n {
+        padding: 10px;
+        font-family: Arial;
+        font-weight: 900;
+        text-shadow:
+            -8px 2px 0 map.get(theme.$nyg-black-palletes, potrait3-black),
+            0px 0px 0 map.get(theme.$nyg-black-palletes, potrait3-black);
+
+        letter-spacing: 5px;
+        color: map.get(theme.$nyg-white-palletes, white)
+    }
+}

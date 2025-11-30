@@ -10,7 +10,7 @@ import (
 )
 
 func Server() {
-	log.Println("POST BEGINs")
+	log.Println("NYG POST SERVER RUNNING ⚙️")
 	_p := fmt.Sprintf(":%d", *port)
 	_net := "tcp"
 	lsn, err := net.Listen(_net, _p)

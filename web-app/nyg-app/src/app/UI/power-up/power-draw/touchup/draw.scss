@@ -1,0 +1,545 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+:host {
+    .ocs-be-item {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, map.get(theme.$nyg-white-palletes, ad1-white)15%,
+                map.get(theme.$nyg-white-palletes, ad2-white)100%);
+    }
+}
+
+:host {
+    .x {
+        width: fit-content;
+        height: fit-content;
+    }
+}
+
+:host {
+    .ocs-headerx {
+        color: map.get(theme.$nyg-white-palletes, ad1-white);
+        font-size: 4rem;
+        font-family: arial;
+        font-weight: bolder;
+
+    }
+}
+
+:host {
+    .ocs-banner {
+        width: 35%;
+    }
+}
+
+:host {
+    .ocs-bet-form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+:host {
+    .bx {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+:host {
+    .nyg-form-container {
+        width: 100%;
+        @include mat.setupFlex(row, center, center);
+
+    }
+}
+
+:host {
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+:host {
+    input {
+        appearance: none;
+        width: 280px;
+        height: 480px;
+    }
+}
+
+:host {
+    .in-con {
+        position: absolute;
+        width: fit-content;
+        height: fit-content;
+
+    }
+}
+
+:host {
+    .ocs-header1 {
+        font-family: arial;
+        font-size: 5rem;
+        pointer-events: none;
+        background:
+            linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad4-red),
+                map.get(theme.$nyg-blue-palletes, ad4-blue));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        font-weight: bolder;
+    }
+}
+
+:host {
+    .ocsx0 {
+        background:
+            linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad4-red),
+                map.get(theme.$nyg-blue-palletes, ad4-blue));
+        ;
+    }
+
+    .ocsx1 {
+        background:
+            linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad4-red),
+                map.get(theme.$nyg-blue-palletes, ad4-blue));
+        ;
+    }
+
+    .ocsx2 {
+        background:
+            linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad4-red),
+                map.get(theme.$nyg-blue-palletes, ad4-blue));
+        ;
+    }
+}
+
+:host {
+    .ocs-card {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        border-radius: 1rem;
+        padding: 10px;
+    }
+}
+
+:host {
+    .ocs-cont {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+:host {
+    .ocs-card-header {
+        font-size: 4rem;
+        font-family: arial;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        word-break: break-all;
+        width: fit-content;
+        height: fit-content;
+        font-weight: bolder;
+        pointer-events: none;
+        background:
+            linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad4-red),
+                map.get(theme.$nyg-blue-palletes, ad4-blue));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 10px;
+
+    }
+}
+
+:host {
+    .ocs-card-title {
+        width: 290px;
+        height: 400px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1rem;
+        background-color: white;
+    }
+}
+
+:host {
+    .nyg-form-fieldXX {
+        @include mat.setup(350px, 100%);
+        @include mat.setupFlex(row, center, center);
+        padding: 0px;
+        margin: 0px;
+        margin-inline: 0px;
+        border: 0px;
+    }
+}
+
+
+:host {
+    .nyg-header {
+        font-size: 3rem;
+        font-family: arial;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+:host {
+    .nyg-labelXX {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+:host {
+    .nyg-form {
+        width: fit-content;
+        height: fit-content;
+        overflow: scroll;
+        overscroll-behavior: none;
+        scrollbar-width: 0px;
+        display: flex;
+        flex-direction: row;
+
+    }
+}
+
+:host {
+    ::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+    }
+}
+
+:host {
+    .item-fitz {
+        transform: skew(-5deg);
+        padding: 10px;
+        margin: 10px;
+    }
+}
+
+:host {
+    .nyg-form-field {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        padding: 0px;
+        margin: 0px;
+        margin-inline: 0px;
+        border: 0px;
+        align-items: center;
+    }
+}
+
+:host {
+    .nyg-form-field2 {
+        width: fit-content;
+        height: fit-content;
+        padding: 0px;
+        margin: 0px;
+        margin-inline: 0px;
+        border: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+:host {
+    .nyg-leg {
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        margin: 0px;
+        margin-inline: 0px;
+        border: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        overflow: hidden;
+    }
+}
+
+:host {
+    .noB {
+        width: fit-content;
+        height: fit-content;
+        ;
+    }
+}
+
+:host {
+    .blur {
+        background-color: rgba(map.get(theme.$nyg-white-palletes, ad4-white), 0.5);
+        border-radius: 20rem;
+        width: 50%;
+        height: 60px;
+        display: block;
+        position: absolute;
+        z-index: -111;
+        filter: blur(1px);
+
+    }
+}
+
+:host {
+    .nyg-header1 {
+        font-size: 4rem;
+        font-family: arial;
+        color: map.get(theme.$nyg-black-palletes, ad1-black);
+        z-index: 111;
+        filter: blur(0px);
+        font-weight: bolder;
+    }
+}
+
+
+:host {
+    .bx {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+:host {
+    .nyg-form-field {
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        margin: 0px;
+        margin-inline: 0px;
+        border: 0px;
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+}
+
+:host {
+    .nyg-form-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+}
+
+:host {
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+:host {
+    .nyg-input {
+        appearance: none;
+        // width: 100%;
+        // height: 100%;
+    }
+}
+
+// :host {
+//     .in-bor {
+//         width: 100%;
+//         height: 100%;
+
+//     }
+// }
+
+:host {
+    .in-con {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        // background-color: orange;
+        z-index: -11;
+
+    }
+}
+
+// :host {
+//     input[type="checkbox"]:checked {
+//         border-style: solid;
+//         border-width: 10px;
+//     }
+// }
+
+// :host {
+//     .nyg-input:checked {
+//         background-color: map.get(theme.$nyg-red-palletes, indian-red);
+//     }
+// }
+
+:host {
+    .nyg-form-fieldXX {
+        @include mat.setup(100%, 100%);
+        @include mat.setupFlex(row, center, center);
+        padding: 0px;
+        margin: 0px;
+        margin-inline: 0px;
+        border: 0px;
+    }
+}
+
+:host {
+    .nyg-header {
+        font-size: 4.4rem;
+        font-family: arial;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        pointer-events: none;
+    }
+}
+
+:host {
+    .nyg-labelXX {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+:host {
+    .nyg-form {
+        width: fit-content;
+        height: fit-content;
+        overflow: scroll;
+        overscroll-behavior: auto;
+        scrollbar-width: 0px;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+:host {
+    ::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+    }
+}
+
+:host {
+    .item-fitz {
+        transform: skew(-5deg);
+        padding: 10px;
+        margin: 10px;
+    }
+}
+
+
+:host {
+    .nyg-form-field2 {
+        width: 100%;
+        height: fit-content;
+        padding: 0px;
+        margin: 0px;
+        margin-inline: 0px;
+        border: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+:host {
+    .nyg-leg {
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        margin: 0px;
+        margin-inline: 0px;
+        border: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        overflow: hidden;
+    }
+}
+
+:host {
+    .noB {
+        width: fit-content;
+        height: fit-content;
+    }
+}
+
+:host {
+    .blur {
+        // background-color: rgba(map.get(theme.$nyg-white-palletes, ad4-white), 0.5);
+        border-radius: 20rem;
+        width: 40%;
+        height: 60px;
+        display: block;
+        position: absolute;
+        z-index: -1111;
+        filter: blur(1px);
+
+    }
+}
+
+:host {
+    .nyg-header1 {
+        font-size: 4rem;
+        font-family: arial;
+        z-index: 111;
+        font-weight: bolder;
+        pointer-events: none;
+
+    }
+}

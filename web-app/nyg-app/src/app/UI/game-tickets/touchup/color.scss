@@ -1,0 +1,137 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+
+:host {
+    .container {
+        width: 100%;
+        height: 100%
+    }
+
+    .nyg-sheet-container {
+        @include mat.setup(100%, 100%);
+        @include mat.setupFlex(column, center, center);
+
+        & {
+            font-family: monospace;
+        }
+    }
+
+    th {
+        font-weight: 100;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    .nyg-cheat-sheet {
+        @include mat.setup(100%, 100%);
+    }
+
+    .nyg-res {
+        @include mat.setup(fit-content, 100%);
+        @include mat.setupFlex(row, center, center);
+    }
+
+    :host {
+        .nyg-header {
+            font-size: 3rem;
+        }
+    }
+
+    th {
+        text-indent: 0px;
+        text-align: start;
+        width: fit-content;
+    }
+
+    .nyg-set {
+
+        th {
+            text-align: center;
+
+        }
+    }
+
+    td {
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-left: 20px;
+        padding-bottom: 10px;
+        overflow: hidden;
+    }
+
+    th,
+
+    // td {
+    //     background-color: map.get(theme.$nyg-red-palletes, potrait6-red);
+    // }
+
+    // .nyg-stats {
+    //     background-color: map.get(theme.$nyg-ad1-palletes, ad3-red);
+
+    // }
+
+    .nyg-header {
+        pointer-events: none;
+    }
+
+    .nyg-set {
+
+
+        th {
+            // border-style: none;
+            padding: 10px;
+        }
+    }
+
+    .adjust {
+        @include mat.setup(100%, 100%);
+        @include mat.setupFlex(row, center, center);
+    }
+}
+
+:host {
+    .nyg-header {
+        font-size: 7rem;
+        pointer-events: none;
+    }
+}
+
+:host {
+    .nyg-res {
+        .nyg-header {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+
+            & {
+                border-color: map.get(theme.$nyg-black-palletes, umber-black);
+            }
+        }
+
+        // .left-head {
+        //     border-top: 0px;
+        //     border-right: 0px;
+        //     border-left: 0px;
+        //     border-bottom: 0px;
+        // }
+
+        // .right-head {
+        //     border-top: 0px;
+        //     border-right: 0px;
+        //     border-bottom: 0px;
+
+
+        // }
+
+    }
+}
+
+.nyg-stats {
+    th {
+        padding-left: 10px;
+    }
+}

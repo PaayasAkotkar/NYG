@@ -1,0 +1,39 @@
+<div class="ocs-indox">
+    <button class="ocs-l" (click)="listen()">
+        <svg width="100%" height="100%" viewBox="0 0 713 700" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+            style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+            <g id="indox">
+                <path id="inner"
+                    d="M675.513,40.864l36.851,66.727l-0,591.47l-672.679,-0l-39.685,-655.2c75.335,-12.663 274.39,-43.861 274.39,-43.861c-0,0 22.994,33.019 37.09,50.088l364.033,-9.224Z" />
+                <g id="signal">
+                    <path id="bottom-signal"
+                        d="M553.872,375.161c-48.954,-17.706 -138.439,-22.259 -187.256,-5.811c-48.817,16.449 -77.625,79.712 -86.854,140.28c-5.368,-15.933 16.798,-132.9 84.339,-155.657c67.542,-22.757 184.402,5.254 189.771,21.188Z" />
+                    <path id="mid-signal"
+                        d="M588.398,340.161c-66.527,-24.061 -188.133,-30.249 -254.473,-7.896c-66.34,22.353 -105.49,108.325 -118.031,190.635c-7.296,-21.653 22.828,-180.606 114.613,-211.533c91.786,-30.926 250.595,7.141 257.891,28.794Z" />
+                    <path id="top-signal"
+                        d="M614.584,288.379c-80.547,-29.132 -227.783,-36.624 -308.104,-9.56c-80.321,27.063 -127.722,131.154 -142.906,230.811c-8.834,-26.216 27.639,-218.669 138.769,-256.113c111.129,-37.444 303.407,8.645 312.241,34.862Z" />
+                </g>
+                <path id="outer"
+                    d="M712.364,128.603l-0,570.458l-640.381,-0l4.506,-509.34l221.587,-15.222l24.037,-49.473l390.251,3.577Z" />
+                <g id="name" transform="matrix(1,0,0,0.830095,0,-19.2531)">
+                    <g transform="matrix(253.355,0,0,253.355,664.951,579.476)"></g><text x="115.932px" y="579.476px"
+                        style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:253.355px;fill:black;">NYG</text>
+                </g>
+            </g>
+
+        </svg>
+
+    </button>
+
+    <div class="ocs-lm">
+        @if (OCSlatest) {
+        <div class="ocs-msg">
+            <span class="nyg-header">
+                {{OCSmsg}}
+            </span>
+        </div>
+        }
+
+    </div>
+</div>

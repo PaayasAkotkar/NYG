@@ -1,0 +1,30 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+:host {
+    .nyg-log {
+        padding: 5px;
+    }
+}
+
+:host {
+    .border {
+        background-color: map.get(theme.$nyg-white-palletes, ad8-white);
+    }
+}
+
+:host {
+    .nyg-log-t {
+        padding: 10px;
+        background-color: map.get(theme.$nyg-white-palletes, ad8-white);
+
+    }
+}
+
+:host {
+    .nyg-outer-border {
+        background-color: orange;
+        border-radius: 50px;
+    }
+}

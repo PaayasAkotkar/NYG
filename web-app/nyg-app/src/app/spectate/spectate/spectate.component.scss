@@ -1,0 +1,25 @@
+.conta {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ocs-ff {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+:host {
+    .ocs-header {
+        font-size: 3rem;
+        font-family: arial;
+    }
+}

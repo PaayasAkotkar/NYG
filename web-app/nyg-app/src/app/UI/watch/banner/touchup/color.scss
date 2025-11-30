@@ -1,0 +1,9 @@
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use '../../../../helpers/helpers.scss' as mat;
+@use 'sass:map';
+
+:host {
+    .nyg-items {
+        background-color: map.get(theme.$nyg-white-palletes, ad8-white);
+    }
+}

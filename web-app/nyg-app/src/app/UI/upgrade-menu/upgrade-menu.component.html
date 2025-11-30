@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="item">
+
+        <form class="ocs-form" [formGroup]="upgradePowersForm">
+
+            <div class="ocs-pagenav">
+                @for (item of Pages; track $index) {
+                <ocs-button (NYGEVENT)="Nav($event)" [NYGheader]="$index+1"></ocs-button>
+                }
+            </div>
+            <div class="ocs-form-field">
+
+                @switch (nav_) {
+                @case(1){
+
+                <div class="ocs-fit">
+                    @for (item of frontRowPowers; track $index;let i=$index) {
+
+                    <div class="fit">
+                        <app-power-upgrade [RemoveClickAnimation]="true" [OCSdonatedSpurs]="item.spur"
+                            [OCSpower]="item.power"></app-power-upgrade>
+                        <app-ocs-counter [OCSheader]="item.display" (OCSAdd)="Add(i)"
+                            (OCSSub)="Subtract($index)"></app-ocs-counter>
+                        @if (item.allow) {
+                        <ocs-btnV2 NYGheader="UPGRADE" (NYGEVENT)="Purchase()"></ocs-btnV2>
+                        }@else {
+                        <ocs-btnV2 NYGheader="UPGRADE"></ocs-btnV2>
+                        }
+                    </div>
+                    }
+                </div>
+                }
+                @case(2){
+                <div class="ocs-fit">
+                    @for (item of backRowPowers; track $index) {
+
+                    <div class="fit">
+                        <app-power-upgrade [RemoveClickAnimation]="true" [OCSdonatedSpurs]="item.spur"
+                            [OCSpower]="item.power"></app-power-upgrade>
+                        <app-ocs-counter [OCSheader]="item.display" (OCSAdd)="Add($index)"
+                            (OCSSub)="Subtract($index)"></app-ocs-counter>
+                        @if (item.allow) {
+                        <ocs-btnV2 NYGheader="UPGRADE" (NYGEVENT)="Purchase()"></ocs-btnV2>
+
+                        }@else {
+                        <ocs-btnV2 NYGheader="UPGRADE"></ocs-btnV2>
+
+                        }
+                    </div>
+
+                    }
+                </div>
+                }
+                }
+
+            </div>
+
+        </form>
+
+    </div>
+</div>

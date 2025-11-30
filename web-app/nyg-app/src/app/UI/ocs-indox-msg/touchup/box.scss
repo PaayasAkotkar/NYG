@@ -1,0 +1,67 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+.ocs-indox {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.ocs-emot {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.ocs-like,
+.ocs-dislike {
+    width: 50px;
+    height: 50px;
+}
+
+.ocs-title {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.ocs-subtitle {
+    width: 600px;
+    height: 100px;
+    padding: 10px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.nyg-theader {
+    position: relative;
+    left: 50px;
+    font-size: 3rem;
+    font-family: arial;
+}
+
+.nyg-header {
+    font-size: 3rem;
+    font-family: arial;
+    font-family: arial;
+    pointer-events: none;
+    white-space: wrap;
+    overflow-wrap: break-word;
+    word-break: break-all;
+}

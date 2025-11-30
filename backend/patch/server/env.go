@@ -13,7 +13,7 @@ var (
 		"http://192.168.1.7:4200",
 	}
 
-	USER     = ""
+	USER     = "root"
 	PASSWORD = ""
 )
 
@@ -23,7 +23,7 @@ func SetEnv() {
 	if err != nil {
 		log.Fatalf("Error setting MYSQL_USER: %v", err)
 	}
-	err = os.Setenv("kingp12", "kingp12")
+	err = os.Setenv(PASSWORD, PASSWORD)
 	if err != nil {
 		log.Fatalf("Error setting MYSQL_PASS: %v", err)
 	}

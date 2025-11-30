@@ -1,0 +1,150 @@
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use '../../../../helpers/helpers.scss' as mat;
+@use 'sass:map';
+
+:host {
+    .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+:host {
+    .ocs-bo {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        gap: 10px;
+    }
+}
+
+.ocs-itemxy {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    gap: 10px;
+}
+
+.ocs-bor {
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+
+}
+
+:host {
+    .ocs-text {
+        width: 600px;
+        height: 100px;
+        padding: 35px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        overflow-x: hidden;
+    }
+}
+
+:host {
+    .nyg-header {
+        font-size: 4rem;
+        font-family: arial;
+        pointer-events: none;
+        white-space: wrap;
+        overflow-wrap: break-word;
+        word-break: break-all;
+    }
+}
+
+:host {
+    .ocs-itemx {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+:host {
+    .ocs-itemxx {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+}
+
+:host {
+
+    .nyg-header {
+        white-space: wrap;
+    }
+}
+
+.ocs-bg {
+    border-radius: 3rem;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.nyg-sp {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    padding: 20px;
+
+    border-radius: 4rem;
+    // background:
+    //     linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad11-red),
+    //         map.get(theme.$nyg-blue-palletes, potrait9-blue));
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.ocs-sn {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #0c002b, #1779ff);
+
+    z-index: -1;
+    border-radius: 3rem;
+}
+
+.ocs-sn2 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 122px;
+
+    z-index: -1;
+    border-radius: 3rem;
+
+}

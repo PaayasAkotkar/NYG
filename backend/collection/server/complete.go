@@ -12,7 +12,6 @@ import (
 
 func CompleteSports(conn *sse.Server) {
 	time.Sleep(1 * time.Second)
-	fmt.Println("sendng sports book")
 
 	SSEmessenger := &sse.Message{}
 	token := sports.UpdateBook()
@@ -27,7 +26,6 @@ func CompleteSports(conn *sse.Server) {
 
 func CompleteEntertainment(conn *sse.Server) {
 	time.Sleep(1 * time.Second)
-	fmt.Println("sendng enterinta book")
 	SSEmessenger := &sse.Message{}
 
 	token := entertainment.UpdateEntertainment()

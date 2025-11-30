@@ -1,0 +1,22 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+
+:host {
+    .nyg-header {
+        font-size: 2rem;
+        font-family: arial;
+    }
+}
+
+:host {
+    .ocs-mc {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: 2rem;
+    }
+}

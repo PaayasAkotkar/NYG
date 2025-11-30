@@ -1,0 +1,20 @@
+<div class="frame">
+
+    <div class="ocs-pla">
+
+        @for (name of OCSprofiles; track $index) {
+        <div class="ocs-pla-li">
+
+            <div class="ocs-na">
+                <span class="ocs-header" (mouseleave)="TimeOut()"
+                    (mouseenter)="ViewProfile(name.profile)">{{name.name}}</span>
+                <div class=" ocso">
+                    <div class="ocs-on"></div>
+                </div>
+
+            </div>
+        </div>
+        }
+    </div>
+
+</div>

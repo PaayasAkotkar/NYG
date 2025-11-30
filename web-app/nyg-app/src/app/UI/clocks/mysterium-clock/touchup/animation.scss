@@ -1,0 +1,32 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    --func: cubic-bezier(1, -0.01, 0, .99)
+}
+
+:host {
+
+    .left-bo {
+        @for $i from 1 to 4 {
+            &:nth-child(#{$i}) {
+                animation: run;
+                animation-duration: .45s;
+                animation-delay: #{$i * 0.4}s;
+                animation-iteration-count: infinite;
+                animation-timing-function: var(--func);
+            }
+        }
+    }
+}
+
+@keyframes run {
+    0% {
+        border-color: map.get(theme.$nyg-red-palletes, ad16-red);
+    }
+
+    100% {
+        border-color: map.get(theme.$nyg-green-palletes, ad18-green);
+    }
+}

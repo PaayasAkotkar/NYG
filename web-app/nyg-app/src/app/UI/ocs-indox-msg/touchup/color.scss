@@ -1,0 +1,25 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+.ocs-indox {
+    background: map.get(theme.$nyg-white-palletes, ad8-white);
+
+}
+
+.ocs-title {
+    background-color: map.get(theme.$nyg-white-palletes, ad3-white);
+}
+
+.ocs-subtitle {
+    background-color: map.get(theme.$nyg-blue-palletes, ad12-blue);
+
+}
+
+.dlike {
+    fill:#{map.get(theme.$nyg-voilet-palletes,ad7-voilet)};
+}
+
+.like {
+    fill:#{map.get(theme.$nyg-green-palletes,ad15-green)};
+}

@@ -1,0 +1,9 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+.ocs-box {
+    width: fit-content;
+    height: 400px;
+    overflow-y: scroll;
+}

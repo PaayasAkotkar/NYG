@@ -63,7 +63,6 @@ func ServeUpgrades(ctx *gin.Context) {
 		return
 	}
 	defer db.CloseDB()
-	log.Println("body: ", req)
 	// updating the upgrades
 
 	var pu PowerUp
@@ -79,7 +78,6 @@ func ServeUpgrades(ctx *gin.Context) {
 	}
 
 	// upgrading credits
-	log.Println("for id: ", req.ID)
 	var _src Credit
 
 	err = db.ExtractData("playerCredits", id, &_src)
@@ -87,11 +85,9 @@ func ServeUpgrades(ctx *gin.Context) {
 		log.Println(err)
 		return
 	}
-	log.Println("extracted data: ", _src)
 	var cleanAccount = strings.ReplaceAll(_src.Spur, "S", "")
 	var cleanPurchase = strings.ReplaceAll(req.Spur, "S", "")
 
-	log.Println("clean account: ", cleanAccount, "clean purchase:", cleanPurchase)
 
 	a, err := strconv.Atoi(cleanAccount)
 
@@ -131,7 +127,6 @@ func ServeUpgrades(ctx *gin.Context) {
 		log.Println(err, "for req coin: ", req.Coin)
 		return
 	}
-	log.Println("clean account: ", cleanAccount, "clean purchase:", cleanPurchase)
 
 	var newCoinAmount = a - b
 	if newCoinAmount < 0 {
@@ -146,10 +141,6 @@ func ServeUpgrades(ctx *gin.Context) {
 		return
 	}
 	err = db.UpdateSingleJSONentry(id, "coins", "playerCredits", nc)
-	log.Println("new spur coin: ", newSpurAmount, newCoinAmount)
-
-	log.Println("prev spur coin:", _src.Spur, _src.Coin)
-	log.Println("rec spur coin: ", req.Spur, req.Coin)
 
 	if err != nil {
 		log.Println(err)
@@ -172,9 +163,7 @@ func ServeUpgrades(ctx *gin.Context) {
 	}
 
 	for power, det := range pp.Powers {
-		log.Println("power: ", power, "req: ", req.Power)
 		if strings.Contains(power, req.Power) {
-			log.Println("includes power")
 			var src = det
 			if req.NewLevel == 100 {
 				src.Level = int32(OCSlvl)

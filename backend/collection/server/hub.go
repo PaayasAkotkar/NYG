@@ -13,11 +13,6 @@ func RunHub(h *Hub, conn *sse.Server) {
 		fmt.Println("got: ", token)
 		fmt.Println("key: ", h.key)
 
-		// important to avoid coroutine race
-		// h.wg.Add(1)
-		// go func() {
-		// 	defer h.wg.Done()
-
 		switch true {
 
 		// beginning of dictionaries channel
@@ -93,6 +88,6 @@ func RunHub(h *Hub, conn *sse.Server) {
 
 			// end of the validation channel
 		}
-		// }()
+		
 	}
 }

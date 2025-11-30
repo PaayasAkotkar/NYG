@@ -4,5 +4,4 @@ package server
 
 func RunServer() {
 	Server()
-
 }

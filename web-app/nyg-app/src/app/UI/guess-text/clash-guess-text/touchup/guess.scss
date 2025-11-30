@@ -1,0 +1,161 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+.container {
+    width: 100%;
+    height: 100%;
+
+}
+
+:host {
+    .nyg-header {
+        font-size: 6rem;
+        font-weight: bolder;
+        font-family: Arial;
+        color: map.get(theme.$nyg-black-palletes, ad8-black);
+
+    }
+}
+
+:host {
+    .freeze-it {
+        width: 1150px;
+        height: 100px;
+        background-color: orange;
+        display: block;
+        position: absolute;
+        z-index: 1111;
+        background: rgba(0, 154, 206, 0.5);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 154, 206, 0.5);
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        border: 30px solid rgba(0, 154, 206, 0.5);
+        animation-name: freeze;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+    }
+}
+
+.xx {
+    width: 40px;
+    height: 50px;
+    display: block;
+    background-color: white;
+    position: relative;
+    transform: skew(-15deg);
+    z-index: 1111;
+    right: 90%;
+}
+
+.ocs-parent {
+    width: 40px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transform: skew(-15deg);
+    z-index: 1111;
+    right: 90%;
+
+}
+
+@keyframes freeze {
+    0% {
+        filter: blur(10px);
+        width: 0px;
+    }
+
+    100% {
+        filter: blur(0px);
+        width: 1150px;
+    }
+}
+
+:host {
+    .nyg-input {
+        padding-top: 10px;
+        font-size: 3rem;
+        font-family: Arial;
+        font-weight: 900;
+        text-transform: uppercase;
+        outline-style: none;
+        border-style: none;
+        width: 900px;
+        border-radius: 4rem;
+
+        & {
+            text-shadow:
+                1px 1px 0px map.get(theme.$nyg-black-palletes, potrait1-black),
+                2px 2px 0px map.get(theme.$nyg-black-palletes, potrait1-black),
+                4px 4px 0px map.get(theme.$nyg-black-palletes, potrait1-black);
+        }
+
+        & {
+            color: map.get(theme.$nyg-white-palletes, ad1-white);
+        }
+
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+:host {
+    input:focus {
+        border: 0px;
+        outline: none;
+    }
+}
+
+:host {
+    .nyg-btn {
+        width: 110px;
+        height: 110px;
+        border: 0px;
+        border-radius: 100%;
+    }
+}
+
+:host {
+    .nyg-form-items {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        border: 0px;
+        margin: 0px;
+
+    }
+}
+
+:host {
+    .nyg-in-conta {
+        width: fit-content;
+        padding: 20px;
+        height: fit-content;
+        overflow: hidden;
+        border-radius: 4rem;
+    }
+}
+
+:host {
+    .nyg-form {
+        width: fit-content;
+        height: fit-content;
+    }
+}
+
+:host {
+    .adjust {
+        padding: 20px;
+        display: flex;
+        gap: 10px;
+        border-radius: 1rem;
+        align-items: center;
+    }
+}

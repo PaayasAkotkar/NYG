@@ -1,0 +1,76 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+.container {
+    width: 100%;
+    height: 100%;
+
+}
+
+:host {
+    .nyg-header {
+        font-size: 4rem;
+        font-family: Arial;
+    }
+}
+
+:host {
+    .nyg-input {
+        padding-top: 10px;
+        font-size: 3rem;
+        font-family: Arial;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+}
+
+:host {
+    .nyg-btn {
+        width: 90px;
+        height: 90px;
+        border-radius: 100%;
+        border: 0px;
+    }
+}
+
+:host {
+    .nyg-form-items {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        border: 0px;
+        margin: 0px;
+
+    }
+}
+
+:host {
+    .nyg-in-conta {
+        width: fit-content;
+        transform: skew(-20deg);
+        padding: 10px;
+        height: fit-content;
+        overflow: hidden;
+    }
+}
+
+:host {
+    .nyg-form {
+        width: fit-content;
+        height: fit-content;
+    }
+}
+
+:host {
+    .adjust {
+        padding: 20px;
+        display: flex;
+        gap: 10px;
+        border-radius: 1rem;
+    }
+}

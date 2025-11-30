@@ -1,0 +1,81 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+svg {
+    width: 100vw;
+    height: 100vh;
+}
+
+@for $i from 1 through 15 {
+    #back {
+        :nth-child(#{$i}) {
+            animation-name: sprint;
+            animation-delay: #{$i* 0.85}s;
+            animation-duration: #{$i* 4.374}s;
+            animation-timing-function:
+                cubic-bezier(.9, -0.34, .79, 1.83);
+            animation-iteration-count: infinite;
+        }
+    }
+}
+
+@for $i from 1 through 15 {
+    #out {
+        :nth-child(#{$i}) {
+            animation-name: revsprint;
+            animation-delay: #{$i* 0.85}s;
+            animation-duration: #{$i* 4.374}s;
+
+            animation-timing-function:
+                cubic-bezier(.9, -0.34, .79, 1.83);
+            animation-iteration-count: infinite;
+        }
+    }
+}
+
+@keyframes sprint {
+    0% {
+        transform: translateX(-50%);
+        fill: blue;
+
+    }
+
+    65% {
+        transform: translateX(100%);
+        fill: red;
+    }
+
+    85% {
+        transform: translateX(-50%);
+        fill: yellow;
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+
+}
+
+@keyframes revsprint {
+    0% {
+        transform: translateX(50%);
+        fill: blue;
+    }
+
+    65% {
+        transform: translateX(-100%);
+        fill: red;
+    }
+
+    85% {
+        transform: translateX(50%);
+        fill: yellow;
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}

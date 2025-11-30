@@ -1,0 +1,92 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+@supports(syntax: '<color>') {
+    @property --from {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: blue;
+    }
+
+    @property --to {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: blue;
+    }
+
+    @property --bg {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: blue;
+    }
+
+    @property --col_ {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: blue;
+    }
+}
+
+.ocs-gal {
+    --bg: #{map.get(theme.$nyg-white-palletes, ad8-white)};
+    background-color: var(--bg);
+}
+
+.ocs-ga {
+    --bg: #{map.get(theme.$nyg-white-palletes, ad8-white)};
+    background-color: var(--bg);
+}
+
+:host {
+    .nyg-header {
+        --from: #{map.get(theme.$nyg-red-palletes, ad11-red)};
+        --to:#{map.get(theme.$nyg-blue-palletes, ad11-blue)};
+
+        padding: 10px;
+        letter-spacing: -3px;
+        pointer-events: none;
+        background:
+            linear-gradient(to left, var(--from),
+                var(--to));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bolder;
+    }
+}
+
+.ocs-h {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-style: double;
+    border-width: 15px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    --col_: #{map.get(theme.$nyg-white-palletes, ad8-white)};
+
+    border-color: var(--col_)
+}
+
+:host {
+    .nyg-header1 {
+        font-family: arial;
+        font-size: 3rem;
+        font-weight: bolder;
+        pointer-events: none;
+        --col_: map.get(theme.$nyg-white-palletes, ad8-white);
+        color: var(--col_)
+    }
+}
+
+:host {
+    .ocs-as {
+        --bg: #{map.get(theme.$nyg-white-palletes, ad8-white)};
+        background: var(--bg);
+        padding: 2px;
+    }
+}

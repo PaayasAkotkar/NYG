@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="ocs-itemx">
+
+        <div class="nyg-sp">
+            <span class="ocs-sn"></span>
+            <div class="ocs-bg">
+
+                <div class="ocs-bor">
+
+                    <div class="ocs-bo">
+
+                        <div class="ocs-itemxy">
+                            <app-watcher-title [NYGisRedTeam]="true" NYGheader="RED"></app-watcher-title>
+
+                            <div class="ocs-text">
+                                <span class="nyg-header">{{NYGteamRedText()}} </span>
+                            </div>
+                        </div>
+                        <div class="ocs-itemxx">
+                            <!-- <app-watcher-timer></app-watcher-timer> -->
+                            <app-clock></app-clock>
+                        </div>
+                        <div class="ocs-itemxy">
+                            <app-watcher-title [NYGisRedTeam]="false" NYGheader="BLUE"></app-watcher-title>
+
+                            <div class="ocs-text">
+                                <span class="nyg-header">{{NYGteamBlueText()}}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <app-watcher-scoreboard [NYGblueTeamScore]="NYGblueTeamScore"
+                    [NYGredTeamScore]="NYGredTeamScore"></app-watcher-scoreboard>
+                <span class="ocs-sn2"></span>
+            </div>
+        </div>
+        <app-banner [NYGblueTeamPlayer]="NYGteamBlueName()" [NYGredTeamPlayer]="NYGteamRedName()"></app-banner>
+
+    </div>
+</div>

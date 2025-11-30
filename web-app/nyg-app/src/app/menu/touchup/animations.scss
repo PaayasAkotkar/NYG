@@ -1,0 +1,114 @@
+@use '../../helpers/helpers.scss' as mat;
+@use '../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+
+:host {
+    .nyg-stand {
+        &:hover {
+            will-change: transform;
+            transition-property: transform;
+            transition-duration: 0.16s;
+            transition-timing-function: cubic-bezier(.68, .77, .22, .5);
+            z-index: 10000;
+            transform: translateY(-2%) skew(-5deg);
+            padding: 5px;
+            background: map.get(theme.$nyg-white-palletes, ad1-white);
+            --first-color: #1D2225;
+            --second-color: #45556B;
+            --third-color: #E5E3E1;
+            --fourth-color: #EFFDBC;
+            --gradient-border: conic-gradient(from var(--border-angle), var(--first-color) 2%,
+
+                    var(--second-color), var(--third-color) 99%, var(--fourth-color));
+            --border-angle: 0turn; // initial-state
+
+            border: solid 5px transparent;
+            background: var(--gradient-border) border-box;
+
+            background-position: center center;
+            animation: rotateQ;
+            animation-duration: 1.45s;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+
+            .n {
+                will-change: transform;
+                transition-property: background-color;
+                transition-duration: 5.16s;
+                transition-timing-function: cubic-bezier(.68, .77, .22, .5);
+
+                // background-color: map.get(theme.$nyg-white-palletes, ad3-white);
+            }
+
+
+            .nyg-header2,
+            .nyg-header {
+                color: map.get(theme.$nyg-white-palletes, foundation-white);
+                font-weight: bolder;
+            }
+
+            .nav-outer-border {
+
+                --gradient-border: conic-gradient(from var(--border-angle), #FFC30E,
+
+                        #44170A, #44170A, #FFC30E);
+
+                --border-angle: 0turn; // initial-state
+
+                border: solid 5px transparent;
+                background:
+
+                    var(--gradient-border) border-box;
+
+                background-position: center center;
+                animation: rotateQ;
+                border-radius: 2rem;
+                animation-duration: 2.45s;
+                animation-iteration-count: infinite;
+                animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+            }
+
+            :nth-child(1) {
+                border-style: none;
+            }
+        }
+    }
+}
+
+:host {
+    .nav-outer-border {
+        border-radius: 2rem;
+
+        --gradient-border: conic-gradient(from var(--border-angle), #FFC30E,
+
+                #44170A, #44170A, #FFC30E);
+
+        --border-angle: 0turn; // initial-state
+
+        border: solid 5px transparent;
+        background: var(--gradient-border) border-box;
+
+
+        background-position: center center;
+        animation: rotateQ;
+        animation-duration: 9.45s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+    }
+}
+
+
+@keyframes rotateQ {
+
+    to {
+        --border-angle: -3turn;
+    }
+
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}

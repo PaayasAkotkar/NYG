@@ -1,0 +1,45 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+:host {
+    .ocs-item {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+:host {
+    .ocs-bo {
+        padding: 10px;
+        background-color: orange;
+        border-radius: 100%;
+    }
+}
+
+:host {
+    .ocs-di {
+        width: 130px;
+        height: 130px;
+        border-radius: 100%;
+        background-color: map.get(theme.$nyg-white-palletes, ad8-white);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+:host {
+    .nyg-header {
+        font-family: arial;
+        font-size: 4rem;
+        font-weight: bolder;
+        pointer-events: none;
+        color: map.get(theme.$nyg-orange-palletes, ad2-orange)
+    }
+}

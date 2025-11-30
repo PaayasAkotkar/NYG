@@ -1,0 +1,28 @@
+<div class="container" (click)="close()">
+    <div class="ocs-item">
+        <div>
+            <app-home-profile-header [OCSheader]="NYGProfile.Name"></app-home-profile-header>
+        </div>
+        <div class="ocs-prof">
+            @if (NYGshowIMG) {
+            <div class="ocs-set">
+                <div style="z-index: 1;">
+                    <app-ocs-img [OCSPicURL]="NYGProfile.ProfilePic"></app-ocs-img>
+                </div>
+            </div>
+            }
+            <div class="setA">
+                <div class="ocs-set2">
+                    <!-- <app-ocs-det OCStitle="RECORD" [OCSsubTitle]="NYGProfile.Record"></app-ocs-det> -->
+                    <app-ocs-det OCStitle="POINTs" [OCSsubTitle]="NYGProfile.Points"></app-ocs-det>
+                    <app-ocs-det OCStitle="TIER" [OCSsubTitle]="NYGProfile.Tier"></app-ocs-det>
+                    <app-ocs-det OCStitle="RATING" [OCSsubTitle]="NYGProfile.Rating"></app-ocs-det>
+
+                </div>
+                <div class="ocs-set2">
+                    <app-ocs-det OCStitle="GAMEs PLAYED" [OCSsubTitle]="NYGProfile.GamesPlayed"></app-ocs-det>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

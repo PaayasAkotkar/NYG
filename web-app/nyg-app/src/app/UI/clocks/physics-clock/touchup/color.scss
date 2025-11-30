@@ -1,0 +1,30 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+.ocs-i {
+    width: 350px;
+    height: 350px;
+}
+
+:host {
+    .ocs-st {
+        fill: map.get(theme.$nyg-red-palletes, ad4-red);
+    }
+}
+
+:host {
+
+    .nyg-headerT,
+    .nyg-header {
+        pointer-events: none;
+
+        background:
+            linear-gradient(195deg,
+                map.get(theme.$nyg-white-palletes, ad8-white),
+                map.get(theme.$nyg-yellow-palletes, ad4-yellow));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bolder;
+    }
+}

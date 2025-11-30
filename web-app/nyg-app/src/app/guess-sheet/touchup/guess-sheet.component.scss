@@ -1,0 +1,57 @@
+@use "../../view-cheat-sheet/touchup/view-cheat-sheet" as *;
+@use "../../view-sheet/touchup/view-sheet" as *;
+@use '../../helpers/helpers.scss' as mat;
+@use '../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+
+.contianer {
+    width: 100%;
+    height: 100%
+}
+
+.adjustGU {
+    padding: 10px;
+    border-width: 10px;
+    border-style: solid;
+
+    & {
+        background-color: map.get(theme.$nyg-yellow-palletes, ad2-yellow);
+    }
+
+    & {
+        border-color: map.get(theme.$nyg-black-palletes, project3-black)
+    }
+
+}
+
+.nyg-guess-sheet {
+    @include mat.setup(100%, 100%);
+    @include mat.setupFlex(column, flex-start, flex-start);
+
+    & {
+        z-index: 10000;
+    }
+}
+
+:host {
+    .nyg-headers {
+        pointer-events: none;
+        font-size: 4rem;
+        font-family: arial;
+        color: map.get(theme.$nyg-black-palletes, project3-black);
+        text-shadow: 1px 1px 0px map.get(theme.$nyg-black-palletes, project3-black);
+    }
+}
+
+.guess-head {
+    font-weight: bold;
+    font-family: arial;
+}
+
+.nyg-head {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 2rem;
+    border-style: double;
+}

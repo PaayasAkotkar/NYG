@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="ocs-items">
+
+        <div class="ocs-boards">
+
+            @switch (PageNavigation) {
+
+            @case (1) {
+            <div class="setA">
+                <div class="setX">
+                    <Refscorboard-25x></Refscorboard-25x>
+                    <RefguessText-25x NYGmyTeam="BLUE"></RefguessText-25x>
+                    <RefguessText-25x NYGmyTeam="RED"></RefguessText-25x>
+                </div>
+            </div>
+            }
+            @case (2) {
+            <div class="setA">
+                <div class="setX">
+                    <Refscoreboard-11x></Refscoreboard-11x>
+                    <RefguessText-11x NYGmyTeam="BLUE"></RefguessText-11x>
+                    <RefguessText-11x NYGmyTeam="RED"></RefguessText-11x>
+
+                </div>
+            </div>
+            }
+
+            }
+        </div>
+        <div class="setB">
+            <ocs-button NYGheader="1" (NYGEVENT)="Navigate($event)"></ocs-button>
+            <ocs-button NYGheader="2" (NYGEVENT)="Navigate($event)"></ocs-button>
+        </div>
+
+    </div>
+    <div>
+        <app-ocs-btns (OCSclick)="Check()" OCSType="submit" OCSheader="SET"></app-ocs-btns>
+    </div>
+</div>

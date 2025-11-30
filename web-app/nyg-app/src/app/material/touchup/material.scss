@@ -1,0 +1,183 @@
+@use "../../../../node_modules/@angular/material/core/style/_layout-common" as *;
+@use "../../helpers/color-palletes" as *;
+@use '../../helpers/helpers.scss' as mat;
+@use '../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+.nyg-header {
+    pointer-events: none;
+}
+
+li {
+    list-style: none;
+    padding: 10px;
+}
+
+:host {
+    .border {
+        padding: 10px;
+        border-style: solid;
+        border-width: 10px;
+        border-radius: 20px;
+
+        & {
+            background-color: map.get(theme.$nyg-voilet-palletes, magenta-dark-shade-2);
+        }
+
+        & {
+            border-color: map.get(theme.$nyg-black-palletes, umber-black);
+
+        }
+    }
+}
+
+
+
+:host {
+    .nyg-form-field {
+        @include mat.setup(100%, 100%, flex);
+        @include mat.setupFlex(column, center, center);
+
+        & {
+            margin: 0px;
+            border: 0px;
+            border-style: none;
+            overflow: hidden;
+        }
+    }
+}
+
+ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.commonN {
+    display: flex;
+    flex-direction: column;
+
+    .nyg-header {
+        word-spacing: -20px;
+    }
+}
+
+li {
+    border-style: solid;
+    border-width: 5px;
+
+}
+
+:host {
+    .nyg-label {
+        @include mat.setup(fit-content, fit-content, flex);
+        @include mat.setupFlex(row, center, center);
+
+        & {
+            border-style: solid;
+            border-width: 5px;
+            border-bottom: 0px;
+            padding: 10px;
+        }
+
+        & {
+            font-family: monospace;
+            border-top-left-radius: 14rem;
+            border-top-right-radius: 14rem;
+            overflow: hidden;
+        }
+
+        & {
+            .nyg-header {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                letter-spacing: -5px;
+                padding: 20px;
+
+            }
+        }
+
+        & {
+            color: map.get(theme.$nyg-black-palletes, umber-black);
+            background-color: map.get(theme.$nyg-yellow-palletes, yellow-orch);
+        }
+
+    }
+}
+
+:host {
+    .nyg-header {
+        font-size: 4rem;
+        font-family: monospace;
+    }
+}
+
+:host {
+    .input-container {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.even {
+    :nth-of-type(1) {
+        border-bottom: 0px;
+        border-right: 0px;
+    }
+
+    :nth-of-type(2) {
+        border-right: 0px;
+    }
+}
+
+.odd {
+    :nth-of-type(1) {
+        border-bottom: 0px;
+    }
+}
+
+:host {
+    .nyg-input {
+        @include mat.setup(100%, fit-content, );
+
+        & {
+            border: 0px;
+            margin: 0px;
+            font-family: monospace;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        & {
+            color: map.get(theme.$nyg-black-palletes, umber-black);
+            outline-color: map.get(theme.$nyg-black-palletes, umber-black);
+        }
+    }
+}
+
+.nyg-input {
+    & {
+        color: map.get(theme.$nyg-black-palletes, umber-black);
+        background-color: map.get(theme.$nyg-green-palletes, moss-green-light-shade);
+    }
+}

@@ -26,7 +26,6 @@ func (p *NYGPubSub) Subscribe(room string) chan *model.LatestMessage {
 	defer p.mu.Unlock()
 	if _, ok := p.subscribers[room]; !ok {
 		p.subscribers[room] = make(map[chan *model.LatestMessage]struct{})
-
 	}
 	p.subscribers[room][ch] = struct{}{}
 	return ch

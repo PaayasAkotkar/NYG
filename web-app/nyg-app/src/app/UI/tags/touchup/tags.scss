@@ -1,0 +1,90 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+
+
+@supports(syntax:'<color>') {
+    @property --bg {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: blue;
+    }
+
+    @property --col_ {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: white;
+    }
+
+    @property --from {
+        syntax: "<color>";
+        inherits: true;
+        initial-value: red;
+    }
+
+    @property --to {
+        syntax: "<color>";
+        inherits: true;
+        initial-value: green;
+    }
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.nyg-se {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+:host {
+    .nyg-header {
+        pointer-events: none;
+    }
+}
+
+:host {
+    .nyg-tag2 {
+        padding: 10px;
+    }
+}
+
+:host {
+    .nyg-tag {
+        border-right: 0px;
+        border-left: 0px;
+        padding: 10px;
+        font-family: arial;
+
+        & {
+            background-color: var(--bg);
+        }
+
+
+        & {
+            color: var(--bg);
+        }
+    }
+}
+
+
+:host {
+    .nyg-header {
+        font-size: 3rem;
+        pointer-events: none;
+
+        background:
+            linear-gradient(to left, var(--from), var(--to));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+    }
+}

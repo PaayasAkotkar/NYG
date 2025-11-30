@@ -1,0 +1,38 @@
+<div class="ocs-outer">
+    <div class="ocs-inner">
+        <div class="ocs-item">
+            <span class="ocs-header ocs-ti">{{OCStitle}}</span>
+            <div class="ocs-tt">
+                <span class="ocs-tool-tip">{{NYGtoolTip}}</span>
+            </div>
+        </div>
+        <div class="ocs-con">
+            @switch (true) {
+            @case (isHeader) {
+            @for (item of OCSsubTitles; track $index) {
+            <span class="ocs-header ocs-ti ">
+                {{item}}
+            </span>
+
+            }
+
+            }
+            @case (isLink) {
+            @for (item of OCSsubTitles; track $index) {
+            <a [href]="OCShref">
+                <span class="ocs-header ocs-ti ">
+                    {{item}}
+                </span>
+            </a>
+            }
+
+            }
+
+            }
+            @if (NYGisError) {
+            <span class="nyg-error-header">{{NYGerrorMessage}}</span>
+            }
+        </div>
+
+    </div>
+</div>

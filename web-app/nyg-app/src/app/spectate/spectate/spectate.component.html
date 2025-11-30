@@ -1,0 +1,25 @@
+<div class="conta">
+
+    <app-tags2 NYGheader="DRESSING ROOM" [NYGMode]="NYGmode()"></app-tags2>
+    @if (NYGgame()) {
+    <app-watch [NYGblueTeamScore]="NYGblueTeamScore" [NYGredTeamScore]="NYGredTeamScore"
+        [NYGteamBlueName]="NYGteamBlueName" [NYGteamRedName]="NYGteamRedName" [NYGteamRedText]="NYGteamRedText"
+        [NYGteamBlueText]="NYGteamBlueText"></app-watch>
+    }@else{
+    <div class="ocs-ff">
+        <div class="ocs-f">
+            <form [formGroup]="_ref">
+
+                <ref-field [NYGheader]="NYGheader" [NYGMode]="NYGmode" [NYGsetTopPosition]="NYGsetTopPosition"
+                    [NYGcollection]="OCScollections"></ref-field>
+            </form>
+
+        </div>
+    </div>
+    <div>
+        <span class="ocs-header">{{NYGspecInfo.playerName}}</span>
+    </div>
+
+
+    }
+</div>

@@ -1,0 +1,87 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    .animateLeft {
+        animation: runLeft;
+        animation-duration: 2.45s;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
+}
+
+:host {
+    .animateRight {
+        animation: runRight;
+        animation-duration: 2.45s;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes runRight {
+    0% {
+        transform: translateX(0%) rotateZ(0turn) translateY(0%);
+    }
+
+    50% {
+        transform: translateX(100%) rotateZ(1turn) translateY(30%);
+
+    }
+
+    100% {
+        transform: translateX(0%) rotateZ(0turn) translateY(0%);
+
+    }
+}
+
+@keyframes runLeft {
+
+
+    0% {
+        transform: translateX(0%) rotateZ(0turn);
+    }
+
+    50% {
+        transform: translateX(-90%) rotateZ(-1turn) translateY(10%);
+
+    }
+
+    100% {
+        transform: translateX(0%) rotateZ(0turn) translateY(0%);
+
+    }
+}
+
+
+:host {
+    --func: cubic-bezier(1, -0.01, 0, .99)
+}
+
+:host {
+
+    .left-bo {
+        @for $i from 1 to 5 {
+            &:nth-child(#{$i}) {
+                animation: run;
+                animation-duration: .45s;
+                animation-delay: #{$i * 0.4}s;
+                animation-iteration-count: infinite;
+                animation-timing-function: var(--func);
+            }
+        }
+    }
+}
+
+@keyframes run {
+    0% {
+        border-color: map.get(theme.$nyg-white-palletes, ad8-white);
+    }
+
+    100% {
+        border-color: map.get(theme.$nyg-yellow-palletes, ad9-yellow);
+    }
+}

@@ -37,7 +37,5 @@ func Server() {
 	// updating the upgrades and deducting the coins, spurs
 	app.PATCH("/upgrade/power/:id", ServeUpgrades)
 
-	// go RunHub(h)
-
 	app.Run(":" + port)
 }

@@ -1,0 +1,27 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+@property --bg {
+    syntax: '<color>';
+    initial-value: green;
+    inherits: true;
+}
+
+.ocs-b {
+    // --bg:#{map.get(theme.$nyg-red-palletes, ad15-red)};
+    background: var(--bg);
+
+    &:nth-child(2) {
+        background-color: map.get(theme.$nyg-orange-palletes, ad4-orange);
+    }
+
+    &:nth-child(3) {
+        background-color: map.get(theme.$nyg-yellow-palletes, ad7-yellow);
+    }
+
+    &:nth-child(4) {
+        background-color: map.get(theme.$nyg-green-palletes, ad15-green);
+    }
+
+}

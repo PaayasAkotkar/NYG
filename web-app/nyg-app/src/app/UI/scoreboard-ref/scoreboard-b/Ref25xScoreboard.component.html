@@ -1,0 +1,70 @@
+<div class="container">
+
+    <div class="nyg-cont-item">
+        <div class="bord">
+            <div class="nyg-item">
+                <div class="nyg-teamsb">
+                    <div class="ba">
+                        <div class="nyg-t">
+                            <div class="nyg-tn">
+                                @for (item of Red_; track $index) {
+                                <span class="nyg-header red-head">{{item}}</span>
+                                }
+                            </div>
+                            <div>
+                                <span class="nyg-header nyg-sco">
+                                    {{NYGredScore}}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="nyg-tx">
+                            <div class="nyg-ti">
+                                <span class="nyg-theader">{{OCSgameTime}}</span>
+
+                            </div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="nyg-t blu-t">
+                            <div>
+                                <span class="nyg-header nyg-sco">
+                                    {{NYGblueScore}}
+                                </span>
+                            </div>
+                            <div class="nyg-tn">
+                                @for (item of Blue_; track $index) {
+                                <span class="nyg-header blue-head">{{item}}</span>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="outer-dis">
+                    <div>
+                        <div>
+                            <span class="nyg-header"> S{{NYGset}}</span>
+                        </div>
+                    </div>
+                    <div class="nyg-bx">
+                        @for (item of Rounds; track $index) {
+                        <div class="nyg-played">
+                            <div class="inner"></div>
+                        </div>
+                        }
+                    </div>
+                    <div>
+                        <span class="nyg-header">R{{NYGround}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nyg-net">
+            <span class="nyg-n">OCS NETWORK</span>
+        </div>
+    </div>
+
+</div>

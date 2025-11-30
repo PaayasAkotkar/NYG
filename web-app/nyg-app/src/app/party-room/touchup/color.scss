@@ -1,0 +1,139 @@
+@use '../../helpers/helpers.scss' as mat;
+@use '../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+.nyg-tlabel {
+    & {
+        color: map.get(theme.$nyg-black-palletes, potrait4-black);
+        background-color: map.get(theme.$nyg-blue-palletes, ad11-blue);
+    }
+}
+
+:host {
+    .nyg-label {
+
+        & {
+            background-color: map.get(theme.$nyg-blue-palletes, ad11-blue);
+        }
+    }
+}
+
+.nyg-contr {
+
+
+    & {
+        background-color: map.get(theme.$nyg-white-palletes, ad8-white);
+
+    }
+
+}
+
+:host {
+    .nyg-input {
+        & {
+            background-color: map.get(theme.$nyg-blue-palletes, ad11-blue);
+        }
+
+        border: 0px;
+        margin: 0px;
+
+        & {
+            color: map.get(theme.$nyg-white-palletes, ad1-white);
+        }
+    }
+}
+
+
+input:focus {
+    outline: none;
+
+}
+
+.nyg-text-m {
+
+    & {
+        background-color: map.get(theme.$nyg-white-palletes, ad3-white);
+    }
+
+}
+
+.nyg-tex {
+    & {
+        background-color: map.get(theme.$nyg-white-palletes, ad2-white);
+
+    }
+}
+
+
+
+:host {
+    .ocs-header {
+        pointer-events: none;
+        background:
+            linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad11-red),
+                map.get(theme.$nyg-blue-palletes, ad11-blue));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+    }
+
+
+}
+
+:host {
+    .ocs-btn {
+        width: fit-content;
+        height: 70px;
+        border-radius: 5rem;
+        border: 0px;
+        margin: 0px;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+}
+
+:host {
+    .ocs-outer {
+        width: fit-content;
+        height: fit-content;
+        transform: skew(-10deg);
+        padding: 5px;
+        border-radius: 5rem;
+
+    }
+}
+
+:host {
+    .ocs-header {
+        font-size: 4rem;
+        font-family: arial;
+    }
+}
+
+:host {
+    .ocs-btn {
+        &:active {
+            background:
+                linear-gradient(to left, map.get(theme.$nyg-red-palletes, ad11-red),
+                    map.get(theme.$nyg-blue-palletes, ad11-blue));
+
+            .ocs-header {
+                background: map.get(theme.$nyg-white-palletes, ad8-white);
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: bold;
+            }
+
+        }
+    }
+}
+
+:host {
+    .optx {
+        background-color: map.get(theme.$nyg-white-palletes, warm-white);
+    }
+}

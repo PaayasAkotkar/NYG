@@ -1,0 +1,75 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    .nyg-theader {
+        font-size: 9rem;
+        font-family: arial;
+        pointer-events: none;
+
+        transform: scale(1.5);
+        padding: 10px;
+        font-weight: bolder;
+        color: map.get(theme.$nyg-white-palletes, ad1-white);
+        text-shadow:
+            -8px 2px 0 map.get(theme.$nyg-black-palletes, ad1-black),
+            -8px -2px 0 map.get(theme.$nyg-black-palletes, ad1-black),
+            // full font outline
+            -1px 2px 0 map.get(theme.$nyg-black-palletes, ad1-black),
+            1px 2px 0 map.get(theme.$nyg-black-palletes, ad1-black),
+            2px 2px 0 map.get(theme.$nyg-black-palletes, ad1-black),
+            2px -2px 0 map.get(theme.$nyg-black-palletes, ad1-black),
+            -4px 2px 0 map.get(theme.$nyg-black-palletes, ad1-black),
+            -4px -2px 0 map.get(theme.$nyg-black-palletes, ad1-black);
+        animation-name: heart-beat;
+        animation-duration: 1.45s;
+        animation-timing-function:
+            cubic-bezier(.9, .81, .67, .68);
+
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+    }
+}
+
+:host {
+    --xcolor: #93E800;
+}
+
+@keyframes heart-beat {
+    0% {
+        transform: scale(1);
+    }
+
+    99% {
+        transform: scale(1.5);
+        color: var(--xcolor);
+
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+:host {
+    .nyg-ti {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        height: fit-content;
+    }
+}
+
+:host {
+    .nyg-tx {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}

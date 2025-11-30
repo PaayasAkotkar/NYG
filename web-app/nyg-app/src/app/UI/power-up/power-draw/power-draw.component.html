@@ -1,0 +1,53 @@
+<!-- <app-pick-pattern-v2 [OCSformGroup]="NYGdrawOfferForm" [OCScollections]="NYGcollection" OCSbtnHeader="BET ITEMS"
+    OCSbtnHeader="SEND" OCSheader="DRAW" (OCSgetBody)="UpdatedToken($event)" [OCSmyTeam]="NYGmyteam"
+    (OCSbtn)="Confirm()"></app-pick-pattern-v2> -->
+
+
+<!-- <app-pick-pattern-v2 [OCSformGroup]="NYGbetForm" [OCScollections]="NYGcollection" OCSbtnHeader="BET ITEMS"
+    OCSbtnHeader="BET" OCSheader="SET" (OCSgetBody)="GetBetToken($event)" [OCSmyTeam]="NYGmyTeam"
+    (OCSbtn)="Bet()"></app-pick-pattern-v2> -->
+
+
+
+<div class="ocs-be-item on-enter">
+    <div class="x "><span class="ocs-headerx">DRAW</span></div>
+
+    <form [formGroup]="NYGdrawOfferForm" class="ocs-bet-form">
+
+        <div class="nyg-form-container">
+
+            <div class="nyg-form">
+
+                <fieldset class="nyg-form-field">
+
+                    <div class="bx">
+                        @for (item of NYGcollection; track $index) {
+                        <div class="item-fitz">
+                            <fieldset class=" colx{{$index}} nyg-form-fieldXX field-adjust">
+                                <label [htmlFor]="item.OCStemplate" class="nyg-labelXX  adjust-labelH">
+                                    <span class="nyg-header ">{{item.OCStemplate}}</span>
+                                </label>
+                                <div class="in-con">
+                                    <div class="in-bor">
+                                        <input type="checkbox" class="nyg-input" (change)="Update(item.OCStemplate)"
+                                            [formControlName]="item.OCStemplate" [id]="item.OCStemplate"
+                                            [name]="item.OCStemplate">
+
+                                    </div>
+                                </div>
+
+                            </fieldset>
+
+                        </div>
+                        }
+                    </div>
+
+                </fieldset>
+
+            </div>
+
+        </div>
+
+    </form>
+    <app-ocs-btns OCSheader="SEND" OCSType="submit" (OCSclick)="Confirm()"></app-ocs-btns>
+</div>

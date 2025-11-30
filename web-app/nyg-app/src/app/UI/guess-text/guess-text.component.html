@@ -1,0 +1,24 @@
+@switch (OCStheme) {
+@case ("text11x") {
+<guessText-11x (NYGtext)="myView($event)" [NYGmyroom]="NYGmyroom" [NYGmyTeam]="NYGmyTeam" [NYGround]="NYGround"
+    [NYGset]="NYGset" [NYGunderTast]="NYGunderTast" [NYGunFreeze]="NYGunFreeze" [NYGuseCovertPower]="NYGuseCovertPower"
+    [NYGfriend]="NYGfriend" (NYGguess)="Guess()" [OCSformGroup]="gameForm" OCSformControl="GuessToken"></guessText-11x>
+}
+@case ("text25x") {
+<guessText-25x (NYGtext)="myView($event)" [NYGmyroom]="NYGmyroom" [NYGmyTeam]="NYGmyTeam" [NYGround]="NYGround"
+    [NYGset]="NYGset" [NYGunderTast]="NYGunderTast" [NYGunFreeze]="NYGunFreeze" [NYGuseCovertPower]="NYGuseCovertPower"
+    [NYGfriend]="NYGfriend" (NYGguess)="Guess()" [OCSformGroup]="gameForm" OCSformControl="GuessToken"></guessText-25x>
+}
+@case('clash-text'){
+<app-clash-guess-text (NYGtext)="myView($event)" [NYGmyroom]="NYGmyroom" [NYGmyTeam]="NYGmyTeam" [NYGround]="NYGround"
+    [NYGset]="NYGset" [NYGunderTast]="NYGunderTast" [NYGunFreeze]="NYGunFreeze" [NYGuseCovertPower]="NYGuseCovertPower"
+    [NYGfriend]="NYGfriend" (NYGguess)="Guess()" [OCSformGroup]="gameForm"
+    OCSformControl="GuessToken"></app-clash-guess-text>
+
+}
+@default {
+<guessText-25x (NYGtext)="myView($event)" [NYGmyroom]="NYGmyroom" [NYGmyTeam]="NYGmyTeam" [NYGround]="NYGround"
+    [NYGset]="NYGset" [NYGunderTast]="NYGunderTast" [NYGunFreeze]="NYGunFreeze" [NYGuseCovertPower]="NYGuseCovertPower"
+    [NYGfriend]="NYGfriend" (NYGguess)="Guess()" [OCSformGroup]="gameForm" OCSformControl="GuessToken"></guessText-25x>
+}
+}

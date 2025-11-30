@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="nyg-cont-item">
+        <div class="bord">
+            <div class="nyg-tx">
+                <div class="nyg-ti">
+                    <span class="nyg-theader">{{OCSgameTime}}</span>
+                    <!-- <div class="line">
+                    </div>
+                    <div class="line2">
+                    </div> -->
+                </div>
+            </div>
+            <div class="bk">
+                <span class="ox1"></span>
+                <div class="nyg-item">
+                    <div class="nyg-teamsb">
+                        <div class="ba">
+                            <div class="nyg-t red-t">
+                                <div class="nyg-tn">
+                                    <span class="nyg-header red-head nyg-sco">RED</span>
+                                    <div class="nyg-dx">
+                                        @for (item of Rounds; track $index) {
+                                        <div class="nyg-d">
+                                            <div class="x red-d"></div>
+                                        </div>
+                                        }
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="nyg-header nyg-sco nyg-score">
+                                        {{NYGredScore}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="nyg-t blu-t">
+                                <div class="nyg-tn">
+                                    <span class="nyg-header blue-head nyg-sco">BLUE</span>
+                                    <div class="nyg-dx">
+                                        @for (item of Rounds; track $index) {
+                                        <div class="nyg-d">
+                                            <div class="x blue-d"></div>
+                                        </div>
+                                        }
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="nyg-header nyg-sco nyg-score">
+                                        {{NYGblueScore}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="outer-dis">
+                        <div class="nyg-bx">
+                            <span class="nyg-header"> S{{NYGset}}</span>
+                        </div>
+                        <div class="nyg-bx">
+                            <span class="nyg-header">R{{NYGround}}</span>
+                        </div>
+                    </div>
+                </div>
+                <span class="ox2"></span>
+            </div>
+            <div>
+                <!-- <div class="line3">
+                </div>
+                <div class="line4">
+                </div> -->
+                <div>
+                    <span class="nyg-lheader">OCS LIVE</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

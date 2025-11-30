@@ -1,0 +1,49 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    .ocs-con {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+:host {
+    .x {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+:host {
+    .nyg-headerT {
+        font-size: 15rem;
+        font-family: arial;
+        font-weight: bold;
+        pointer-events: none;
+    }
+}
+
+:host {
+    .nyg-header {
+        font-size: 15rem;
+        font-family: arial;
+        pointer-events: none;
+
+    }
+}
+
+:host {
+    .ocs-s {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

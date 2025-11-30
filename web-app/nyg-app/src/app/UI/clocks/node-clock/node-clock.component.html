@@ -1,0 +1,18 @@
+<div class="ocs-ti">
+    <div RemoveClass [ReplaceWith]="replaceWith" [Replace]="replace" [replaceIt]="Slot" toRemove="animate" #_control
+        class="ocs-o animateLeft">
+        <div class="ocs-ho">
+            <span class="nyg-headerT">{{DisplayMin}}</span>
+        </div>
+        <div class="ocs-se ocs-ho">
+            <span class="nyg-header">{{DisplaySec}}</span>
+        </div>
+    </div>
+    <div class="ocs-hx">
+        @for (item of [1,2,3,4,5]; track $index) {
+        <div class="left-bo"></div>
+        }
+
+    </div>
+
+</div>

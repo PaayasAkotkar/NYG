@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="nyg-form-container">
+        <span class="ocs-sn2 "></span>
+
+        <div class="nyg-form" appOnMode [fromColor]="fromColor" #scrollBar (scroll)="onScroll(scrollBar.scrollTop)"
+            [toColor]="toColor" [bg]="bg">
+
+            <fieldset class="nyg-form-field">
+
+                <div class="bx">
+                    @for (item of NYGcollection(); track $index) {
+                    <div class="item-fitz" appOnMode [fromColor]="fromColor" [toColor]="toColor" [bg]="bg">
+                        <fieldset class=" nyg-form-fieldXX field-adjust">
+                            <label [htmlFor]="item.OCStemplate" class="nyg-labelXX  adjust-labelH">
+                                <span class="nyg-header" appOnMode [fromColor]="fromColor" [toColor]="toColor"
+                                    [bg]="bg">{{item.OCStemplate}}</span>
+                            </label>
+                            <div class="in-con">
+                                <div class="in-bor">
+                                    <input appOnMode type="checkbox" class="nyg-input _nyg-gym"
+                                        (change)="OnClickValue(item.OCStemplate)" [formControlName]="item.OCStemplate"
+                                        [id]="item.OCStemplate" [name]="item.OCStemplate" [fromColor]="fromColor"
+                                        [toColor]="toColor" [bg]="bg">
+
+                                </div>
+                            </div>
+
+                        </fieldset>
+
+                    </div>
+                    }
+                </div>
+
+            </fieldset>
+            <span class="ocs-sn"></span>
+
+        </div>
+
+
+        <div class="nyg-form-field2">
+
+            <div class="nyg-leg">
+                <div class="noB">
+
+                    <span class="nyg-header1" appOnMode [isSingleColor]="true" [singleColor]="singleColor"
+                        [fromColor]="fromColor" [toColor]="toColor" [bg]="bg">
+                        {{NYGheader}}
+                    </span>
+                </div>
+
+                <div class="blur">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

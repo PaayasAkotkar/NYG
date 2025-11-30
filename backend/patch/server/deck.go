@@ -32,7 +32,5 @@ func PatchDeck(ctx *gin.Context) {
 		query := "UPDATE _nygpatch_ SET  deck = ? WHERE id = ?"
 		va, _ := store.Value()
 		db.Prepare(query, va, BUID)
-		log.Println("for id: ", string(BUID))
 	}
-	log.Println("PROCESS DONE")
 }

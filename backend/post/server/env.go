@@ -15,7 +15,7 @@ import (
 
 var (
 	port     = flag.Int("port", 3434, "server port")
-	USER     = ""
+	USER     = "root"
 	PASSWORD = ""
 )
 
@@ -33,7 +33,7 @@ func SetEnv() {
 
 func Env() *mysql.Config {
 	addr := "127.0.0.1:3306"
-	user := "root"
+	user := USER
 	pass := PASSWORD
 	cfg := mysql.NewConfig()
 	cfg.User = user

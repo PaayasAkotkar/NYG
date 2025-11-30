@@ -1,0 +1,21 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+.ocs-g {
+    animation-name: slap;
+    animation-duration: .25s;
+    animation-timing-function:
+        cubic-bezier(1, -1.14, .99, 1.63);
+    animation-iteration-count: 1;
+}
+
+@keyframes slap {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(4);
+    }
+}

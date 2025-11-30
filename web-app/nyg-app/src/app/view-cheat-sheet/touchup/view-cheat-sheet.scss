@@ -1,0 +1,21 @@
+@use '../../helpers/helpers.scss' as mat;
+@use '../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+:host {
+    .containerX {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+:host {
+    .item {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+}

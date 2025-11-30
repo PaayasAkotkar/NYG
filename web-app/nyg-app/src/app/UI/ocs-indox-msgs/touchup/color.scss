@@ -1,0 +1,13 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+.ocs-box {
+    background-color: map.get(theme.$nyg-blue-palletes, ad11-blue);
+    // background: map.get(theme.$nyg-red-palletes, ad11-red);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}

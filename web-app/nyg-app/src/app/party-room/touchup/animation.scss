@@ -1,0 +1,37 @@
+:host {
+    .ocs-animate {
+        --gradient-border: conic-gradient(from var(--border-angle), #ff0060,
+
+                #7434ff, #7434ff, #ff0060);
+
+        --border-angle: 0turn; // initial-state
+
+        border: solid 5px transparent;
+        border-radius: 5rem;
+
+        background: var(--gradient-border) border-box;
+
+        background-position: center center;
+        animation: rotateQ;
+        animation-duration: 1.45s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+
+    }
+}
+
+
+@keyframes rotateQ {
+
+    to {
+        --border-angle: 2turn;
+
+    }
+
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}

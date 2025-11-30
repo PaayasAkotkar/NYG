@@ -1,0 +1,42 @@
+<div class="ocs-opx">
+    @if (viewLocify) {
+    <div class="ocs-xy">
+
+        <div class="ocs-x move-left">
+            <app-home-profile [NYGshowIMG]="false" [NYGProfile]="NYGonevoneProfile"></app-home-profile>
+            <div class="ocs-hea">
+                <app-view-pattern3 OCStitle="1v1"></app-view-pattern3>
+            </div>
+        </div>
+        <div class="ocs-xxx">
+            <ocs-btnV2 NYGheader="BACK" (NYGEVENT)="toLocify()"></ocs-btnV2>
+        </div>
+        <div class="ocs-x move-right">
+            <app-home-profile [NYGProfile]="NYGtwovtwoProfile"></app-home-profile>
+            <div class="ocs-hea">
+                <app-view-pattern3 OCStitle="2v2"></app-view-pattern3>
+            </div>
+        </div>
+    </div>
+
+    }@else if(viewClash){
+    <div class="ocs-xy">
+        <div class="ocs-xxx">
+            <ocs-btnV2 NYGheader="BACK" (NYGEVENT)="toClash()"></ocs-btnV2>
+        </div>
+        <div class="ocs-x move-left ocs-g">
+            <app-home-profile [NYGProfile]="NYGclashProfile"></app-home-profile>
+            <div class="ocs-hea">
+                <app-view-pattern3 OCStitle="CLASH"></app-view-pattern3>
+            </div>
+        </div>
+
+    </div>
+    }@else {
+    <div class="ocs-e">
+        <app-view-pattern3 (OCSEVENT)="toClash()" OCStitle="CLASH"></app-view-pattern3>
+        <app-view-pattern3 (OCSEVENT)="toLocify()" OCStitle="LOCIFY"></app-view-pattern3>
+
+    </div>
+    }
+</div>

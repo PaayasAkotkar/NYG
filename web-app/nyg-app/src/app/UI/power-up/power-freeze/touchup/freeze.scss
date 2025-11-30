@@ -1,0 +1,15 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+button {
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+    border: 0px;
+}
+
+.freeze-sv {
+    width: 500px;
+    height: 500px;
+}

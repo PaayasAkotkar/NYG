@@ -1,0 +1,37 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+@supports(syntax:'<color>') {
+    @property --bg {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: blue;
+    }
+
+    @property --col_ {
+        syntax: '<color>';
+        inherits: true;
+        initial-value: white;
+    }
+
+    @property --from {
+        syntax: "<color>";
+        inherits: true;
+        initial-value: red;
+    }
+
+    @property --to {
+        syntax: "<color>";
+        inherits: true;
+        initial-value: green;
+    }
+}
+
+:host {
+    .nyg-form-field {
+        background-color: var(--bg);
+        background-color: map.get(theme.$nyg-white-palletes, warm-white);
+
+    }
+}

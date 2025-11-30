@@ -1,0 +1,32 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+
+:host {
+    .ocs-header {
+        animation-name: up;
+        animation-duration: 705ms;
+        animation-timing-function:
+            cubic-bezier(.68, .57, .85, -0.02);
+        animation-iteration-count: infinite;
+
+    }
+}
+
+@keyframes up {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    25% {
+        opacity: 1.5;
+    }
+
+
+    100% {
+
+        transform: scale(2.5);
+    }
+}

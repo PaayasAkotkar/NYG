@@ -1,0 +1,22 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    .nyg-header1 {
+        color: map.get(theme.$nyg-white-palletes, ad1-white);
+        text-shadow: 2px 2px 0px map.get(theme.$nyg-black-palletes, potrait3-black);
+    }
+}
+
+:host {
+    .ocs-lvl {
+        background-color: map.get(theme.$nyg-yellow-palletes, ad1-yellow);
+    }
+}
+
+:host {
+    .slot {
+        border-color: map.get(theme.$nyg-black-palletes, potrait3-black);
+    }
+}

@@ -1,0 +1,134 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+:host {
+    .animate {
+
+        background:
+            linear-gradient(to right, #6F09E8, #1AD6C2);
+        animation: rotateQ;
+        animation-duration: 1.45s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+    }
+}
+
+:host {
+    .ocs-header {
+        color: map.get(theme.$nyg-white-palletes, ad1-white);
+        pointer-events: none;
+    }
+}
+
+:host {
+    .ocs-header1 {
+        pointer-events: none;
+        color: map.get(theme.$nyg-blue-palletes, potrait2-blue);
+    }
+}
+
+.xx {
+    @for $i from 1 to 4 {
+        &:nth-child(#{$i}) {
+            animation: runChange;
+            animation-duration: #{$i * 0.5}s;
+            animation-delay: #{$i * 0.4}s;
+
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+
+        }
+    }
+}
+
+.ocs-x {
+    animation: up;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+
+}
+
+@keyframes up {
+    100% {
+        transform: scale(1.2);
+
+    }
+}
+
+@keyframes runChange {
+    0% {
+        fill: #{map.get(theme.$nyg-blue-palletes, ad19-blue)};
+    }
+
+    100% {
+        fill: #{map.get(theme.$nyg-blue-palletes, ad11-blue)};
+        stroke-width: 10px;
+        filter: url("#stroke-blur");
+        stroke: map.get(theme.$nyg-white-palletes, ad8-white);
+    }
+}
+
+.ocs-parent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    transform-style: preserve-3d;
+    perspective: 800000px;
+}
+
+.particles {
+    width: 250px;
+    height: 250px;
+    display: block;
+    background-color: orange;
+    border-radius: 100%;
+    border-width: 10px;
+    border-style: solid;
+}
+
+.ocs-parent {
+    animation: rotateP;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+
+    .particles {
+        @for $i from 1 to 5 {
+            &:nth-child(#{$i}) {
+                animation: particle;
+                animation-duration: #{$i * 0.5}s;
+                animation-delay: #{$i * 0.4}s;
+
+                animation-iteration-count: infinite;
+                animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+
+            }
+        }
+    }
+}
+
+@keyframes particle {
+    0% {
+        border-color: map.get(theme.$nyg-white-palletes, ad8-white);
+        background-color: map.get(theme.$nyg-blue-palletes, ad14-blue);
+
+    }
+
+    100% {
+        transform: scale(0.5) rotateX(1turn)translateX(100%);
+        background-color: map.get(theme.$nyg-blue-palletes, ad4-blue);
+    }
+}
+
+@keyframes rotateP {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

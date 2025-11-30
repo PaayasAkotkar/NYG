@@ -1,0 +1,91 @@
+<div class="container">
+    <div #items class="nyg-item">
+
+        <form [formGroup]="changeRoomSettings" class="nyg-form">
+            <fieldset class="nyg-form-field">
+                @switch (ENavigation) {
+                @case ('BOOK') {
+                <div class="nyg-fs2">
+                    <app-field NYGMode="CREATE" (NYGEVENT)="CollectionToken($event)" [NYGcollection]="NYGcollection"
+                        [NYGheader]="Header"></app-field>
+                </div>
+                <div class="fs23">
+                    <app-ocs-header [NYGsetToolTip]="true" [NYGtoolTip]="bookToolTip" [NYGerrorMessage]="NYGbookerror"
+                        [NYGisError]="isNYGbookError" OCStitle="ANY 1 BOOK"></app-ocs-header>
+                </div>
+                }
+
+                @case ('CONTROLS') {
+
+                <div class="ocs-xxx">
+
+                    <div class="nyg-fs">
+                        @for (item of nygFormControl; track $index) {
+                        <app-settings-pattern (NYGclick)="click($event)" class="n"
+                            [NYGformControl]="item.OCSformControl" [NYGheader]="item.OCStemplate" [NYGsetToolTip]="true"
+                            [NYGtoolTip]="item.OCSToolTip"></app-settings-pattern>
+                        }
+
+                    </div>
+                    <div class="ocs-fs2s">
+                        <app-ocs-header [NYGsetToolTip]="true" [NYGtoolTip]="NYGgameTimeToolTip"
+                            OCStitle="GAME TIME"></app-ocs-header>
+                        <app-ocs-counter (OCSAdd)="GAdd()" (OCSSub)="GSub()" [OCSheader]="GameTime"></app-ocs-counter>
+                        <app-ocs-header [NYGsetToolTip]="true" [NYGtoolTip]="NYGdecisionTimeToolTip"
+                            OCStitle="DISCUSSION TIME"></app-ocs-header>
+                        <app-ocs-counter (OCSAdd)="DAdd()" (OCSSub)="DSub()"
+                            [OCSheader]="DiscussionTime"></app-ocs-counter>
+                    </div>
+                </div>
+                }
+                @case ('POWERS') {
+                <div class="ocs-yx">
+                    <app-ocs-header [NYGerrorMessage]="NYGpowerError" [NYGisError]="isNYGpowerError"
+                        OCStitle="ANY {{Maxlength}} POWERS"></app-ocs-header>
+
+                    <div class="nyg-fs2">
+                        <div class="nyg-p1">
+                            @for (item of powers; track $index) {
+                            @if ($index%2==0) {
+                            <app-power-setttings-pattern (NYGEVENT)="PowerToken($event)"
+                                [NYGformControl]="item.OCSformControl"
+                                [NYGheader]="item.OCStemplate"></app-power-setttings-pattern>
+                            }}
+                        </div>
+                        <div class="nyg-p1">
+                            @for (item of powers; track $index) {
+                            @if ($index%2!=0) {
+                            <app-power-setttings-pattern (NYGEVENT)="PowerToken($event)"
+                                [NYGformControl]="item.OCSformControl"
+                                [NYGheader]="item.OCStemplate"></app-power-setttings-pattern>
+                            }}
+                        </div>
+
+                    </div>
+
+                </div>
+                }
+
+                }
+            </fieldset>
+        </form>
+    </div>
+
+
+    <div class="container2">
+        <div class="ocs-step">
+
+            <ocs-btnV2 NYGheader="CONTROLS" (NYGEVENT)="toControls()"></ocs-btnV2>
+            <ocs-btnV2 NYGheader="POWERS" (NYGEVENT)="toPowers()"></ocs-btnV2>
+            <ocs-btnV2 NYGheader="BOOK" (NYGEVENT)="toBook()"></ocs-btnV2>
+            @if (!NYGclient) {
+            <div class="btn-cont">
+
+                <button class="nyg-make-btn">
+                    <span class="nyg-header" (click)="SaveSettings($event)">SAVE</span>
+                </button>
+            </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,116 @@
+<app-pick-pattern OCSheader="BET TO TRICK" [OCSformGroup]="NYGbetForm" [OCScollections]="NYGcollection"
+    (OCSbtnEvent)="Bet()" (OCSgetSelectedToken)="GetBetToken($event)" OCSbtnHeader="BET" [OCSmyTeam]="NYGmyTeam"
+    [OCSproceed]="NYGproceed" [NYGMode]="NYGMode"></app-pick-pattern>
+
+<!--
+<div class="ocs-be-item">
+
+    <svg class="ocs-banner" width="100%" height="100%" viewBox="0 0 2989 1156" version="1.1"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+        xmlns:serif="http://www.serif.com/"
+        style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+        <g transform="matrix(1614.2,0,0,1614.2,3021.11,1155.77)"></g><text class="ocs-header" x="-118.227px"
+            y="1155.77px" style="font-family:'Arial';font-size:1614.2px;">BET</text>
+        <g id="e-balls">
+            <ellipse class="bulb" cx="1156.01" cy="222.921" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="1156.01" cy="914.767" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="1347.75" cy="1088.49" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="1810.12" cy="1088.49" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="1649.65" cy="1088.49" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="1497.34" cy="1088.49" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="1167.9" cy="1066.06" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="1156.01" cy="751.579" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="1156.01" cy="562.894" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="1621.09" cy="562.894" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="1773.4" cy="562.894" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="1463.34" cy="562.894" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="1301.52" cy="562.894" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="1156.01" cy="374.209" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="1156.01" cy="61.434" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="1475.58" cy="61.434" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="1785.64" cy="61.434" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="1636.05" cy="61.434" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="1323.27" cy="61.434" rx="66.822" ry="61.434" />
+        </g>
+        <g id="t-balls">
+            <ellipse class="bulb" cx="2164.71" cy="61.434" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="2535.28" cy="195.723" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="2535.28" cy="856.971" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="2535.28" cy="1064.02" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="2535.28" cy="663.186" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="2535.28" cy="508.498" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="2535.28" cy="336.812" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="2848.05" cy="61.434" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="2657.67" cy="61.434" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="2482.58" cy="61.434" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="2321.1" cy="61.434" rx="66.822" ry="61.434" />
+        </g>
+        <g id="b-balls">
+            <ellipse class="bulb" cx="77.632" cy="72.535" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="252.433" cy="72.535" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="77.632" cy="750.822" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="80.62" cy="1052.62" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="551.238" cy="1085.48" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="790.282" cy="919.273" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="695.038" cy="635.409" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="790.282" cy="771.738" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="691.303" cy="1033.19" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="395.859" cy="1088.47" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="235.999" cy="1088.47" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="77.632" cy="903.213" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="77.632" cy="596.938" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="413.787" cy="550.249" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="576.263" cy="550.249" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="251.312" cy="550.249" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="77.632" cy="435.583" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="77.632" cy="260.782" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="585.6" cy="85.981" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="720.112" cy="396.237" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="709.791" cy="210.172" rx="66.822" ry="61.434" />
+            <ellipse class="bulb" cx="430.222" cy="72.535" rx="66.822" ry="61.434" />
+        </g>
+    </svg>
+
+
+    <form [formGroup]="NYGbetForm" class="ocs-bet-form">
+
+        <span class="ocs-sn2"></span>
+
+        <div class="nyg-form-container">
+
+            <div class="nyg-form">
+
+                <fieldset class="nyg-form-field">
+
+                    <div class="bx">
+                        @for (item of NYGcollection; track $index) {
+                        <div class="item-fitz">
+                            <fieldset class=" colx{{$index}} nyg-form-fieldXX field-adjust">
+                                <label [htmlFor]="item.OCStemplate" class="nyg-labelXX  adjust-labelH">
+                                    <span class="nyg-header ">{{item.OCStemplate}}</span>
+                                </label>
+                                <div class="in-con">
+                                    <div class="in-bor">
+                                        <input type="checkbox" class="nyg-input"
+                                            (change)="GetBetToken(item.OCStemplate)"
+                                            [formControlName]="item.OCStemplate" [id]="item.OCStemplate"
+                                            [name]="item.OCStemplate">
+
+                                    </div>
+                                </div>
+
+                            </fieldset>
+
+                        </div>
+                        }
+                    </div>
+
+                </fieldset>
+                <span class="ocs-sn"></span>
+
+            </div>
+
+        </div>
+
+    </form>
+</div> -->

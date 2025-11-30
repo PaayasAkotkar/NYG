@@ -1,0 +1,55 @@
+<div class="PCcontainer">
+    <div class="nyg-form-PCcontainer">
+        <div class="nyg-form-PCview">
+            <form class="nyg-form" [formGroup]="OCSformGroup">
+                <fieldset class="nyg-form-items">
+                    <div class="adjust">
+                        <label [htmlFor]="OCSformControl">
+                        </label>
+
+                        @switch (true) {
+                        @case (NYGunFreeze() && !NYGunderTast() ){
+                        <div class="nyg-in-conta">
+                            <input #A (input)="change(A.value)" [MyTeamColor]="NYGmyTeam" [name]="OCSformControl"
+                                class="nyg-input" type="input" [formControlName]="OCSformControl">
+                        </div>
+                        <button class="nyg-btn" [MyTeamColor]="NYGmyTeam" (click)="Guess()">
+                            <span class="nyg-header">G</span>
+                        </button>
+                        }
+                        @case (NYGunderTast()) {
+                        <div class="nyg-in-conta">
+                            <input #B (input)="change(B.value)" autocomplete="off" type="password"
+                                [MyTeamColor]="NYGmyTeam" [name]="OCSformControl" class="nyg-input"
+                                [formControlName]="OCSformControl">
+                        </div>
+                        <button class="nyg-btn" [MyTeamColor]="NYGmyTeam" (click)="Guess()">
+                            <span class="nyg-header">G</span>
+                        </button>
+                        }
+                        @default {
+
+                        <div class="nyg-in-conta dolla">
+                            <input #C (input)="change(C.value)" autocomplete="off" [MyTeamColor]="NYGmyTeam"
+                                [name]="OCSformControl" class="nyg-input" [formControlName]="OCSformControl">
+                        </div>
+                        <button class="nyg-btn" [MyTeamColor]="NYGmyTeam" (click)="Guess()">
+                            <span class="nyg-header">G</span>
+                        </button>
+                        }
+                        }
+                        @if (NYGunFreeze()==false) {
+                        <div class="ocs-parent">
+
+                            @for (item of [1,2,3,4,5]; track $index) {
+                            <div class="xx right" appOnFreeze></div>
+                            }
+                        </div>
+                        <div class="freeze-it"></div>
+                        }
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    .nyg-btn {
+        background: map.get(theme.$nyg-white-palletes, ad1-white);
+    }
+}
+
+:host {
+    .nyg-header {
+        font-size: 35rem;
+        pointer-events: none;
+        font-family: arial;
+        background:
+            linear-gradient(to bottom, #93E800 35%,
+
+                #0844C6 30%, #FF0012 59%, #F29136 10%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bolder;
+
+    }
+}
+
+.freeze-it {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: orange;
+
+}
+
+@keyframes heart {
+
+    0% {
+        background-color: conic-gradient(from var(--border-angle), #93E800 5%,
+
+                #0844C6, #FF0012 99%, #F29136);
+        ;
+    }
+
+    100% {
+        animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+
+    }
+}

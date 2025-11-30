@@ -1,0 +1,91 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+:host {
+    --red-signal: #ff0031;
+    --yellow-signal: #ffa300;
+    --green-signal: #00da00;
+}
+
+.yellowf {
+    fill: var(--yellow-signal);
+    animation-name: yellow;
+    animation-duration: 2.49845s;
+    animation-delay: 2.49s;
+
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.46, .31, .48, .14);
+    animation-fill-mode: forwards;
+}
+
+.greenf {
+    fill: var(--green-signal);
+    animation-name: green;
+    animation-duration: 2.49845s;
+    animation-delay: 2.49s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.46, .31, .48, .14);
+    animation-fill-mode: forwards;
+}
+
+.redf {
+    fill: var(--red-signal);
+    animation-name: red;
+    animation-duration: 2.49845s;
+    animation-delay: 2.49s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.46, .31, .48, .14);
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes red {
+
+    0%,
+    33% {
+        fill: var(--green-signal);
+    }
+
+    34%,
+    100% {
+        fill: var(--yellow-signal);
+
+    }
+}
+
+@keyframes yellow {
+
+    0%,
+    33% {
+        fill: var(--green-signal);
+
+    }
+
+    34%,
+    66% {
+        fill: var(--red-signal);
+
+    }
+
+    67%,
+    100% {
+        fill: var(--yellow-signal);
+
+    }
+}
+
+@keyframes green {
+
+    0%,
+    66% {
+        fill: var(--red-signal);
+
+    }
+
+    67%,
+    100% {
+        fill: var(--yellow-signal);
+
+    }
+}

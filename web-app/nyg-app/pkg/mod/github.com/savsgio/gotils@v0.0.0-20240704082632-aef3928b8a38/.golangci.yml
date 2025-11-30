@@ -1,0 +1,19 @@
+linters:
+  fast: false
+  enable-all: true
+  disable:
+    - gomnd
+    - gochecknoglobals
+    - testpackage
+    - paralleltest
+    - nolintlint
+    - varnamelen
+    - exhaustruct
+    - nonamedreturns
+    - depguard
+    - mnd
+    - copyloopvar
+    - intrange
+
+    # deprecated
+    - execinquery

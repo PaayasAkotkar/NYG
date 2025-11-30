@@ -1,0 +1,16 @@
+<div class="ocs-item">
+    <div class="ocs-y color-y">
+
+        <div class="ocs-x color-x">
+            <app-rooms-list></app-rooms-list>
+            <button (click)="click()">
+                <span class="nyg-header">OR</span>
+            </button>
+            @if (show) {
+            <button (click)="toMake()" [@OnEnter] class="ocs-xx color-xx">
+                <span class="nyg-header">SEARCH</span>
+            </button>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<div class="containerX">
+    <div class="nyg-sheet-container">
+        <div class="adjust21">
+
+            <table class="nyg-cheat-sheet">
+
+                <thead class="nyg-h">
+                    <tr class="nyg-set">
+                        @for (item of Rounds; track $index) {
+                        <th scope="col">
+                            <div>
+                                <span class="nyg-header">
+                                    {{item}}
+                                </span>
+                            </div>
+                        </th>
+                        }
+                    </tr>
+                </thead>
+
+                <tbody class="nyg-b">
+                    <tr>
+                        @for (res of NYGupdateRed; track $index) {
+
+                        <td>
+                            <div class="nyg-res">
+                                <div class="adjust">
+                                    <span class="nyg-header red-head">{{res[1]}}</span>
+                                </div>
+
+                            </div>
+                        </td>
+                        }
+                        <td>
+                            <div>
+                                <div>
+                                    <span class="nyg-header red-head">RED</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <div>
+                                    <span class="score-header">{{HS}}</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+                <tbody class="nyg-b">
+                    <tr>
+                        @for (res of NYGupdateBlue; track $index) {
+
+                        <td>
+                            <div class="nyg-res">
+                                <div class="adjust">
+                                    <span class="nyg-header blue-head">
+                                        {{res[1]}}
+                                    </span>
+                                </div>
+
+                            </div>
+                        </td>
+                        }
+                        <td>
+                            <div>
+                                <div>
+                                    <span class="nyg-header blue-head">BLUE</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <div>
+                                    <span class="score-header">{{AS}}</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>

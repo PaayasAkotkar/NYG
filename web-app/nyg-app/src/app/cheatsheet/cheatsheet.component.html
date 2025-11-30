@@ -1,0 +1,66 @@
+<div class="containerX">
+    <div class="nyg-sheet-container">
+        <div class="adjust21">
+
+            <table class="nyg-cheat-sheet">
+
+                <thead class="nyg-h">
+                    <tr class="nyg-set">
+                        <th class="ocs-score">
+                            <span class="nyg-header s-header">RED {{NYGredScore}} BLUE {{NYGblueScore}}</span>
+                        </th>
+                        @for (item of Sets; track $index) {
+                        <th scope="col">
+                            <div>
+                                <span class="nyg-header st-header">
+                                    {{item}}
+                                </span>
+                            </div>
+                        </th>
+                        }
+                    </tr>
+                </thead>
+
+                <tbody class="nyg-bx">
+                    @for (nn of NYGplayersNickNames; track nn) {
+                    <tr class="nyg-stats">
+                        <th>
+                            <div>
+                                <span class="nyg-header n-header">
+                                    {{nn}}
+                                </span>
+                            </div>
+                        </th>
+
+                        <td class="ocs-deta">
+                            <div class="nyg-res">
+                                <div class="adjust">
+                                    <span class="nyg-header left-head">{{NYGupdateSheet[nn][1]}}</span>
+                                    <span class="nyg-header right-head">{{NYGupdateSheet[nn][2]}}</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="ocs-deta2">
+                            <div class="nyg-res">
+                                <div class="adjust">
+                                    <span class="nyg-header left-head">{{NYGupdateSheet[nn][3]}}</span>
+                                    <span class="nyg-header right-head">{{NYGupdateSheet[nn][4]}}</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="ocs-deta3">
+                            <div class="nyg-res">
+                                <div class="adjust">
+                                    <span class="nyg-header left-head">{{NYGupdateSheet[nn][5]}}</span>
+                                    <span class="nyg-header right-head">{{NYGupdateSheet[nn][6]}}</span>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

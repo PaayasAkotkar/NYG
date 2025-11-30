@@ -1,0 +1,19 @@
+<div>
+    <div class="ocs-b_">
+        <!-- @for (name of PlayersNames; track $index) { -->
+        <div appOnTeamColor [doBackground]="true" [Team]="NYGTeamName" class="ocs-b" #ocs_b>
+            <div class="ocs-a">
+                <span class="nyg-header">{{NYGheader}}</span>
+            </div>
+            <div #sprite class="ocs-sprit">
+                @for (item of [1,2,3,4,5,6,7,8,9,10]; track $index) {
+                <div [style.--to]="getDynamicColor($index, 'to')" [style.--from]="getDynamicColor($index, 'from')"
+                    [ngClass]="['class' + $index.toString()]" appOnChance [NYGTeamName]="NYGTeamName"
+                    [class.animate]="animate()" [OCScurrentChance]="OCScurrentChance" #slot class="slot animate-slot">
+                </div>
+                }
+            </div>
+        </div>
+        <!-- } -->
+    </div>
+</div>

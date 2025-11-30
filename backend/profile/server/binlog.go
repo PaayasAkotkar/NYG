@@ -19,7 +19,6 @@ type ChangeDetectionRef struct {
 }
 
 func (h *EVT) OnRow(e *canal.RowsEvent) error {
-	log.Println("in onRow")
 	var id string
 	inx := 0
 	cdr := ChangeDetectionRef{}
@@ -68,15 +67,9 @@ func (h *EVT) OnRow(e *canal.RowsEvent) error {
 				}
 			}
 
-			log.Println("cdr: ", cdr.ActionColName)
 			switch cdr.ActionColName {
 			case "playerCredits":
-				log.Println("changes playerCredits")
-				// cfg := Env()
-				// con := sqlmanager.ConnectSQL{}
 				pubsub.pubUpdatedPlayerCredits <- &body.Credits
-				log.Println("yes playerCredits changed")
-				// inx = i
 			case "name":
 				pubsub.pubUpdatedName <- body.Name
 			case "nickname":
@@ -117,19 +110,14 @@ func (h *EVT) OnRow(e *canal.RowsEvent) error {
 	return nil
 }
 
-// func (h *EVT) String() string {
-// 	log.Println("in String")
-// 	return "MyEventHandler"
-// }
-
 func Watch() {
 	mu.Lock()
 	defer mu.Unlock()
 
 	cfg := canal.NewDefaultConfig()
 	cfg.Addr = "127.0.0.1:3306"
-	cfg.User = "root"
-	cfg.Password = "kingp12"
+	cfg.User = USER
+	cfg.Password = PASSWORD
 	// We only care table canal_test in test db
 	cfg.Dump.TableDB = "nygpatch"
 	cfg.Dump.Tables = []string{"_nygpatch_"}

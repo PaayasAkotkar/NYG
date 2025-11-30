@@ -1,0 +1,70 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+
+:host {
+    .nyg-input {
+        &:focus {
+            transition-property: padding-top;
+            transition-duration: 0.24s;
+            transition-timing-function: cubic-bezier(.9, .81, .67, .68);
+            padding-top: 20px;
+        }
+    }
+}
+
+
+.ocs-parent {
+    @for $i from 1 to 6 {
+        .right {
+            &:nth-child(#{$i}) {
+                animation: runt;
+                animation-duration: #{$i* 1.945}s;
+                animation-iteration-count: infinite;
+                animation-timing-function: cubic-bezier(1, 1.98, .99, .8);
+                animation-delay: #{$i * 1.1}s;
+            }
+        }
+    }
+}
+
+@keyframes runt {
+    0% {
+        background: rgba(255, 255, 255, 1);
+    }
+
+    99% {
+        background: rgba(0, 154, 206, 0.5);
+        transform: translateX(2000%);
+    }
+
+    100% {
+        background: rgba(255, 255, 255, 1);
+        transform: translateX(0%);
+    }
+}
+
+
+.xx {
+    width: 40px;
+    height: 250px;
+    display: block;
+    background-color: white;
+    position: relative;
+    transform: skew(-15deg);
+    z-index: 1111;
+    right: 90%;
+}
+
+.ocs-parent {
+    width: 40px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transform: skew(-15deg);
+    z-index: 1111;
+    right: 90%;
+
+}

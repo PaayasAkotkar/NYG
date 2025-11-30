@@ -1,0 +1,126 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.ocs-cont {
+    width: fit-content;
+    height: fit-content;
+    padding: 45px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.ocs-item {
+    width: fit-content;
+    height: 950px;
+    display: flex;
+    flex-direction: column;
+    background-color: map.get(theme.$nyg-white-palletes, ad8-white);
+
+    overflow-y: scroll;
+    overflow-x: scroll;
+
+    position: relative;
+    padding: 10px;
+    gap: 10px;
+    overflow-x: auto;
+}
+
+:host {
+    .ocs-manual-cont {
+        inline-size: 750px;
+        padding: 25px;
+        background-color: map.get(theme.$nyg-white-palletes, ad8-white);
+
+        overflow: hidden;
+        border-radius: 3rem;
+    }
+}
+
+:host {
+    .ocs-contax {
+        inline-size: 0px;
+        width: fit-content;
+    }
+}
+
+:host {
+    .ocs-2nd {
+        inline-size: 0px;
+        width: fit-content;
+    }
+}
+
+.outer {
+    padding: 15px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 3rem;
+
+}
+
+
+.ocs-xitems {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.ocs-img-cont {
+    width: 100%;
+    height: 100%;
+}
+
+.ocs-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+:host {
+    .nyg-header {
+        color: map.get(theme.$nyg-black-palletes, ad1-black);
+        font-family: arial;
+        font-size: 4rem;
+        overflow-wrap: break-word;
+        white-space: pre-line;
+        max-width: 600px;
+        line-height: 1.2;
+        pointer-events: none;
+    }
+}
+
+:host {
+    .nyg-header1 {
+        color: map.get(theme.$nyg-black-palletes, ad1-black);
+        font-family: arial;
+        font-size: 4rem;
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+        max-width: 600px;
+        line-height: 1.5;
+        pointer-events: none;
+    }
+}
+
+.ocs-xa {
+    justify-content: flex-start;
+    align-items: flex-start;
+}

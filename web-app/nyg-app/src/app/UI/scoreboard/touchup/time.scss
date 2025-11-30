@@ -1,0 +1,53 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+
+:host {
+    .nyg-tx {
+        padding: 50px;
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .nyg-theader {
+        font-size: 6rem;
+        font-family: Arial;
+        letter-spacing: -1px;
+
+        & {
+            color: map.get(theme.$nyg-white-palletes, ad1-white);
+
+        }
+    }
+
+}
+
+:host {
+
+    .nyg-n {
+        padding: 10px;
+        font-size: 3rem;
+        font-family: Arial;
+        font-weight: 900;
+        text-shadow:
+            -8px 2px 0 map.get(theme.$nyg-black-palletes, umber-black),
+            -8px -2px 0 map.get(theme.$nyg-black-palletes, umber-black),
+            // full font outline
+            -1px 2px 0 map.get(theme.$nyg-black-palletes, umber-black),
+            1px 2px 0 map.get(theme.$nyg-black-palletes, umber-black),
+            2px 2px 0 map.get(theme.$nyg-black-palletes, umber-black),
+            2px -2px 0 map.get(theme.$nyg-black-palletes, umber-black),
+            -4px 2px 0 map.get(theme.$nyg-black-palletes, umber-black),
+            -4px -2px 0 map.get(theme.$nyg-black-palletes, umber-black);
+
+        color: map.get(theme.$nyg-white-palletes, white)
+    }
+}
+
+:host {
+    .nyg-header {
+        font-size: 4rem;
+
+    }
+}

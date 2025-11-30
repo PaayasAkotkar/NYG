@@ -1,0 +1,69 @@
+<div class="containerX">
+    <div class="deta-container">
+
+        <div class="headers-container">
+
+            <div class="set-border">
+
+                <div class="menu-bar">
+                    <div class="menu-bar">
+
+                        <button class="nyg-submenu">
+                            <span class="nyg-menu-header">{{rating}}</span>
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="sheet-list">
+
+                    <div class="header-list">
+                        <div class="adjust-sheet2">
+                            <mat-card class="det">
+                                <mat-card-title class="nyg-title">
+                                    <span class="nyg-header">
+                                        {{playerName}}
+                                    </span>
+                                </mat-card-title>
+                                <mat-card-subtitle class="nyg-su">
+                                    <span class="nyg-header">
+                                        {{teamName}}
+                                    </span>
+                                </mat-card-subtitle>
+                            </mat-card>
+
+                        </div>
+
+                    </div>
+                    <div class="nyg-cheat-sheet">
+                        <div class="adjust-sheet">
+
+                            @for (item of Set; track $index) {
+                            <mat-card class="nyg-set">
+                                <mat-card-title class=" nyg-title nyg-header">{{item}}</mat-card-title>
+                                <mat-card-title class="nyg-round nyg-tile">
+                                    @for (item of Round; track $index) {
+                                    <span class="nyg-round-headers">
+
+                                        <span class="nyg-header">{{Round[$index]}}</span>
+                                        <span class="nyg-header">
+                                            {{_update}}
+                                        </span>
+                                    </span>
+
+                                    }
+                                </mat-card-title>
+                            </mat-card>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>

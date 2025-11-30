@@ -23,7 +23,6 @@ func ServeSpur(ctx *gin.Context) {
 	if err := ctx.ShouldBindBodyWithJSON(&req); err != nil {
 		panic(err)
 	}
-	log.Println("body: ", req)
 
 	conn := sqlmanager.ConnectSQL{}
 	cfg := Env()
@@ -51,7 +50,6 @@ func ServeSpur(ctx *gin.Context) {
 		log.Println(err)
 		return
 	}
-	log.Println("playersCredit: ", src)
 	var cleanAccount = strings.ReplaceAll(src.Spur, "S", "")
 	var cleanPurchase = strings.ReplaceAll(req.Spur, "S", "")
 	a, err := strconv.Atoi(cleanAccount)

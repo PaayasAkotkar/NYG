@@ -1,0 +1,46 @@
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use '../../../../helpers/helpers.scss' as mat;
+@use 'sass:map';
+
+:host {
+    .nyg-li {
+        filter: grayscale(1);
+        background-color: map.get(theme.$nyg-black-palletes, ad2-black);
+
+        .nyg-header {
+            pointer-events: none;
+            color: map.get(theme.$nyg-white-palletes, ad4-white);
+        }
+    }
+}
+
+:host {
+    .outer-bordr {
+        background-color: map.get(theme.$nyg-white-palletes, ad4-white);
+    }
+}
+
+:host {
+    .border {
+        background-color: map.get(theme.$nyg-white-palletes, ad4-white);
+    }
+}
+
+:host {
+    .nyg-input:checked {
+        background-color: black;
+    }
+}
+
+:host {
+    .nyg-header {
+        pointer-events: none;
+    }
+}
+
+:host {
+    .ocs-rate-shape {
+        width: 10%;
+        height: 20%;
+    }
+}

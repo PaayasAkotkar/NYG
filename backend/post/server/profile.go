@@ -23,7 +23,6 @@ func GetProfile(id string) ICreate {
 		log.Println(err)
 		return ICreate{}
 	}
-	log.Println("for id: ", id)
 	_uuid, _ := uuid.Parse(id)
 	BUID, _ := _uuid.MarshalBinary()
 	var prof ICreate
@@ -63,9 +62,5 @@ func GetProfile(id string) ICreate {
 		fmt.Println("NULLLLLLL 🤢 id : ", id)
 		return ICreate{}
 	}
-	fmt.Println("profile: ", prof.Name)
-	fmt.Println("profile: ", prof.Nickname)
-	fmt.Println("profile: ", prof.ID)
-
 	return prof
 }

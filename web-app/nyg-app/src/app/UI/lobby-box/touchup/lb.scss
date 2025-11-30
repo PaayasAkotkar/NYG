@@ -1,0 +1,87 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    .ocs-overlay {
+        position: absolute;
+    }
+}
+
+:host {
+    .frame {
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+:host {
+    .ocs-header {
+        font-size: 3rem;
+        font-family: arial;
+    }
+}
+
+:host {
+    .ocs-na {
+        padding: 10px;
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+    }
+}
+
+:host {
+    .ocs-pla {
+        width: 300px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow: hidden;
+        padding: 20px;
+        border-radius: 4rem;
+        overflow: scroll;
+        scrollbar-width: none;
+    }
+}
+
+:host {
+    .ocs-na {
+        width: fit-content;
+        height: fit-content;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: stretch;
+
+    }
+}
+
+:host {
+    .ocs-pla-li {
+        width: fit-content;
+        height: fit-content;
+        padding: 5px;
+        transform: skew(-10deg);
+    }
+}
+
+:host {
+    .ocso {
+        position: absolute;
+        top: 10px;
+    }
+}
+
+:host {
+    .ocs-on {
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+    }
+}

@@ -1,0 +1,130 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+:host {
+    .run {
+        animation-name: run;
+        animation-duration: 1.49845s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.46, .31, .48, .14);
+        animation-fill-mode: forwards;
+        border-radius: 2rem;
+        opacity: 0.5;
+        background: white;
+    }
+}
+
+:host {
+    .animate-slot {
+        @for $i from 1 to 11 {
+            &:nth-child(#{$i}) {
+                animation-name: run2;
+                animation-duration: 900ms;
+                animation-delay: #{$i *.1}s;
+                animation-iteration-count: infinite;
+                animation-timing-function: cubic-bezier(.17, .67, 1, -0.3);
+            }
+        }
+    }
+}
+
+:host {
+    --to: #6b05ff;
+    --from: #f5f4de;
+    --fromPer: 100%;
+    --toPer: 100%;
+    --border: #E5E3E1;
+    --decr: 100%;
+}
+
+@keyframes run2 {
+    0% {
+        background: linear-gradient(to right, var(--from) var(--fromPer),
+                var(--to) var(--toPer));
+    }
+
+    60% {
+        background: linear-gradient(to right, var(--from)40%,
+                var(--to) 100%);
+
+    }
+
+    70% {
+        background: linear-gradient(to right, var(--from) 70%,
+                var(--to) 100%);
+
+    }
+
+    80% {
+        background: linear-gradient(to right, var(--from) 80%,
+                var(--to) 100%);
+
+    }
+
+    90% {
+        background: linear-gradient(to right, var(--from) 90%,
+                var(--to) 100%);
+
+    }
+
+    100% {
+        background: linear-gradient(to right, var(--from),
+                var(--to));
+
+    }
+}
+
+@keyframes run {
+    0% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(245%);
+    }
+
+    75% {
+        transform: translateY(-75%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+
+:host {
+    .ocs-b_ {
+        --gradient-borderx: conic-gradient(from var(--border-angle), var(--from),
+
+                var(--to), var(--to), var(--from));
+        --border-angle: 0turn; // initial-state
+
+        border: solid 2px transparent;
+        border-radius: 4rem;
+
+        background: var(--gradient-borderx) border-box;
+
+        background-position: center center;
+        animation: rotateQ;
+        animation-duration: 3.45s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.17, .67, 1, -0.3);
+    }
+}
+
+
+@keyframes rotateQ {
+
+    to {
+        --border-angle: 2turn;
+    }
+}
+
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}

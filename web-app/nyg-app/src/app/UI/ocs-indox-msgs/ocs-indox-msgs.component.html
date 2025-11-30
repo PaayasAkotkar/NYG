@@ -1,0 +1,9 @@
+<div class="ocs-box">
+
+    @for (msg of OCSmsgs; track $index) {
+    <div class="ocs-msgs">
+        <app-ocs-indox-msg [OCStitle]="msg.author" [OCSsubtitle]="msg.msg"></app-ocs-indox-msg>
+    </div>
+    }
+
+</div>

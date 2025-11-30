@@ -1,0 +1,11 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+:host {
+    .nyg-header {
+        font-family: arial;
+        font-size: 3rem;
+        pointer-events: none;
+    }
+}

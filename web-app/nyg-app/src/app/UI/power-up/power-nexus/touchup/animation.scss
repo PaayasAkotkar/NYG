@@ -1,0 +1,64 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+:host {
+    .nyg-se {
+        --gradient-border: conic-gradient(from var(--border-angle), #6F09E8 2%,
+
+                #D6DCE8, #1AD6C2 99%, #F29136);
+        --border-angle: 0turn; // initial-state
+
+        border: solid 5px transparent;
+        background: var(--gradient-border) border-box;
+
+        background-position: center center;
+        animation: rotateQ;
+        animation-duration: .45s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+    }
+}
+
+@keyframes rotateQ {
+
+    to {
+        --border-angle: 1turn;
+
+    }
+
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+:host {
+    .container {
+        perspective: 1000px;
+
+    }
+}
+
+// :host {
+//     .nyg-se {
+//         transform-style: preserve-3d;
+//         animation: on-enter;
+//         animation-duration: 1.45s;
+//         animation-iteration-count: 1;
+//         animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+//     }
+// }
+
+@keyframes on-enter {
+    0% {
+        transform: rotateX(5turn) scale(4.5);
+
+    }
+
+    100% {
+        transform: rotateX(1turn) scale(1);
+    }
+}

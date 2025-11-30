@@ -1,0 +1,39 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+
+:host {
+    .nyg-header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        --from: #{map.get(theme.$nyg-red-palletes, ad18-red)};
+        --to:#{map.get(theme.$nyg-blue-palletes, ad18-blue)};
+
+        letter-spacing: 3px;
+
+        background:
+            linear-gradient(to right, var(--from)30%,
+                var(--to));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bolder;
+    }
+}
+
+button {
+    border-radius: 4rem;
+
+}
+
+:host {
+    .nyg-header {
+        font-size: 8rem;
+        font-family: 'Hey August';
+        font-weight: bolder;
+
+
+    }
+}

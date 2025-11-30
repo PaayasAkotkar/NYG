@@ -1,0 +1,49 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+.nyg-form {
+    background: map.get(theme.$nyg-green-palletes, ad20-green);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.nyg-pc {
+    width: 100%;
+    height: 100%;
+}
+
+input {
+    appearance: none;
+
+}
+
+.nyg-pc-items {
+    @include mat.setup(100%, 100%, flex);
+    @include mat.setupFlex(row, center, center);
+
+}
+
+:host {
+    .nyg-form {
+        @include mat.setup(fit-content, 100%, flex);
+        @include mat.setupFlex(row, center, center);
+        border-radius: 4rem;
+
+        & {
+            gap: 15px;
+            padding: 0px;
+        }
+    }
+}
+
+:host {
+    .fit {
+        @include mat.setup(100%, 100%, flex);
+        @include mat.setupFlex(row, center, center);
+        padding: 10px;
+    }
+}

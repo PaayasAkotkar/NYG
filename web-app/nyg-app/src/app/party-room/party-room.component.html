@@ -1,0 +1,92 @@
+<div class="PCcontainer">
+    <div class="nyg-form-PCcontainer">
+        <div class="nyg-contr">
+            <div class="nyg-itemX">
+                <div class="ocs-tags">
+                    @if (NYGroomSettings.private||NYGroomSettings.friend) {
+                    <app-friend-code style="position: absolute; z-index: 1; right: 600px;" cdkDrag
+                        [NYGfriendCode]="Code"></app-friend-code>
+                    }
+
+                    <div class="ocs-outer">
+                        <button class="ocs-btn optx opt-co" (click)="Options()">
+                            <span class="ocs-header">OPTIONS</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="nyg-coun">
+                    <app-count [NYGMode]="'default'" [NYGCount]="NYGactiveConn"></app-count>
+                </div>
+                <div>
+                    <app-lobby-box [OCSprofiles]="NYGplayersProfile"></app-lobby-box>
+                </div>
+            </div>
+            <div class="nyg-form-PCview">
+                <div class="ocs-tag">
+                    <app-tags NYGtitle="CATEGORY" [NYGsubTitle]="NYGroomSettings.category"></app-tags>
+                    <app-tags NYGtitle="MODE" [NYGsubTitle]="NYGmode"></app-tags>
+                    <app-room-name [NYGroomName]="NYGroomSettings.roomname"></app-room-name>
+                    <app-tags NYGtitle="BOOKS" [NYGsubTitle]="NYGroomSettings.book"></app-tags>
+                    <div class="nyg-coun">
+                        <div class="ocs-outer">
+                            <button class="ocs-btn optx opt-co" (click)="Leave()">
+                                <span class="ocs-header">EXIT</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <form class="nyg-PCform" [formGroup]="partyChatForm">
+                    <fieldset class="nyg-form-PCitems">
+                        <fieldset class="nyg-form-field">
+                            <div class="nyg-ma">
+                                <div class="nyg-legend ">
+
+                                    <label for="PartyChatToken" class="nyg-label adjust-lege">
+                                        <div>
+                                            <span class="nyg-header">CHAT</span>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="input-container">
+                                    <input class="nyg-input" #name type="text" name="PartyChatToken" id="PartyChatToken"
+                                        formControlName="PartyChatToken">
+                                </div>
+                            </div>
+
+                            <fieldset class="nyg-form-fieldx adjust-fieldx2">
+                                <div class="ocs-outer ocs-animate">
+                                    <button type="submit" class="ocs-btn" (click)="Chat($event)">
+                                        <span class="ocs-header">GO</span>
+                                    </button>
+                                </div>
+                            </fieldset>
+                        </fieldset>
+                    </fieldset>
+                </form>
+
+                <!-- messages -->
+                <div class="box">
+                    <div class="box-field">
+                        <div class="box-bor">
+                            <div class="nyg-tex">
+                                @for (item of latest(); track $index) {
+                                <div class="tex-adjust">
+
+                                    <div class="nyg-tlabel">
+                                        <span class="nyg-header">{{NYGnickName}}</span>
+                                    </div>
+                                    <div class="nyg-tex-m">
+                                        <span class="nyg-header2">{{item}}</span>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

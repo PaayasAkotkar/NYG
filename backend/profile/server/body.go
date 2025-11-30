@@ -5,7 +5,6 @@ import (
 	"app/sqlmanager"
 	"encoding/base64"
 	"encoding/json"
-	"fmt"
 	"log"
 	"os"
 	"regexp"
@@ -25,7 +24,7 @@ type UpgradeProgress struct {
 	PowersKeys []string                      `json:"powers"`       // keys to use to unlock the map
 }
 
-func ViewBody(id string) Body {
+func ViewBody(id string) *Body {
 	var (
 		body           Body
 		img            *IIMG
@@ -44,7 +43,6 @@ func ViewBody(id string) Body {
 	var refImg IIMG
 
 	img = &refImg
-	log.Println("req for id: ", id)
 	_id, err := uuid.Parse(id)
 
 	if err != nil {
@@ -60,8 +58,8 @@ func ViewBody(id string) Body {
 	manager := sqlmanager.ConnectSQL{}
 
 	addr := "127.0.0.1:3306"
-	user := "root"
-	pass := "kingp12"
+	user := USER
+	pass := PASSWORD
 	cfg := mysql.NewConfig()
 	cfg.User = os.Getenv(user)
 	cfg.Passwd = os.Getenv(pass)
@@ -72,69 +70,76 @@ func ViewBody(id string) Body {
 	db, err := manager.Init("nygpatch", "_nygpatch_", cfg)
 
 	if err != nil {
-		panic(err)
+		log.Println(err)
+		return nil
 	}
+
 	defer db.CloseDB()
 	if exists, err := db.HasID(buid); exists && err == nil {
-		err = db.ExtractData("event", buid, &devents)
-		if err != nil {
-			panic(err)
+		if err := db.ExtractData("event", buid, &devents); err != nil {
+			log.Println(err)
+			return nil
 		}
 
-		err = db.ExtractData("playerCredits", buid, &playerCredits)
-		if err != nil {
-			panic(err)
+		if err := db.ExtractData("playerCredits", buid, &playerCredits); err != nil {
+			log.Println(err)
+			return nil
 		}
 
-		err = db.ExtractData("img", buid, img)
-		if err != nil {
-			panic(err)
+		if err := db.ExtractData("img", buid, img); err != nil {
+			log.Println(err)
+			return nil
 		}
-		err = db.ExtractData("deck", buid, &deck)
-		if err != nil {
-			panic(err)
+		if err := db.ExtractData("deck", buid, &deck); err != nil {
+			log.Println(err)
+			return nil
 		}
-		err = db.ExtractData("powerUpgradesProgress", buid, &upgrades)
-		if err != nil {
-			panic(err)
-		}
-
-		err = db.ExtractSingleData("name", buid, &name)
-		if err != nil {
-			panic(err)
+		if err = db.ExtractData("powerUpgradesProgress", buid, &upgrades); err != nil {
+			log.Println(err)
+			return nil
 		}
 
-		err = db.ExtractSingleData("nickname", buid, &nickname)
-		if err != nil {
-			panic(err)
-		}
-		err = db.ExtractSingleDataFromJSON("twoVtwoProfile", "profile", buid, &twovtwoProfile)
-		if err != nil {
-			panic(err)
+		if err := db.ExtractSingleData("name", buid, &name); err != nil {
+			log.Println(err)
+			return nil
 		}
 
-		err = db.ExtractSingleDataFromJSON("oneVoneProfile", "profile", buid, &onevoneProfile)
-		if err != nil {
-			panic(err)
+		if err := db.ExtractSingleData("nickname", buid, &nickname); err != nil {
+			log.Println(err)
+			return nil
+		}
+		if err := db.ExtractSingleDataFromJSON("twoVtwoProfile", "profile", buid, &twovtwoProfile); err != nil {
+			log.Println(err)
+			return nil
+		}
+		if err := db.ExtractSingleDataFromJSON("oneVoneProfile", "profile", buid, &onevoneProfile); err != nil {
+			log.Println(err)
+			return nil
 		}
 
-		err = db.ExtractSingleDataFromJSON("clashProfile", "profile", buid, &clashProfile)
-		if err != nil {
-			panic(err)
+		if err := db.ExtractSingleDataFromJSON("clashProfile", "profile", buid, &clashProfile); err != nil {
+			log.Println(err)
+			return nil
 		}
 		db.ChangeTable("nygstore")
 		smt, err := db.Conn.Query("select store from nygstore")
 		if err != nil {
-			panic(err)
+			log.Println(err)
+			return nil
+
 		}
 		var str string
 		for smt.Next() {
 			if err := smt.Scan(&str); err != nil {
-				panic(err)
+				log.Println(err)
+				return nil
+
 			}
 		}
 		if err := json.Unmarshal([]byte(str), &store); err != nil {
-			panic(err)
+			log.Println(err)
+			return nil
+
 		}
 
 		body.ClashProfile = model.IProfile{}
@@ -226,12 +231,9 @@ func ViewBody(id string) Body {
 
 		fill.ID = body.ID
 		body.Profile = fill
-		log.Println("updagrades: ", upgrades.Powers)
-		fmt.Println("body done")
-		log.Println("deck: ", body.Deck)
-		return body
+		return &body
 	}
-	return Body{}
+	return nil
 }
 
 // DecodeImageURL writes the image on the storage based on the location and given name

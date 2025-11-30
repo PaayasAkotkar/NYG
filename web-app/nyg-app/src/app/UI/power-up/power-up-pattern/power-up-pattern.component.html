@@ -1,0 +1,30 @@
+<div class="fit _click">
+
+    <div class="fitx _animate" RemoveClass toRemove="_animate" [doIt]="OCSdisableHover" #_animate_>
+
+        <div class="ocs-lvl">
+            <span class="nyg-header1">
+                {{OCSlvl}}
+            </span>
+        </div>
+        <div class="fit2">
+            <label class="nyg-label" [htmlFor]="OCSformControl">
+                <span class="nyg-header">{{OCSpower}}</span>
+
+            </label>
+            <div class="input-cont">
+                <input (change)="Event()" type="checkbox" class="btn-cont" [formControlName]="OCSformControl"
+                    [name]="OCSformControl" [id]="OCSformControl" />
+            </div>
+        </div>
+
+    </div>
+
+    <div class="ocs-sprit">
+        @for (item of [1,2,3,4,5,6,7,10]; track $index) {
+        <div class="slot animate-slot"></div>
+        }
+        <div class="run"></div>
+
+    </div>
+</div>

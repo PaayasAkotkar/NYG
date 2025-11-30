@@ -1,0 +1,13 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+:host {
+    .ocs-outer-bod {
+        transition-property: background;
+        transition-duration: 1.45s;
+        transition-timing-function: cubic-bezier(.9, .81, .67, .68);
+
+        background: linear-gradient(to right, map.get(theme.$nyg-white-palletes, ad3-white), map.get(theme.$nyg-blue-palletes, potrait2-blue), );
+    }
+}

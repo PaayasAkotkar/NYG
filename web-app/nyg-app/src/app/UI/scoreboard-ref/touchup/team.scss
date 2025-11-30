@@ -1,0 +1,47 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    .ba {
+        display: flex;
+        padding: 30px;
+    }
+}
+
+:host {
+    .nyg-t {
+        gap: 20px;
+    }
+}
+
+:host {
+    .blue-head {
+        text-shadow:
+            -8px 2px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            -8px -2px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            // full font outline
+            -1px 2px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            1px 2px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            2px 2px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            2px -2px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            -4px 2px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            -4px -2px 0 map.get(theme.$nyg-white-palletes, ad1-white);
+    }
+}
+
+:host {
+    .red-head {
+        text-shadow:
+            -8px 2px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            -8px -2px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            // full font outline
+            -1px 2px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            1px 2px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            2px 2px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            2px -2px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            -4px 2px 0 map.get(theme.$nyg-white-palletes, ad1-white),
+            -4px -2px 0 map.get(theme.$nyg-white-palletes, ad1-white);
+    }
+
+}

@@ -1,0 +1,37 @@
+<div class="container">
+
+    <div class="co">
+        <div class="ocs-cl">
+
+            <div>
+                <span class="nyg-header">CLASH</span>
+            </div>
+            @for (events of NYGclashEvents; track $index;let i= $index) {
+            <app-daily-events (OCSlisten)="getClashUpdate($event)" [monitor]="i"
+                [NYGevents]="events"></app-daily-events>
+            }
+            <div>
+                <span class="nyg-header">LIVE EVENTS</span>
+            </div>
+
+        </div>
+    </div>
+    <div class="co">
+        <div class="ocs-cl">
+            <div>
+                <span class="nyg-header">LOCFIY</span>
+
+            </div>
+
+            @for (events of NYGlocifyEvents; track $index;let i= $index) {
+            <app-daily-events (OCSlisten)="getLocifyUpdate($event)" [monitor]="i"
+                [NYGevents]="events"></app-daily-events>
+            }
+
+            <div>
+                <span class="nyg-header">LIVE EVENTS</span>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,339 @@
+@use '../src/app/helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+@font-face {
+    font-family: 'Hey August';
+
+    src: url('/hey_august/Hey\ August.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    /* Recommended for better performance */
+}
+
+body {
+
+    // & {
+    //     background-color: map.get(theme.$nyg-blue-palletes, kings-blue);
+    // }
+    & {
+        // background-color: map.get(theme.$nyg-black-palletes, ad1-black);
+        // background-color: map.get(theme.$nyg-green-palletes, ad10-green);
+        // background: linear-gradient(to left, #FFC30E, #44170A, );
+        background-color: map.get(theme.$nyg-blue-palletes, ad10-blue);
+        background-color: map.get(theme.$nyg-blue-palletes, ad20-blue);
+    }
+
+    & {
+        overflow: hidden;
+        margin: 0px
+    }
+
+}
+
+body {
+    .DBack {
+        background: map.get(theme.$nyg-blue-palletes, ad12-blue);
+    }
+}
+
+body {
+    .POWERTAG {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        position: fixed;
+    }
+}
+
+body {
+    .VIEWBC {
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgb(255, 255, 255);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+}
+
+body {
+    .TAGG {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgb(255, 255, 255);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+}
+
+
+body {
+    .RATING {
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+}
+
+body {
+    .PDBack {
+        background: map.get(theme.$nyg-blue-palletes, ad12-blue);
+    }
+}
+
+body {
+    .DBTBack {
+        background: map.get(theme.$nyg-white-palletes, ad8-white);
+
+    }
+}
+
+body {
+    .ENTRANCE {
+        width: 100vw;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        position: fixed;
+    }
+}
+
+body {
+    .LOGO {
+        width: 100vw;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        position: fixed;
+    }
+}
+
+// body {
+//     position: fixed;
+//     top: 0;
+//     width: 100vw;
+//     height: 100vh;
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+body {
+    .FREEZECOUN {
+        padding: 10px;
+    }
+}
+
+body {
+    .GAMESTART {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        z-index: 1111111111111;
+    }
+}
+
+body {
+    .INDOXMESSAGES {
+        background: rgba(255, 255, 255, 0);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+}
+
+body {
+    .ROOMSETTINGSBACKDROP {
+        background-color: map.get(theme.$nyg-blue-palletes, kings-blue);
+    }
+}
+
+body {
+    .STARTUPTIMER {
+        // background: map.get(theme.$nyg-black-palletes, potrait2-black);
+    }
+}
+
+body {
+    .sports-class {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        pointer-events: auto;
+        bottom: 0;
+        top: 0;
+        left: 0px;
+    }
+}
+
+body {
+    .lft-class {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        pointer-events: auto;
+        bottom: 0;
+        top: 0;
+        left: 0px;
+    }
+}
+
+body {
+    .POWERNEXUS {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        pointer-events: auto;
+        bottom: 0;
+        top: 0;
+        left: 0px;
+        position: absolute;
+        z-index: 111111;
+    }
+}
+
+body {
+    .mode-panel-class {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        pointer-events: auto;
+        bottom: 0;
+        top: 0;
+        left: 0px;
+        position: absolute;
+    }
+}
+
+body {
+    .entertainment-class {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        pointer-events: auto;
+        bottom: 0;
+        top: 0;
+        left: 0px;
+    }
+}
+
+.BackDSHEET {
+    background-color: rgba(125, 125, 140, 0.7) !important;
+    z-index: 1000;
+}
+
+body {
+    .SHEETGUESS {
+        width: fit-content;
+        height: fit-content;
+        position: absolute;
+        z-index: -111;
+        padding: 10px;
+    }
+}
+
+body {
+    .MENU {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        pointer-events: auto;
+        z-index: 100000;
+    }
+}
+
+body {
+    .SHEET {
+        display: flex;
+        flex-direction: column;
+        bottom: 0;
+        left: 0;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        height: fit-content;
+        pointer-events: auto;
+
+    }
+}
+
+body {
+    .SHEET2 {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        width: fit-content;
+        bottom: 0;
+        left: 250px;
+        top: 50px;
+        justify-content: center;
+        align-items: center;
+        pointer-events: auto;
+    }
+}
+
+body {
+    .CL {
+        background-color: rgba(245, 244, 222, 0.85);
+    }
+}
+
+body {
+    .VIEW {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4rem;
+        width: 100%;
+        padding: 50px;
+        background-color: map.get(theme.$nyg-green-palletes, ad17-green);
+    }
+}
+
+body {
+    .freezeBackdrop {
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+    }
+
+}

@@ -1,0 +1,25 @@
+<div class="container">
+
+    <div class="ocs-items">
+        <div class="X">
+
+            <div class="ocs-gal" appOnMode [fromColor]="fromColor" [toColor]="toColor" [bg]="bg">
+                @for (item of List(); track $index) {
+                <div class="ocs-as">
+                    <div class="ocs-ga" appOnMode [fromColor]="fromColor" [toColor]="toColor" [bg]="bg">
+                        <span class="nyg-header" appOnMode [fromColor]="fromColor" [toColor]="toColor"
+                            [bg]="bg">{{item.OCStemplate}}</span>
+                    </div>
+                </div>
+
+                }
+            </div>
+            <div class="ocs-h">
+                <span class="nyg-header1" appOnMode [fromColor]="fromColor" [toColor]="toColor" [bg]="bg"
+                    [isSingleColor]="true" [singleColor]="singleColor">{{OCSHeader}}</span>
+            </div>
+        </div>
+
+    </div>
+
+</div>

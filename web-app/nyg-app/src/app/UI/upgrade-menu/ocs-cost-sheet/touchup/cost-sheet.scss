@@ -1,0 +1,98 @@
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use '../../../../helpers/helpers.scss' as mat;
+@use 'sass:map';
+
+:host {
+    .ocs-header {
+        font-size: 3rem;
+        font-family: arial;
+        pointer-events: none;
+    }
+}
+
+:host {
+    .ix {
+        width: fit-content;
+        height: fit-content;
+        background-color: map.get(theme.$nyg-white-palletes, ad4-white);
+    }
+}
+
+:host {
+    .ocs-inner {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+:host {
+    .ocs-btn {
+        width: 60px;
+        height: 60px;
+        justify-content: center;
+        display: flex;
+        overflow: hidden;
+    }
+}
+
+:host {
+    .xi {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+:host {
+    .ixw {
+        width: 200px;
+        height: 50px;
+        background-color: map.get(theme.$nyg-white-palletes, ad8-white);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 1rem;
+    }
+}
+
+:host {
+    .ixw2 {
+        width: fit-content;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 1rem;
+        border-style: double;
+        border-width: 10px;
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+
+        .ocs-header {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+    }
+}
+
+.ocs-btn {
+    border: 0px;
+    border-radius: 100%;
+    padding: 10px;
+}

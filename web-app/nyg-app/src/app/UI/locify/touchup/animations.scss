@@ -1,0 +1,107 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+.ocs-xx:hover {
+    overflow: hidden;
+    padding: 10px;
+
+    #blue-key {
+        transform: translate(-40%, 0%) scale(1.3);
+        transition-property: transform;
+        transition-duration: 0.45s;
+        transition-timing-function: cubic-bezier(.46, .31, .48, .14);
+
+    }
+
+    #red-key {
+        transform: translate(20%, 0%) scale(1.3);
+        transition-property: transform;
+        transition-duration: 0.45s;
+        transition-timing-function: cubic-bezier(.46, .31, .48, .14);
+
+    }
+
+    .ocs-p {
+        transform: scale(1.3);
+        transition-property: transform;
+        transition-duration: 0.45s;
+        transition-timing-function: cubic-bezier(.46, .31, .48, .14);
+
+    }
+
+    #right-2,
+    #right-1,
+    #left-1,
+    #left-2 {
+        animation-play-state: paused;
+    }
+}
+
+#left-2,
+#right-1 {
+    animation-name: down;
+    animation-duration: 2.49845s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.46, .31, .48, .14);
+    animation-fill-mode: forwards;
+}
+
+#right-2,
+#left-1 {
+    animation-name: up;
+    animation-duration: 2.49845s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes up {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(-100%);
+
+    }
+
+}
+
+@keyframes down {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+
+    }
+
+}
+
+
+.ocs-name {
+    animation-name: run_;
+    animation-duration: 4.49845s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.46, .31, .48, .14);
+    animation-fill-mode: forwards;
+}
+
+@keyframes run_ {
+    0% {
+        transform: translateX(0)
+    }
+
+    50% {
+        transform: translateX(55%);
+        ;
+
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}

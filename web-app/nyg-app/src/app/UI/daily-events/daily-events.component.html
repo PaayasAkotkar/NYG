@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="ocs-out">
+
+        <div class="ocs-item">
+            <div>
+                <span class="nyg-header">{{NYGevents.eventName}}</span>
+            </div>
+            <div class="ocs-yu">
+                <button class="ocs-bar" (click)="listen(NYGevents.reward)">
+                    <span class="nyg-h">
+                        {{NYGevents.completed}}/{{NYGevents.toComplete}}
+                    </span>
+                    <div class="an" appOnProgress [NYGProgress]="NYGevents.toComplete">
+                        <div class=" run"></div>
+                    </div>
+
+                </button>
+                <span class="nyg-hx">
+                    {{NYGevents.description}}
+                </span>
+
+            </div>
+
+            <div>
+                <span class="nyg-header">{{NYGevents.reward}}</span>
+            </div>
+        </div>
+
+    </div>
+
+</div>

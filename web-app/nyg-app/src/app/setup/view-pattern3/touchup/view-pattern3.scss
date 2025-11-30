@@ -1,0 +1,42 @@
+:host {
+    .ocs-outer {
+        padding: 6px;
+        width: fit-content;
+        height: fit-content;
+        transform: skew(-10deg);
+    }
+}
+
+.ocs-inner {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border-radius: 0.1rem;
+    gap: 10px;
+}
+
+:host {
+    .ocs-item {
+        width: fit-content;
+        height: fit-content;
+
+    }
+}
+
+:host {
+    button {
+        border: 0px;
+    }
+}
+
+:host {
+    .ocs-ti {
+        border-style: double;
+        border-width: 10px;
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+    }
+}

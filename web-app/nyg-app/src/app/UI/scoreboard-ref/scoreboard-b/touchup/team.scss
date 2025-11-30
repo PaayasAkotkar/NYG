@@ -1,0 +1,26 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    .ba {
+        display: flex;
+        padding: 30px;
+        width: 100%;
+    }
+}
+
+:host {
+    .nyg-t {
+        width: 100%;
+        height: 100%;
+        gap: 20px;
+    }
+}
+
+:host {
+    .nyg-teamsb {
+        width: 100%;
+        height: 100%;
+    }
+}

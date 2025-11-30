@@ -1,0 +1,72 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+@keyframes burning-left {
+    0% {
+        transform: rotateX(2turn) translateY(40px);
+        fill: map.get(theme.$nyg-yellow-palletes, ad10-yellow);
+        opacity: 1;
+    }
+
+    50% {
+        fill: map.get(theme.$nyg-orange-palletes, ad5-orange);
+        transform: skew(5deg);
+        opacity: 0.6;
+    }
+
+    100% {
+        fill: map.get(theme.$nyg-red-palletes, ad18-red);
+        transform: translateX(50px) translateY(-150px);
+        opacity: 1;
+    }
+}
+
+@keyframes burning-right {
+    0% {
+        fill: map.get(theme.$nyg-yellow-palletes, ad10-yellow);
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    50% {
+        fill: map.get(theme.$nyg-orange-palletes, ad5-orange);
+        transform: skew(-10deg) translateY(-150px);
+
+        opacity: 0.2;
+    }
+
+
+    75% {
+        opacity: 0.5;
+    }
+
+    99% {
+        transform: scale(1) translateY(0);
+        fill: map.get(theme.$nyg-red-palletes, ad18-red);
+
+        opacity: 1;
+    }
+
+    100% {
+        fill: map.get(theme.$nyg-red-palletes, ad18-red);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@for $i from 1 to 7 {
+
+    #fire {
+
+        :nth-child(#{$i}) {
+            animation: burning-left;
+            animation-delay:#{$i*.1}s;
+            animation-duration: 1.945s;
+            animation-iteration-count: 1;
+            animation-timing-function: cubic-bezier(1, .4, .07, .7);
+        }
+
+
+    }
+}

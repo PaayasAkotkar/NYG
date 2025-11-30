@@ -1,0 +1,73 @@
+@use '../../../helpers/helpers.scss' as mat;
+@use '../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+:host {
+    .ocs-animate-outer {
+        --gradient-borderx: conic-gradient(from var(--raindbow-angle), #ff0060,
+
+                #7434ff, #7434ff, #ff0060);
+        --raindbow-angle: 0turn; // initial-state
+
+
+        background: var(--gradient-borderx) border-box;
+
+        background-position: center center;
+        animation: rainbowQ;
+        animation-duration: 1.45s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+}
+
+
+@keyframes rotateQ {
+
+    to {
+        --border-angle: 10turn;
+    }
+}
+
+@keyframes rainbowQ {
+    to {
+        --raindbow-angle: 2turn;
+    }
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+@property --raindbow-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+:host {
+    .ocs-animate-inner {
+        padding: 10px;
+
+        --gradient-borderx: conic-gradient(from var(--raindbow-angle), #ff0060,
+
+                #7434ff, #7434ff, #ff0060);
+        --raindbow-angle: 0turn; // initial-state
+
+
+        background: var(--gradient-borderx) border-box;
+
+        background-position: center center;
+        animation: revrainbowQ;
+        animation-duration: 1.45s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+}
+
+@keyframes revrainbowQ {
+    to {
+        --raindbow-angle: -1turn;
+    }
+}

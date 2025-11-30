@@ -1,0 +1,17 @@
+<fieldset class="nyg-form-field">
+    <div class="fit">
+
+        <label #refLabel class="nyg-label" [htmlFor]="NYGformControl">
+            <span class="nyg-header">
+                {{NYGheader}}
+            </span>
+        </label>
+
+        <div class="nyg-inputCont">
+            <input [id]="NYGformControl" [name]="NYGformControl" [formControlName]="NYGformControl" type="checkbox"
+                class="nyg-input" (change)="test()">
+        </div>
+
+    </div>
+
+</fieldset>

@@ -1,0 +1,66 @@
+@use '../../helpers/helpers.scss' as mat;
+@use '../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+.nyg-submenu {
+    border-radius: 100%;
+    width: 190px;
+    height: 190px;
+    border: 0px;
+    overflow: hidden;
+
+    & {
+        background-color: map.get(theme.$nyg-orange-palletes, skin-tone5);
+        color: map.get(theme.$nyg-black-palletes, umber-black);
+    }
+
+    & {
+        outline-style: solid;
+        outline-width: 4px;
+    }
+
+    & {
+        outline-color: map.get(theme.$nyg-black-palletes, umber-black);
+    }
+
+}
+
+.ra-container {
+    & {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    @include mat.setup(100%, 100%, flex);
+    @include mat.setupFlex(row, center, center);
+}
+
+.ra-container {
+    background-color: skyblue;
+}
+
+.menu-bar {
+    width: 210px;
+    height: 220px;
+    border: 0px;
+    border-radius: 100%;
+
+    & {
+        background-color: map.get(theme.$nyg-green-palletes, potrait4-green);
+    }
+
+    & {
+        border-style: solid;
+        border-width: 4px;
+    }
+
+    & {
+        border-color: map.get(theme.$nyg-black-palletes, umber-black);
+    }
+
+}
+
+.nyg-menu-header {
+    font-size: 10rem;
+}

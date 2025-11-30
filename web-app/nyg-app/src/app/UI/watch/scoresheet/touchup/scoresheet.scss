@@ -1,0 +1,21 @@
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use '../../../../helpers/helpers.scss' as mat;
+@use 'sass:map';
+
+:host {
+    .ocs-items {
+        width: 600px;
+        height: 700px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+:host {
+    .nyg-header {
+        font-family: arial;
+        font-size: 5rem;
+    }
+}

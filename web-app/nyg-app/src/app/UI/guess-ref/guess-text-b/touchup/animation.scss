@@ -1,0 +1,51 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use "sass:map";
+
+
+:host {
+    .nyg-input {
+        &:focus {
+            transition-property: padding-top;
+            transition-duration: 0.24s;
+            transition-timing-function: cubic-bezier(.9, .81, .67, .68);
+            padding-top: 20px;
+        }
+    }
+}
+
+:host {
+    .nyg-in-conta {
+        --gradient-border: conic-gradient(from var(--border-angle), #93E800 5%,
+
+                #0844C6, #FF0012 99%, #F29136);
+        --border-angle: 0turn; // initial-state
+
+        border: solid 5px transparent;
+        border-radius: 20px;
+        background: var(--gradient-border) border-box;
+
+        background-position: center center;
+        animation: rotateQ;
+        animation-duration: 3.45s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(.9, .81, .67, .68);
+
+    }
+}
+
+
+@keyframes rotateQ {
+
+    to {
+        --border-angle: 1turn;
+
+    }
+
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}

@@ -1,0 +1,25 @@
+@use '../../../../helpers/helpers.scss' as mat;
+@use '../../../../helpers/color-palletes.scss' as theme;
+@use 'sass:map';
+
+.circle {
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+    border-radius: 10rem;
+    background: map.get(theme.$nyg-white-palletes, ad1-white);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+
+.ocs-park {
+    width: 30%;
+    height: 30%;
+    border-radius: 100%;
+    transform-style: preserve-3d;
+    position: relative;
+}
