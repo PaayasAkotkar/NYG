@@ -1,7 +1,7 @@
 copright 2024; all rights reserved
 ## NYG
 ## by Paayas Akotkar
-![alt text](image.png))
+![alt text](image.png)
 
 
 
