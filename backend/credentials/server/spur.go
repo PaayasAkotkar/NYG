@@ -16,8 +16,12 @@ type Spur struct {
 	Reciept PurchaseReciept `json:"reciept"`
 }
 
+var (
+	h = NewHub()
+)
+
 func ServeSpur(ctx *gin.Context) {
-	log.Println("spur server")
+	log.Println("NYG SPUR SERVER RUNNING ⚙️")
 	var req Spur
 
 	if err := ctx.ShouldBindBodyWithJSON(&req); err != nil {

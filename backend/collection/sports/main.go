@@ -6,9 +6,6 @@ import (
 	update "app/updateS"
 )
 
-func UpdateSport() {
-}
-
 type Parcel struct {
 	Pack any
 }

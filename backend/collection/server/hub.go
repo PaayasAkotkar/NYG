@@ -9,9 +9,6 @@ import (
 func RunHub(h *Hub, conn *sse.Server) {
 	fmt.Println("🐎 running")
 	for token := range h.trigger {
-		fmt.Println("trigger 🏛️")
-		fmt.Println("got: ", token)
-		fmt.Println("key: ", h.key)
 
 		switch true {
 
@@ -88,6 +85,6 @@ func RunHub(h *Hub, conn *sse.Server) {
 
 			// end of the validation channel
 		}
-		
+
 	}
 }

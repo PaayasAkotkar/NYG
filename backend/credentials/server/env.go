@@ -8,9 +8,6 @@ const (
 	PASSWORD = ""
 )
 
-var (
-	h = NewHub()
-)
 
 func Env() *mysql.Config {
 	addr := "127.0.0.1:3306"
