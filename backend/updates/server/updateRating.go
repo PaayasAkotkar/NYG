@@ -45,8 +45,6 @@ func Update(playersCredits map[string]*nygprotoc.TypeGCredentials, clash, onevon
 		_uuid, _ := uuid.Parse(id)
 		BUID, _ := _uuid.MarshalBinary()
 		err = db.ExtractData("credits", BUID, &updated)
-		log.Println("extracted data: ", updated)
-		log.Println("new rating: ", det.Rating)
 
 		if err != nil {
 			log.Println(err)
