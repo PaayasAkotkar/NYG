@@ -1,6 +1,8 @@
 package server
 
 import (
+	"log"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -14,6 +16,7 @@ type Credit struct {
 
 func Server() {
 	app := gin.New()
+	log.Println("NYG CREDENTIALS SERVER RUNNING ⚙️")
 	app.Use(func(c *gin.Context) {
 		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 		c.Writer.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE")

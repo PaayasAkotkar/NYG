@@ -48,7 +48,7 @@ func (up *UpgradeProgress) Value() (string, error) {
 	return string(x), err
 }
 func ServeUpgrades(ctx *gin.Context) {
-	log.Println("upgrade server")
+	log.Println("NYG UPDATE SERVER RUNNING ⚙️")
 
 	var req Upgarade
 	if err := ctx.ShouldBindBodyWithJSON(&req); err != nil {
@@ -87,7 +87,6 @@ func ServeUpgrades(ctx *gin.Context) {
 	}
 	var cleanAccount = strings.ReplaceAll(_src.Spur, "S", "")
 	var cleanPurchase = strings.ReplaceAll(req.Spur, "S", "")
-
 
 	a, err := strconv.Atoi(cleanAccount)
 

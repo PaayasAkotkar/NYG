@@ -153,7 +153,6 @@ func PDrawMechanism(h *Hub, roomname string, ID string, accept bool) {
 	oppoTeam := myProfile.OppoTeamname
 	myTeam := myProfile.MyTeam
 	matchups := map[string]string{}
-	var dr IDraw
 	if accept {
 
 		// switch the players
