@@ -1,5 +1,5 @@
 copright 2024; all rights reserved
-[](E:\Project-NYG\combustion\web-app\nyg-app\public\logo\nyg-logo-4.webp)
+[](![alt text](image.png))
 
 NYG by Paayas Akotkar
 
