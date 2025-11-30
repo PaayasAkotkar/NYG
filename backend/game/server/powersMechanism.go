@@ -218,7 +218,6 @@ func PDrawMechanism(h *Hub, roomname string, ID string, accept bool) {
 			p.MyID, _StringSentinel_, nil, _IntSentinel)
 
 		h.broadcast <- BroadcastReq{Token: CanUsePower, RoomID: roomname}
-		dr.DrawMsg = "Draw Offer"
 		h.broadcast <- BroadcastReq{Token: DMsg + "Draw Offer Accepted", RoomID: roomname}
 
 	} else {

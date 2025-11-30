@@ -1,9 +1,0 @@
-{
-    "editor.fontFamily": "Apply Days, Consolas, 'Courier New', monospace",
-    "mdb.presetConnections": [
-        {
-            "name": "Preset Connection",
-            "connectionString": "mongodb://localhost:27017"
-        }
-    ]
-}
